@@ -6,7 +6,7 @@
   <title>琴心剑胆</title>
   <meta name="author" content="Falcon chen">
   
-  <meta name="description" content="我是falcon,这是我的博客">
+  <meta name="description" content="falcon的博客">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">琴心剑胆</a></h1>
-  <h2><a href="/">天空之王</a></h2>
+  <h2><a href="/">Life is painting a picture, not doing a sum.</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -192,10 +192,10 @@
 </article>
 
 
-
+<% if ( page.comments){ %>
 <section id="comment">
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="" data-title="" data-url=""></div>
+	<div class="ds-thread" data-thread-key="" data-title="文章的标题" data-url="文章网址"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -211,7 +211,7 @@ var duoshuoQuery = {short_name:"falconchen"};
 	</script>
 <!-- 多说公共JS代码 end -->
 </section>
-
+<% } %>
 
 </div></div>
     <aside id="sidebar" class="alignright">
