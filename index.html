@@ -62,6 +62,316 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vim笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/21/vim笔记/" class="article-date">
+  <time datetime="2014-05-21T05:28:45.000Z" itemprop="datePublished">May 21 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vim笔记">vim笔记</h2>
+<h3 id="Windows下设置别名">Windows下设置别名</h3>
+<ul>
+<li><p>新建一个vi.bat放到%path%下，如c:\windows\system32下，写入以下内容：</p>
+<pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
+</code></pre></li>
+<li><p>方法二，批量设置别名    (推荐)</p>
+<ol>
+<li><p>新建一个文件aliases.txt，放在任意目录下，写入如下别名内容：</p>
+<pre><code> <span class="keyword">ls</span>=dir /ONE <span class="variable">$*</span>
+ ll=dir /ONE <span class="variable">$*</span>
+ cat=type <span class="variable">$*</span>
+ rm=del <span class="variable">$*</span>
+ cd=cd /d <span class="variable">$*</span>
+ vi=G:\falconDisk\Vim\vim74\gvim <span class="variable">$*</span>
+</code></pre></li>
+<li><p>新建另一个文件 autorun.bat ，放在任意目录，内容如下：</p>
+<pre><code> @echo off
+ cls
+ color 0A
+ doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
+</code></pre></li>
+<li><p>找到注册表如下位置:</p>
+<p>[HKEY_CURRENT_USER\Software\Microsoft\Command Processor]</p>
+<p>添加一个字符串值Autorun，值为\path\to\autorun.bat</p>
+</li>
+<li><p>启动命令行可以看到效果了</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="多文件操作">多文件操作</h3>
+<ol>
+<li><p>列出当前缓冲区文件</p>
+<pre><code> <span class="pseudo">:ls</span><span class="attr_selector">[!]</span>
+</code></pre><p> 输出如下：</p>
+<pre><code>     <span class="number">1</span> <span class="comment">#h  "/test/text"        line 1 ~</span>
+     <span class="number">2</span>u    <span class="string">"asdf"</span>            <span class="built_in">line</span> <span class="number">0</span> ~
+     <span class="number">3</span> %<span class="operator">a</span>+ <span class="string">"version.c"</span>        <span class="built_in">line</span> <span class="number">1</span> ~
+</code></pre><p> 使用ctrl+^可在%与#之间切换</p>
+</li>
+<li><p>在当前缓冲区选择文件    </p>
+<pre><code> :[s]bf            # Go <span class="keyword">to</span> first <span class="keyword">file</span>.
+ :[s]bl            # Go <span class="keyword">to</span> last <span class="keyword">file</span>
+ :[s]bn            # Go <span class="keyword">to</span> <span class="keyword">next</span> <span class="keyword">file</span>.
+ :[s]bp            # Go <span class="keyword">to</span> previous <span class="keyword">file</span>.
+ :[s]bw            # Close <span class="keyword">file</span>.
+ :[s]b数字         #指定的<span class="keyword">buffer</span>
+</code></pre></li>
+</ol>
+<ol>
+<li><p>对应帮助手册 </p>
+<pre><code> :<span class="keyword">help</span> <span class="keyword">ls</span>
+</code></pre></li>
+<li><p>多标签用插件        </p>
+<p> 将minibufexpl.vim复制到plugin目录，<br> 在_vimrc中添加：</p>
+<pre><code> <span class="built_in">let</span> g:miniBufExplMapCTabSwitchBufs=<span class="number">1</span>
+ <span class="built_in">let</span> g:miniBufExplMapWindowNavVim=<span class="number">1</span>
+ <span class="built_in">let</span> g:miniBufExplMapWindowNavArrows=<span class="number">1</span>
+</code></pre></li>
+</ol>
+<h3 id="大小写转换">大小写转换</h3>
+<ul>
+<li><p>选择字符串（可使用visual模式）后单击 <strong>gU大写，gu小写</strong></p>
+</li>
+<li><p>只转化某个单词：guw、gue </p>
+</li>
+<li><p>转换当前字符到行末为大写 gU$</p>
+</li>
+<li><p>转换当前字符到行首为大写： gU0</p>
+</li>
+<li><p>整篇文章转成大写： gggU</p>
+</li>
+<li><p>转换几行的大小写: 10gU</p>
+</li>
+</ul>
+<h3 id="可视化书签">可视化书签</h3>
+<ul>
+<li><p>将visualmark.vim复制到plugin目录。</p>
+</li>
+<li><p>用gvim打开源码文件，将光标定位在需要添加书签的地方，按下ctrl+F2，即添加了书签。</p>
+</li>
+<li><p>使用F2在书签之间正向切换，shift+F2反向切换。</p>
+</li>
+</ul>
+<h3 id="grep搜索项目内容">grep搜索项目内容</h3>
+<ul>
+<li><p>将grep.vim复制到plugin，在_vimrc中添加：</p>
+<pre><code>  nnoremap &lt;silent&gt; &lt;<span class="constant">F3</span>&gt; <span class="symbol">:Grep&lt;CR&gt;</span>
+</code></pre></li>
+<li>用gvim打开源码文件，并将光标定位到要查找的内容上，按下F3，确定要查找的内容和搜索范围，gvim会在弹出的QuickFix窗口中列出所有符合条件的搜索结果</li>
+</ul>
+<h3 id="supertab插件">supertab插件</h3>
+<ul>
+<li>SuperTab使Tab快捷键具有更快捷的上下文提示功能，下载地址：<a href="http://github.com/ervandew/supertab" target="_blank">http://github.com/ervandew/supertab</a></li>
+<li><p>安装方法：</p>
+<pre><code>  <span class="number">1.</span> Download supertab.vmb <span class="built_in">to</span> <span class="keyword">any</span> <span class="built_in">directory</span>.
+  <span class="number">2.</span> Open <span class="operator">the</span> <span class="built_in">file</span> <span class="operator">in</span> vim ($ vim supertab.vmb).
+  <span class="number">3.</span> Source <span class="operator">the</span> <span class="built_in">file</span> (:so %).
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/05/21/vim笔记/" data-id="67jm04suk4bm3gmb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/21/nodejs/" class="article-date">
+  <time datetime="2014-05-21T05:28:45.000Z" itemprop="datePublished">May 21 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/05/21/nodejs/" data-id="o7rbnvpjjhsb381d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/21/java笔记/" class="article-date">
+  <time datetime="2014-05-21T05:28:45.000Z" itemprop="datePublished">May 21 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考书目">参考书目</h1>
+<h3 id="Head_First_Java">Head First Java</h3>
+<p><img src="http://img5.douban.com/lpic/s2171906.jpg" alt="head first java"></p>
+<hr>
+<p>java 的integer与boolean两种类型<strong>并不相容</strong>，只能用下面的boolean变量来测试</p>
+<pre><code><span class="keyword">boolean</span> isHot = <span class="keyword">true</span>;
+<span class="keyword">while</span> (isHot){ }
+</code></pre><hr>
+<h3 id="centos安装java和jdk">centos安装java和jdk</h3>
+<blockquote>
+<p>参考 <a href="http://www.cnblogs.com/zhoulf/archive/2013/02/04/2891608.html" target="_blank">CentOS-6.3安装配置JDK-7</a>，当前安装的为最新jdk8</p>
+</blockquote>
+<ol>
+<li><p>查看java版本</p>
+<pre><code> <span class="comment"># java -version</span>
+</code></pre></li>
+</ol>
+<ol>
+<li><p>查看JDK信息</p>
+<pre><code> rpm -qa <span class="string">| grep java</span>
+</code></pre></li>
+</ol>
+<pre><code>    <span class="preprocessor">#结果</span>
+    tzdata-java-<span class="number">2012</span>c-<span class="number">1.</span>el6<span class="preprocessor">.noarch</span>        
+    java-<span class="number">1.6</span><span class="number">.0</span>-openjdk-<span class="number">1.6</span><span class="number">.0</span><span class="number">.0</span>-<span class="number">1.45</span><span class="number">.1</span><span class="number">.11</span><span class="number">.1</span><span class="preprocessor">.el</span>6<span class="preprocessor">.x</span>86_64            
+</code></pre><ol>
+<li><p>卸载openjdk,执行以下操作</p>
+<pre><code> rpm <span class="attribute">-e</span> <span class="subst">--</span>nodeps tzdata<span class="attribute">-java</span><span class="subst">-</span><span class="number">2012</span>c<span class="subst">-</span><span class="number">1.</span>el6<span class="built_in">.</span>noarch
+ rpm <span class="attribute">-e</span> <span class="subst">--</span>nodeps 
+</code></pre></li>
+</ol>
+<ol>
+<li><p>安装</p>
+<pre><code> wget http://download<span class="preprocessor">.oracle</span><span class="preprocessor">.com</span>/otn-pub/java/jdk/<span class="number">8</span>u5-b13/jdk-<span class="number">8</span>u5-linux-x64<span class="preprocessor">.rpm</span> --no-check-certificate
+
+ rpm -ivh jdk-<span class="number">8</span>u5-linux-x64<span class="preprocessor">.rpm</span>
+</code></pre><p> <em>如果下载失败，请到 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">java下载页</a>下载后再上传到服务器</em></p>
+</li>
+<li><p>设置环境变量</p>
+<ul>
+<li><p>向<strong>/etc/profile</strong>下追加以下内容</p>
+<pre><code>  <span class="comment">#add java path</span>
+  JAVA_HOME=/usr/java/jdk1.<span class="number">8.0</span>_05
+  JRE_HOME=/usr/java/jdk1.<span class="number">8.0</span>_05/jre
+  PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin
+  CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JRE_HOME</span>/lib
+  <span class="keyword">export</span> JAVA_HOME JRE_HOME PATH CLASSPATH
+</code></pre></li>
+<li><p>执行使之生效</p>
+<pre><code>  <span class="built_in">source</span> /etc/profile
+</code></pre></li>
+<li><p>删除原来的bin</p>
+<pre><code>  rm <span class="attribute">-rf</span> /usr/bin/javac
+  rm <span class="attribute">-rf</span> /usr/bin/jar
+  rm <span class="attribute">-rf</span> /usr/bin/java
+</code></pre></li>
+<li><p>建立软链接</p>
+<pre><code>  ln <span class="operator">-s</span> /usr/java/jdk1.<span class="number">8.0</span>_05/bin/javac /usr/bin/javac
+  ln <span class="operator">-s</span> /usr/java/jdk1.<span class="number">8.0</span>_05/bin/jar /usr/bin/jar
+  ln <span class="operator">-s</span> /usr/java/jdk1.<span class="number">8.0</span>_05/bin/java /usr/bin/java
+</code></pre></li>
+<li><p>检测是否成功</p>
+<pre><code>  java -<span class="built_in">version</span>
+</code></pre><p>  如果报错如下：</p>
+<blockquote>
+<p>javac: error while loading shared libraries: libjli.so: cannot open shared object file: No such file or directory</p>
+</blockquote>
+<p>  处理如下：</p>
+<pre><code>  find / -name libjli<span class="preprocessor">.so</span> <span class="preprocessor">#查找libjli.so路径</span>
+
+  <span class="keyword">cp</span> /usr/java/jdk1<span class="number">.8</span><span class="number">.0</span>_05/jre/lib/amd64/jli/libjli<span class="preprocessor">.so</span> /lib
+
+  <span class="keyword">ldd</span> /usr/bin/java
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<hr>
+<p> 在windows下与Linux配置类似,但需要注意:</p>
+<ol>
+<li><p>全局变量设置里windows是用 <strong>%变量名%</strong> 表示而非<strong>$变量名</strong> 的形式</p>
+</li>
+<li><p>目录使用 <strong>\</strong> 而非<strong>/</strong></p>
+</li>
+<li><p>分隔符采用 <strong>;</strong> 而非 <strong>:</strong>    </p>
+</li>
+</ol>
+<hr>
+<h3 id="编译和运行">编译和运行</h3>
+<p>文件1：<code>Dog.java</code>:</p>
+<pre><code><span class="keyword">class</span> Dog {
+
+    int size;
+    <span class="built_in">String</span> breed ;
+    <span class="built_in">String</span> name;
+
+    <span class="keyword">void</span> bark() {
+        System.out.println(<span class="string">"Ruff! Ruff!"</span>);
+    }
+
+}
+</code></pre><p>文件2：<code>DogTestDrive.java</code>:</p>
+<pre><code>class DogTestDrive {
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+        Dog d = <span class="keyword">new</span> Dog();
+        d.size = <span class="number">40</span>;
+        d.bark();
+    }
+}
+</code></pre><p>编译：</p>
+<pre><code>javac DogTestDrive<span class="preprocessor">.java</span> 
+</code></pre><p>将在当前目录生成DogTestDrive.class和Dog.class</p>
+<p>运行：</p>
+<pre><code>java DogTestDrive
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/05/21/java笔记/" data-id="z9ovs0fkhfpj62jm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-aaa" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/05/21/aaa/" class="article-date">
@@ -72,11 +382,19 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/21/aaa/">aaa</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: aaa<br>date: 2014-05-21 13:14:08</p>
-<h2 id="tags:tag1,tag2">tags:tag1,tag2</h2>
-<h2 id="测试经过npm_install的">测试经过npm install的</h2>
+        <h2 id="测试经过npm_install的">测试经过npm install的</h2>
 <ul>
 <li>这是第一个项目</li>
 <li>这是第二个</li>
@@ -85,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/05/21/aaa/" data-id="xnujrdjpnrdp47p0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/05/21/aaa/" data-id="c5tqpshh657fq962" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/05/21/hello-world/" data-id="p2h6nah37efnvy6e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/05/21/hello-world/" data-id="uarcnpnutc0mghpl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +490,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -184,7 +502,19 @@
       <ul>
         
           <li>
-            <a href="/2014/05/21/aaa/">(no title)</a>
+            <a href="/2014/05/21/vim笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/21/nodejs/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/21/java笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/21/aaa/">aaa</a>
           </li>
         
           <li>
