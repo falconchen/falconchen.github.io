@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>java | 琴心剑胆</title>
+  <title>404 | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -44,7 +44,7 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">java</h2>
+<h2 class="archive-title tag">404</h2>
 
 
   
@@ -54,35 +54,28 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-05-21T05:28:45.000Z"><a href="/2014/05/21/java笔记/">2014年05月21日</a></time>
+        <time datetime="2014-05-23T10:01:01.000Z"><a href="/2014/05/23/hexo创建404/">2014年05月23日</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/05/21/java笔记/">Java学习笔记</a></h1>
+    <h1 class="title"><a href="/2014/05/23/hexo创建404/">hexo创建404</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <ul>
-<li>参考书目 </li>
-</ul>
-<h3 id="Head_First_Java">Head First Java</h3>
-<p><img src="http://img5.douban.com/lpic/s2171906.jpg" alt="head first java"></p>
-<hr>
-<p>java 的integer与boolean两种类型<strong>并不相容</strong>，只能用下面的boolean变量来测试</p>
-<pre><code><span class="keyword">boolean</span> isHot = <span class="keyword">true</span>;
-<span class="keyword">while</span> (isHot){ }
-</code></pre><hr>
-<p>
+        <p>先做好一个<code>404.html</code>的html页面，放到<code>source</code>文件夹下，此时如果进行生成，hexo会自作多情地render，要禁止解析，可以在html内容前加入：</p>
+<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="header">layout: false
+---</span>
+</pre></td></tr></table></figure><br>即可，此时生成会在public生成一个404.html页面，在<code>github</code>无须设置，在其他服务器(如<code>nginx</code>)还需要改动配置文件。</p>
+<p>这是本站的<code>公益404页面</code>:<a href="http://falconchen.github.io/404.html" target="_blank">http://falconchen.github.io/404.html</a></p>
+
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2014/05/21/java笔记/#more" class="more-link">Read More</a>
-          </div>
         
         
       
