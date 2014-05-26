@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-26T07:22:27.164Z</updated>
+  <updated>2014-05-26T08:03:05.110Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -388,7 +388,7 @@ hexo d
     <link href="http://falconchen.github.io/2014/05/23/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/vim笔记/</id>
     <published>2014-05-22T16:00:00.000Z</published>
-    <updated>2014-05-23T05:37:01.000Z</updated>
+    <updated>2014-05-26T07:43:16.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Windows下设置别名">Windows下设置别名</h3>
 <ul>
 <li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
@@ -490,7 +490,18 @@ hexo d
 <pre><code>  <span class="number">1.</span> Download supertab.vmb <span class="built_in">to</span> <span class="keyword">any</span> <span class="built_in">directory</span>.
   <span class="number">2.</span> Open <span class="operator">the</span> <span class="built_in">file</span> <span class="operator">in</span> vim ($ vim supertab.vmb).
   <span class="number">3.</span> Source <span class="operator">the</span> <span class="built_in">file</span> (:so %).
-</code></pre></li>
+</code></pre><h3 id="nerdtree_新建文件">nerdtree 新建文件</h3>
+</li>
+</ul>
+<p>在 <code>nerdtree</code> 中新建文件的方式是 <code>m-a</code> 并写出文件名称。刷新用<code>r</code></p>
+<h3 id="窗口样式调整">窗口样式调整</h3>
+<ul>
+<li><p>交换两个窗口的位置，或者说移动窗口，用<code>ctrl + w + r/x</code></p>
+</li>
+<li><p>窗口大小调整，宽度和高度分别用<code>ctrl + w + &lt;/&gt;</code>和<code>ctrl + w + +/-</code>，或者使用更加灵活的<code>:res +n</code>，<code>:vertical res +n</code></p>
+</li>
+<li><p>Normal模式下，寻找上次光标所在位置为<code>ctrl + o</code>，下次的为<code>ctrl + i</code>，跳到某行修改并返回的时候非常方便</p>
+</li>
 </ul>
 ]]></content>
     <summary type="html"><![CDATA[<h3 id="Windows下设置别名">Windows下设置别名</h3>

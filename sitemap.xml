@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://falconchen.github.io/2014/05/23/vim%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2014-05-26T07:43:16.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://falconchen.github.io/2014/05/26/luo/</loc>
     <lastmod>2014-05-26T07:22:19.000Z</lastmod>
   </url>
@@ -39,11 +44,6 @@
   <url>
     <loc>http://falconchen.github.io/404.html</loc>
     <lastmod>2014-05-23T09:55:47.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://falconchen.github.io/2014/05/23/vim%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2014-05-23T05:37:01.000Z</lastmod>
   </url>
   
 </urlset>
