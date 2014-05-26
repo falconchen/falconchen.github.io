@@ -18,12 +18,13 @@ body {
 }
 @media screen and (max-width: 1260px) {
   body {
-    margin: 0 30px;
+    margin: 0 10px;
   }
 }
 @media screen and (max-width: 600px) {
   body {
     font-size: 13px;
+    margin: 0 10px;
   }
 }
 h1,
@@ -55,6 +56,12 @@ a:hover {
 }
 .alignright {
   float: right;
+}
+@media screen and (max-width: 600px) {
+  .alignright {
+    clear: both;
+    float: none;
+  }
 }
 .clearfix {
   zoom: 1;
@@ -104,6 +111,11 @@ a:hover {
 #header {
   text-shadow: 0 0 1px #fff;
   margin: 50px auto;
+}
+@media screen and (max-width: 600px) {
+  #header {
+    margin: 20px auto 10px;
+  }
 }
 #header a {
   color: #999;
@@ -296,9 +308,9 @@ article .entry blockquote {
   border-bottom: 1px solid #ddd;
   font-style: italic;
   font-family: "Georgia", serif;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 0 30px 15px;
-  text-align: center;
+  text-align: left;
 }
 article .entry blockquote footer {
   border-top: none;

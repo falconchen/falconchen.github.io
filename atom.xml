@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-26T05:44:59.807Z</updated>
+  <updated>2014-05-26T06:08:32.039Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/26/luo/"/>
     <id>http://falconchen.github.io/2014/05/26/luo/</id>
     <published>2014-05-26T03:51:56.000Z</published>
-    <updated>2014-05-26T04:11:51.000Z</updated>
+    <updated>2014-05-26T05:57:04.000Z</updated>
     <content type="html"><![CDATA[本文转自CoolShell.cn 陈浩文章，原文链接：<a href="http://coolshell.cn/articles/11629.html" title="我只是认真」聊聊工匠情怀 " target="_blank">「我只是认真」聊聊工匠情怀 | 酷 壳 - CoolShell.cn</a></br>
 <p>老罗的Smartisan T1手机发布会很多人应该都看了，发布会的最后老罗凝视着自己的工匠自画像，半晌没说话，随后转过身，慢慢离开舞台，屏幕下方只留下一句话：</p>
 <p style="padding-left: 30px;"><strong>我不是为了输赢，我就是认真。</strong></p>
@@ -28,8 +28,9 @@
 <p>「工匠情怀」，我深有体会，就像我在 <a href="http://blog.hesey.net/2014/05/gc-oriented-java-programming.html" target="_blank">面向GC的Java编程</a> 一文中所提到的：</p>
 <p style="padding-left: 30px;"><span style="color: #ff6600;"><strong>优秀程序员的价值，不在于其所掌握的几招屠龙之术，而是在细节中见真著。</strong></span></p>
 <p style="padding-left: 30px;"><span style="color: #ff6600;"><strong>如果我们可以一次把事情做对，并且做好，在允许的范围内尽可能追求卓越，为什么不去做呢？</strong></span></p>
-<p>追求卓越，追求完美，追求细节的极致。小时候看到那些修表匠，握着一个小螺丝刀，或是看着电工，用烙铁沾着锡和松香，在那一小寸的世界里，把坏了的地方修好，那种专注的眼神，觉得很厉害。</p>
 <a id="more"></a>
+<p>追求卓越，追求完美，追求细节的极致。小时候看到那些修表匠，握着一个小螺丝刀，或是看着电工，用烙铁沾着锡和松香，在那一小寸的世界里，把坏了的地方修好，那种专注的眼神，觉得很厉害。</p>
+
 <p>现在再去回想那些工匠工作的场景，越发觉得钦佩。在我老家有一家刻章的店，在我上幼儿园的时候就已经在那开了很多年了。前段时间需要刻一个章，发现那家店还在，于是走进去，门口坐着一个老人，我确实记不得当年是不是他，不过看这岁数八九不离十。我以前在别的地方刻的章，都是在电脑里设计完图案后，激光刻蚀。但那次老人却是用的手刻，我着实惊呆了。只看他拿出一块红色的印底，右手持着刻刀，开始一下一下地刻着。虽然老人连话都不怎么说得清了，但是工作时那专注的神情，和精湛的手艺，以及最后成品那比机器更完美的效果，着实让我心里非常动容。</p>
 <p><span id="more-11629"></span></p>
 <h4>一、技术人的执着</h4>
@@ -94,7 +95,6 @@
 <p>「工匠情怀」，我深有体会，就像我在 <a href="http://blog.hesey.net/2014/05/gc-oriented-java-programming.html" target="_blank">面向GC的Java编程</a> 一文中所提到的：</p>
 <p style="padding-left: 30px;"><span style="color: #ff6600;"><strong>优秀程序员的价值，不在于其所掌握的几招屠龙之术，而是在细节中见真著。</strong></span></p>
 <p style="padding-left: 30px;"><span style="color: #ff6600;"><strong>如果我们可以一次把事情做对，并且做好，在允许的范围内尽可能追求卓越，为什么不去做呢？</strong></span></p>
-<p>追求卓越，追求完美，追求细节的极致。小时候看到那些修表匠，握着一个小螺丝刀，或是看着电工，用烙铁沾着锡和松香，在那一小寸的世界里，把坏了的地方修好，那种专注的眼神，觉得很厉害。</p>
 ]]></summary>
     
       <category term="罗永浩" scheme="http://falconchen.github.io/tags/%E7%BD%97%E6%B0%B8%E6%B5%A9/"/>
@@ -104,42 +104,6 @@
       <category term="业界" scheme="http://falconchen.github.io/tags/%E4%B8%9A%E7%95%8C/"/>
     
       <category term="转载" scheme="http://falconchen.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nodejs笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/26/nodejs%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/26/nodejs笔记/</id>
-    <published>2014-05-26T02:49:44.000Z</published>
-    <updated>2014-05-23T05:36:25.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
   </entry>
   
@@ -284,6 +248,42 @@
       <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="学习笔记" scheme="http://falconchen.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[nodejs笔记]]></title>
+    <link href="http://falconchen.github.io/2014/05/26/nodejs%E7%AC%94%E8%AE%B0/"/>
+    <id>http://falconchen.github.io/2014/05/26/nodejs笔记/</id>
+    <published>2014-05-26T02:49:44.000Z</published>
+    <updated>2014-05-23T05:36:25.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
+    
+      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
   </entry>
   
