@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-26T06:37:00.719Z</updated>
+  <updated>2014-05-26T06:42:10.170Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[我不是为了输赢，我就是认真。]]></title>
     <link href="http://falconchen.github.io/2014/05/26/luo/"/>
     <id>http://falconchen.github.io/2014/05/26/luo/</id>
-    <published>2014-05-26T03:51:56.000Z</published>
-    <updated>2014-05-26T05:57:04.000Z</updated>
+    <published>2014-05-26T02:06:04.000Z</published>
+    <updated>2014-05-26T06:40:27.000Z</updated>
     <content type="html"><![CDATA[本文转自CoolShell.cn 陈浩文章，原文链接：<a href="http://coolshell.cn/articles/11629.html" title="我只是认真」聊聊工匠情怀 " target="_blank">「我只是认真」聊聊工匠情怀 | 酷 壳 - CoolShell.cn</a></br>
 <p>老罗的Smartisan T1手机发布会很多人应该都看了，发布会的最后老罗凝视着自己的工匠自画像，半晌没说话，随后转过身，慢慢离开舞台，屏幕下方只留下一句话：</p>
 <p style="padding-left: 30px;"><strong>我不是为了输赢，我就是认真。</strong></p>
@@ -108,11 +108,143 @@
   </entry>
   
   <entry>
+    <title><![CDATA[hexo安装插件]]></title>
+    <link href="http://falconchen.github.io/2014/05/26/hexo%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6/"/>
+    <id>http://falconchen.github.io/2014/05/26/hexo安装插件/</id>
+    <published>2014-05-26T02:06:04.000Z</published>
+    <updated>2014-05-26T02:43:59.000Z</updated>
+    <content type="html"><![CDATA[<p>安装插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm install &lt;plugin-name&gt; --save
+</pre></td></tr></table></figure><br>启用插件：在<code>hexo\_config.yml</code>文件添加：</p>
+<pre><code>plugins:
+-<span class="ruby"> &lt;plugin-name&gt;  <span class="comment">#插件名</span></span>
+</code></pre><p>升级插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm update
+</pre></td></tr></table></figure><br>卸载插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm uninstall &lt;plugin-name&gt;
+</pre></td></tr></table></figure><br>RSS插件<br>将上述命令中的『plugin-name』，替换为<code>hexo-generator-feed</code>。一旦安装完成，你可以在配置显示你站点的RSS，文件路径<code>/atom.xml</code>。</p>
+<p>你可以用rss作为迁移工具，用如下命令读取其他位置的rss：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>hexo migrate rss &lt;<span class="built_in">source</span>&gt;
+</pre></td></tr></table></figure><br>修改主题<code>header.ejs</code>，加入:</p>
+<pre><code><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span> <span class="attribute">title</span>=<span class="value">"rss feed"</span>&gt;</span>Rss<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+</code></pre>]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
+    
+      <category term="npm" scheme="http://falconchen.github.io/tags/npm/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[hexo命令及用法]]></title>
+    <link href="http://falconchen.github.io/2014/05/26/hexo%E5%91%BD%E4%BB%A4%E5%8F%8A%E7%94%A8%E6%B3%95/"/>
+    <id>http://falconchen.github.io/2014/05/26/hexo命令及用法/</id>
+    <published>2014-05-26T01:47:53.000Z</published>
+    <updated>2014-05-26T01:48:50.000Z</updated>
+    <content type="html"><![CDATA[<p>安装和本地预览：</p>
+<pre><code>npm <span class="keyword">install</span> hexo -g <span class="comment">#全局安装hexo模块，安装缓慢或出错请看上文</span>
+hexo init blog <span class="comment">#初始化本地目录，也可cd到指定目录直接执行 hexo init</span>
+cd blog
+npm <span class="keyword">install</span> <span class="comment">#不要忘记执行此命令，否则生成html会不正常</span>
+hexo server <span class="comment">#默认使用http://localhost:4000/，可在_config.yml更改</span>
+</code></pre><p>撰写文章：</p>
+<pre><code>hexo <span class="keyword">new</span> [模板名] 文章名称 <span class="preprocessor">#使用指定模板创建文章</span>
+hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="preprocessor">#新建页面</span>
+hexo generate            <span class="preprocessor">#生成html，需要在init的目录执行</span>
+hexo deploy              <span class="preprocessor">#部署到github、heroku</span>
+</code></pre><p>命令缩写（精简为命令的首字母）:</p>
+<pre><code>hexo n
+hexo g
+hexo s
+hexo d
+</code></pre>]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[hexo创建404]]></title>
+    <link href="http://falconchen.github.io/2014/05/23/hexo%E5%88%9B%E5%BB%BA404/"/>
+    <id>http://falconchen.github.io/2014/05/23/hexo创建404/</id>
+    <published>2014-05-23T10:01:01.000Z</published>
+    <updated>2014-05-26T01:50:49.000Z</updated>
+    <content type="html"><![CDATA[<p>先做好一个<code>404.html</code>的html页面，放到<code>source</code>文件夹下，此时如果进行生成，hexo会自作多情地render，要禁止解析，可以在html内容前加入：</p>
+<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="header">layout: false
+---</span>
+</pre></td></tr></table></figure><br>即可，此时生成会在public生成一个404.html页面，在<code>github</code>无须设置，在其他服务器(如<code>nginx</code>)还需要改动配置文件。</p>
+<p>这是本站的<code>公益404页面</code>:<a href="http://falconchen.github.io/404.html" target="_blank">http://falconchen.github.io/404.html</a></p>
+]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
+    
+      <category term="404" scheme="http://falconchen.github.io/tags/404/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[nodejs笔记]]></title>
+    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
+    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
+    <published>2014-05-23T02:06:04.000Z</published>
+    <updated>2014-05-26T06:41:37.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
+    
+      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Java学习笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/26/java%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/26/java笔记/</id>
-    <published>2014-05-26T02:49:44.000Z</published>
-    <updated>2014-05-23T05:25:19.000Z</updated>
+    <link href="http://falconchen.github.io/2014/05/23/java%E7%AC%94%E8%AE%B0/"/>
+    <id>http://falconchen.github.io/2014/05/23/java笔记/</id>
+    <published>2014-05-23T02:06:04.000Z</published>
+    <updated>2014-05-26T06:41:26.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li>参考书目 </li>
 </ul>
@@ -252,181 +384,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[nodejs笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/26/nodejs%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/26/nodejs笔记/</id>
-    <published>2014-05-26T02:49:44.000Z</published>
-    <updated>2014-05-23T05:36:25.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://falconchen.github.io/2014/05/26/hello-world/"/>
-    <id>http://falconchen.github.io/2014/05/26/hello-world/</id>
-    <published>2014-05-26T02:49:44.000Z</published>
-    <updated>2014-05-23T05:26:40.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
-<p><a id="more"></a></p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo new <span class="string">"My New Post"</span>
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo server
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo generate
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo deploy
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank">Deployment</a></p>
-]]></content>
-    <summary type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
-<p>]]></summary>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/categories/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[hexo安装插件]]></title>
-    <link href="http://falconchen.github.io/2014/05/26/hexo%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6/"/>
-    <id>http://falconchen.github.io/2014/05/26/hexo安装插件/</id>
-    <published>2014-05-26T02:06:04.000Z</published>
-    <updated>2014-05-26T02:43:59.000Z</updated>
-    <content type="html"><![CDATA[<p>安装插件：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>npm install &lt;plugin-name&gt; --save
-</pre></td></tr></table></figure><br>启用插件：在<code>hexo\_config.yml</code>文件添加：</p>
-<pre><code>plugins:
--<span class="ruby"> &lt;plugin-name&gt;  <span class="comment">#插件名</span></span>
-</code></pre><p>升级插件：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>npm update
-</pre></td></tr></table></figure><br>卸载插件：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>npm uninstall &lt;plugin-name&gt;
-</pre></td></tr></table></figure><br>RSS插件<br>将上述命令中的『plugin-name』，替换为<code>hexo-generator-feed</code>。一旦安装完成，你可以在配置显示你站点的RSS，文件路径<code>/atom.xml</code>。</p>
-<p>你可以用rss作为迁移工具，用如下命令读取其他位置的rss：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>hexo migrate rss &lt;<span class="built_in">source</span>&gt;
-</pre></td></tr></table></figure><br>修改主题<code>header.ejs</code>，加入:</p>
-<pre><code><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span> <span class="attribute">title</span>=<span class="value">"rss feed"</span>&gt;</span>Rss<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-</code></pre>]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="npm" scheme="http://falconchen.github.io/tags/npm/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[hexo命令及用法]]></title>
-    <link href="http://falconchen.github.io/2014/05/26/hexo%E5%91%BD%E4%BB%A4%E5%8F%8A%E7%94%A8%E6%B3%95/"/>
-    <id>http://falconchen.github.io/2014/05/26/hexo命令及用法/</id>
-    <published>2014-05-26T01:47:53.000Z</published>
-    <updated>2014-05-26T01:48:50.000Z</updated>
-    <content type="html"><![CDATA[<p>安装和本地预览：</p>
-<pre><code>npm <span class="keyword">install</span> hexo -g <span class="comment">#全局安装hexo模块，安装缓慢或出错请看上文</span>
-hexo init blog <span class="comment">#初始化本地目录，也可cd到指定目录直接执行 hexo init</span>
-cd blog
-npm <span class="keyword">install</span> <span class="comment">#不要忘记执行此命令，否则生成html会不正常</span>
-hexo server <span class="comment">#默认使用http://localhost:4000/，可在_config.yml更改</span>
-</code></pre><p>撰写文章：</p>
-<pre><code>hexo <span class="keyword">new</span> [模板名] 文章名称 <span class="preprocessor">#使用指定模板创建文章</span>
-hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="preprocessor">#新建页面</span>
-hexo generate            <span class="preprocessor">#生成html，需要在init的目录执行</span>
-hexo deploy              <span class="preprocessor">#部署到github、heroku</span>
-</code></pre><p>命令缩写（精简为命令的首字母）:</p>
-<pre><code>hexo n
-hexo g
-hexo s
-hexo d
-</code></pre>]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[hexo创建404]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/hexo%E5%88%9B%E5%BB%BA404/"/>
-    <id>http://falconchen.github.io/2014/05/23/hexo创建404/</id>
-    <published>2014-05-23T10:01:01.000Z</published>
-    <updated>2014-05-26T01:50:49.000Z</updated>
-    <content type="html"><![CDATA[<p>先做好一个<code>404.html</code>的html页面，放到<code>source</code>文件夹下，此时如果进行生成，hexo会自作多情地render，要禁止解析，可以在html内容前加入：</p>
-<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="header">layout: false
----</span>
-</pre></td></tr></table></figure><br>即可，此时生成会在public生成一个404.html页面，在<code>github</code>无须设置，在其他服务器(如<code>nginx</code>)还需要改动配置文件。</p>
-<p>这是本站的<code>公益404页面</code>:<a href="http://falconchen.github.io/404.html" target="_blank">http://falconchen.github.io/404.html</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="404" scheme="http://falconchen.github.io/tags/404/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[vim笔记]]></title>
     <link href="http://falconchen.github.io/2014/05/23/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/vim笔记/</id>
@@ -549,6 +506,49 @@ hexo d
       <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="vim" scheme="http://falconchen.github.io/categories/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://falconchen.github.io/2014/05/21/hello-world/"/>
+    <id>http://falconchen.github.io/2014/05/21/hello-world/</id>
+    <published>2014-05-21T02:06:04.000Z</published>
+    <updated>2014-05-26T06:40:45.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
+<p><a id="more"></a></p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>$ hexo new <span class="string">"My New Post"</span>
+</pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>$ hexo server
+</pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>$ hexo generate
+</pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>$ hexo deploy
+</pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank">Deployment</a></p>
+]]></content>
+    <summary type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
+<p>]]></summary>
+    
+      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
+    
+      <category term="hexo" scheme="http://falconchen.github.io/categories/hexo/"/>
     
   </entry>
   
