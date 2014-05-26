@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo创建404 | 琴心剑胆</title>
+  <title>hexo安装插件 | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="hexo创建404"/>
+  <meta property="og:title" content="hexo安装插件"/>
   <meta property="og:site_name" content="琴心剑胆"/>
 
   
@@ -51,24 +51,35 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-05-23T10:01:01.000Z"><a href="/2014/05/23/hexo创建404/">2014年05月23日</a></time>
+        <time datetime="2014-05-26T02:06:04.000Z"><a href="/2014/05/26/hexo安装插件/">2014年05月26日</a></time>
       
       
   
-    <h1 class="title">hexo创建404</h1>
+    <h1 class="title">hexo安装插件</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>先做好一个<code>404.html</code>的html页面，放到<code>source</code>文件夹下，此时如果进行生成，hexo会自作多情地render，要禁止解析，可以在html内容前加入：</p>
-<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="header">layout: false
----</span>
-</pre></td></tr></table></figure><br>即可，此时生成会在public生成一个404.html页面，在<code>github</code>无须设置，在其他服务器(如<code>nginx</code>)还需要改动配置文件。</p>
-<p>这是本站的<code>公益404页面</code>:<a href="http://falconchen.github.io/404.html" target="_blank">http://falconchen.github.io/404.html</a></p>
-
+        <p>安装插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm install &lt;plugin-name&gt; --save
+</pre></td></tr></table></figure><br>启用插件：在*hexo_config.yml文件添加：</p>
+<pre><code>plugins:
+-<span class="ruby"> &lt;plugin-name&gt;  <span class="comment">#插件名</span></span>
+</code></pre><p>升级插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm update
+</pre></td></tr></table></figure><br>卸载插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm uninstall &lt;plugin-name&gt;
+</pre></td></tr></table></figure><br>RSS插件<br>将上述命令中的『plugin-name』，替换为<code>hexo-generator-feed</code>。一旦安装完成，你可以在配置显示你站点的RSS，文件路径\atom.xml。</p>
+<p>你可以用rss作为迁移工具，用如下命令读取其他位置的rss：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>hexo migrate rss &lt;<span class="built_in">source</span>&gt;
+</pre></td></tr></table></figure><br>修改主题<code>header.ejs</code>，加入:</p>
+<pre><code><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span> <span class="attribute">title</span>=<span class="value">"rss feed"</span>&gt;</span>Rss<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+</code></pre>
       
     </div>
     <footer>
@@ -82,7 +93,7 @@
         
   
   <div class="tags">
-    <a href="/tags/nodejs/">nodejs</a>, <a href="/tags/hexo/">hexo</a>, <a href="/tags/404/">404</a>
+    <a href="/tags/nodejs/">nodejs</a>, <a href="/tags/hexo/">hexo</a>, <a href="/tags/npm/">npm</a>
   </div>
 
         
