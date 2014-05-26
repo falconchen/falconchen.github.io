@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 琴心剑胆</title>
+  <title>hexo命令及用法 | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Hello World"/>
+  <meta property="og:title" content="hexo命令及用法"/>
   <meta property="og:site_name" content="琴心剑胆"/>
 
   
@@ -49,44 +49,33 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-05-21T05:13:07.000Z"><a href="/2014/05/21/hello-world/">2014年05月21日</a></time>
+        <time datetime="2014-05-26T01:47:53.000Z"><a href="/2014/05/26/hexo命令及用法/">2014年05月26日</a></time>
       
       
   
-    <h1 class="title">Hello World</h1>
+    <h1 class="title">hexo命令及用法</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
-<p><a id="more"></a></p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo new <span class="string">"My New Post"</span>
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo server
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo generate
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo deploy
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank">Deployment</a></p>
-
+        <p>安装和本地预览：</p>
+<pre><code>npm <span class="keyword">install</span> hexo -g <span class="comment">#全局安装hexo模块，安装缓慢或出错请看上文</span>
+hexo init blog <span class="comment">#初始化本地目录，也可cd到指定目录直接执行 hexo init</span>
+cd blog
+npm <span class="keyword">install</span> <span class="comment">#不要忘记执行此命令，否则生成html会不正常</span>
+hexo server <span class="comment">#默认使用http://localhost:4000/，可在_config.yml更改</span>
+</code></pre><p>撰写文章：</p>
+<pre><code>hexo <span class="keyword">new</span> [模板名] 文章名称 <span class="preprocessor">#使用指定模板创建文章</span>
+hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="preprocessor">#新建页面</span>
+hexo generate            <span class="preprocessor">#生成html，需要在init的目录执行</span>
+hexo deploy              <span class="preprocessor">#部署到github、heroku</span>
+</code></pre><p>命令缩写（精简为命令的首字母）:</p>
+<pre><code>hexo n
+hexo g
+hexo s
+hexo d
+</code></pre>
       
     </div>
     <footer>
@@ -94,13 +83,13 @@
         
   
   <div class="categories">
-    <a href="/categories/hexo/">hexo</a>
+    <a href="/categories/nodejs/">nodejs</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/hexo/">hexo</a>
+    <a href="/tags/nodejs/">nodejs</a>, <a href="/tags/hexo/">hexo</a>
   </div>
 
         
