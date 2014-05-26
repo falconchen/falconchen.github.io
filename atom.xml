@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-26T06:57:32.300Z</updated>
+  <updated>2014-05-26T07:21:07.459Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -15,12 +15,49 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[hexo安装插件]]></title>
+    <link href="http://falconchen.github.io/2014/05/26/hexo%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6/"/>
+    <id>http://falconchen.github.io/2014/05/26/hexo安装插件/</id>
+    <published>2014-05-26T02:06:04.000Z</published>
+    <updated>2014-05-26T02:43:59.000Z</updated>
+    <content type="html"><![CDATA[<p>安装插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm install &lt;plugin-name&gt; --save
+</pre></td></tr></table></figure><br>启用插件：在<code>hexo\_config.yml</code>文件添加：</p>
+<pre><code>plugins:
+-<span class="ruby"> &lt;plugin-name&gt;  <span class="comment">#插件名</span></span>
+</code></pre><p>升级插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm update
+</pre></td></tr></table></figure><br>卸载插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm uninstall &lt;plugin-name&gt;
+</pre></td></tr></table></figure><br>RSS插件<br>将上述命令中的『plugin-name』，替换为<code>hexo-generator-feed</code>。一旦安装完成，你可以在配置显示你站点的RSS，文件路径<code>/atom.xml</code>。</p>
+<p>你可以用rss作为迁移工具，用如下命令读取其他位置的rss：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>hexo migrate rss &lt;<span class="built_in">source</span>&gt;
+</pre></td></tr></table></figure><br>修改主题<code>header.ejs</code>，加入:</p>
+<pre><code><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span> <span class="attribute">title</span>=<span class="value">"rss feed"</span>&gt;</span>Rss<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+</code></pre>]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
+    
+      <category term="npm" scheme="http://falconchen.github.io/tags/npm/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[我不是为了输赢，我就是认真。]]></title>
     <link href="http://falconchen.github.io/2014/05/26/luo/"/>
     <id>http://falconchen.github.io/2014/05/26/luo/</id>
     <published>2014-05-26T02:06:04.000Z</published>
-    <updated>2014-05-26T06:40:27.000Z</updated>
-    <content type="html"><![CDATA[本文转自CoolShell.cn 陈浩文章，原文链接：<a href="http://coolshell.cn/articles/11629.html" title="我只是认真」聊聊工匠情怀 " target="_blank">「我只是认真」聊聊工匠情怀 | 酷 壳 - CoolShell.cn</a></br>
+    <updated>2014-05-26T07:20:51.000Z</updated>
+    <content type="html"><![CDATA[本文转自CoolShell.cn 作者：陈皓，原文链接：<a href="http://coolshell.cn/articles/11629.html" title="我只是认真」聊聊工匠情怀 " target="_blank">「我只是认真」聊聊工匠情怀 | 酷 壳 - CoolShell.cn</a></br>
 <p>老罗的Smartisan T1手机发布会很多人应该都看了，发布会的最后老罗凝视着自己的工匠自画像，半晌没说话，随后转过身，慢慢离开舞台，屏幕下方只留下一句话：</p>
 <p style="padding-left: 30px;"><strong>我不是为了输赢，我就是认真。</strong></p>
 <p>这一瞬间让我想起93年「狮城舌战」的主角蒋昌建，在「人性本善还是人性本恶」的总结陈词最后，以顾城的名句，「黑夜给了我黑色的眼睛，我却用它寻找光明」，把整个辩论赛的氛围推向高潮。</p>
@@ -87,7 +124,7 @@
 <p>我们是被这个时代推上浪潮之巅的人，是去做一个见证者，或是一个冲在最前面也不怕被拍死的傻瓜，是我们每个人选择的权利。</p>
 <p>只是不要忘记，那些傻瓜，不是真的不怕死，<span style="color: #ff0000;"><strong>他们只是认真</strong></span>。</p>
 ]]></content>
-    <summary type="html"><![CDATA[本文转自CoolShell.cn 陈浩文章，原文链接：<a href="http://coolshell.cn/articles/11629.html" title="我只是认真」聊聊工匠情怀 " target="_blank">「我只是认真」聊聊工匠情怀 | 酷 壳 - CoolShell.cn</a></br>
+    <summary type="html"><![CDATA[本文转自CoolShell.cn 作者：陈皓，原文链接：<a href="http://coolshell.cn/articles/11629.html" title="我只是认真」聊聊工匠情怀 " target="_blank">「我只是认真」聊聊工匠情怀 | 酷 壳 - CoolShell.cn</a></br>
 <p>老罗的Smartisan T1手机发布会很多人应该都看了，发布会的最后老罗凝视着自己的工匠自画像，半晌没说话，随后转过身，慢慢离开舞台，屏幕下方只留下一句话：</p>
 <p style="padding-left: 30px;"><strong>我不是为了输赢，我就是认真。</strong></p>
 <p>这一瞬间让我想起93年「狮城舌战」的主角蒋昌建，在「人性本善还是人性本恶」的总结陈词最后，以顾城的名句，「黑夜给了我黑色的眼睛，我却用它寻找光明」，把整个辩论赛的氛围推向高潮。</p>
@@ -104,43 +141,6 @@
       <category term="业界" scheme="http://falconchen.github.io/tags/%E4%B8%9A%E7%95%8C/"/>
     
       <category term="转载" scheme="http://falconchen.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[hexo安装插件]]></title>
-    <link href="http://falconchen.github.io/2014/05/26/hexo%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6/"/>
-    <id>http://falconchen.github.io/2014/05/26/hexo安装插件/</id>
-    <published>2014-05-26T02:06:04.000Z</published>
-    <updated>2014-05-26T02:43:59.000Z</updated>
-    <content type="html"><![CDATA[<p>安装插件：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>npm install &lt;plugin-name&gt; --save
-</pre></td></tr></table></figure><br>启用插件：在<code>hexo\_config.yml</code>文件添加：</p>
-<pre><code>plugins:
--<span class="ruby"> &lt;plugin-name&gt;  <span class="comment">#插件名</span></span>
-</code></pre><p>升级插件：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>npm update
-</pre></td></tr></table></figure><br>卸载插件：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>npm uninstall &lt;plugin-name&gt;
-</pre></td></tr></table></figure><br>RSS插件<br>将上述命令中的『plugin-name』，替换为<code>hexo-generator-feed</code>。一旦安装完成，你可以在配置显示你站点的RSS，文件路径<code>/atom.xml</code>。</p>
-<p>你可以用rss作为迁移工具，用如下命令读取其他位置的rss：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>hexo migrate rss &lt;<span class="built_in">source</span>&gt;
-</pre></td></tr></table></figure><br>修改主题<code>header.ejs</code>，加入:</p>
-<pre><code><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span> <span class="attribute">title</span>=<span class="value">"rss feed"</span>&gt;</span>Rss<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-</code></pre>]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="npm" scheme="http://falconchen.github.io/tags/npm/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
   </entry>
   
