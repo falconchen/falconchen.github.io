@@ -69,23 +69,25 @@
       
         <p>概况：</p>
 <ul>
-<li><p>本地开发机器<code>win7</code> ，计算机名：<code>FALCON-PC</code> 公司内网,无法进行80端口映射。  已安装 <code>nginx+php+mysql</code></p>
+<li><p>本地开发机<code>win7</code> ，计算机名：<code>FALCON-PC</code> 公司内网,无法进行80端口映射。 已安装 <code>nginx+php+mysql</code></p>
 </li>
 <li><p>外网测试机环境为<code>centos6.4</code>，主机名<code>cpp65</code> 。已安装<code>nginx</code></p>
 </li>
-<li><p>使用域名 <code>65.hihoku.com</code> 进行开发和测试，该域名已经A记录指向cpp65</p>
+<li><p>使用域名 <code>65.hihoku.com</code> 进行开发测试，A记录已指向<code>cpp65</code></p>
 </li>
 </ul>
 <p>搭建目标：</p>
 <ul>
-<li>微信服务器能直接与本地开发机通讯，本地开发能即时直接看到调试效果</li>
+<li>微信服务器能直接与本地开发机通讯，本地开发能即时看到调试效果</li>
 </ul>
 <p>原理和实现：</p>
 <ul>
 <li>SSH Forward 远程端口转发（<code>C2S</code>模式）+ <code>nginx反向代理</code></li>
 </ul>
-<p><a id="more"></a><br>步骤：</p>
-<h3 id="step1:_本地_@_win7_给nginx_增加一条配置如下：">step1: 本地 <code>@ win7</code> 给nginx 增加一条配置如下：</h3>
+<a id="more"></a> 
+
+<p>实施步骤：</p>
+<h3 id="Step1:_本地_@_win7_给nginx_增加一条配置如下：">Step1: 本地 <code>@ win7</code> 给nginx 增加一条配置如下：</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -149,7 +151,7 @@
 </pre></td></tr></table></figure>
 
 <p><code>nginx -t</code> 测试没有问题后 重启nginx</p>
-<h3 id="step2:_开发机_ssh_forward_@win7">step2: 开发机 <code>ssh forward</code> <code>@win7</code></h3>
+<h3 id="Step2:_开发机_ssh_forward_@win7">Step2: 开发机 <code>ssh forward</code> <code>@win7</code></h3>
 <p>可以使用<code>putty</code>，或者<code>cygwin</code>、<code>minGW</code>里的ssh命令，我机器上有<code>minGW</code>，执行<code>ssh -v</code>查看。</p>
 <ul>
 <li>使用密钥 登陆 :   <code>@ win7</code></li>
@@ -172,7 +174,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <blockquote>
 <p>Warning: remote port forwarding failed for listen port 7002</p>
 </blockquote>
-<h3 id="step3:_nginx配置反向代理@cpp65:">step3: nginx配置反向代理<code>@cpp65</code>:</h3>
+<h3 id="Step3:_nginx配置反向代理@cpp65:">Step3: nginx配置反向代理<code>@cpp65</code>:</h3>
 <p>最简单的配置如下：</p>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 2
@@ -204,7 +206,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <blockquote>
 <p>注意:  由于开发机配置了多个虚拟服务器， 如果<code>@cpp65</code>上直接 访问<a href="http://127.0.0.1:7002" target="_blank">http://127.0.0.1:7002</a>  可以看到开发机本地按 <a href="http://localhost" target="_blank">http://localhost</a>     访问的结果,而非<code>65.hihoku.com</code>。</p>
 </blockquote>
-<h3 id="step4:_验证和接入">step4: 验证和接入</h3>
+<h3 id="Step4:_验证和接入">Step4: 验证和接入</h3>
 <p>登录<a href="https://mp.weixin.qq.com/" target="_blank">微信公众帐号平台</a>,进入<code>开发模式</code>。</p>
 <p>参考：<a href="http://mp.weixin.qq.com/wiki/index.php?title=%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97" target="_blank">接入指南 - 微信公众平台开发者文档</a></p>
 <p>下载php示例并解压，将php文件改名为<code>wx.php</code>并放在开发机配置的web根目录下,本机为<code>F:/kuaipan/hihoku/65.hihoku.com</code><br>将<code>wx.php</code>的<code>define(&quot;TOKEN&quot;, &quot;weixin&quot;);</code>改为你自己的token。</p>
