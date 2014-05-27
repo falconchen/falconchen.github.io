@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-27T06:33:04.032Z</updated>
+  <updated>2014-05-27T07:26:40.403Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
     <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
     <published>2014-05-27T03:34:26.000Z</published>
-    <updated>2014-05-27T06:32:55.000Z</updated>
+    <updated>2014-05-27T07:26:16.000Z</updated>
     <content type="html"><![CDATA[<p>概况：</p>
 <ul>
 <li><p>本地开发机 <code>win7</code> ,计算机名：<code>FALCON-PC</code> ,公司内网无法进行80端口映射.已安装 <code>nginx+php+mysql</code></p>
@@ -209,7 +209,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
     
       <category term="反向代理" scheme="http://falconchen.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
     
-      <category term="微信开发,笔记" scheme="http://falconchen.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91,%E7%AC%94%E8%AE%B0/"/>
+      <category term="微信开发" scheme="http://falconchen.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
