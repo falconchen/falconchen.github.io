@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-26T08:03:05.110Z</updated>
+  <updated>2014-05-27T03:37:36.781Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -13,6 +13,179 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[微信开发笔记[0]:搭建开发测试环境]]></title>
+    <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
+    <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
+    <published>2014-05-27T03:34:26.000Z</published>
+    <updated>2014-05-27T03:37:06.000Z</updated>
+    <content type="html"><![CDATA[<p>概况：</p>
+<ul>
+<li><p>本地开发机器win7 ，公司内网，无法进行端口映射。   <code>nginx+php+mysql</code></p>
+</li>
+<li><p>外网测试环境为centos6.4，主机名<code>cpp65</code> 。<code>nginx</code></p>
+</li>
+<li>使用域名 <code>65.hihoku.com</code> 进行开发和测试，该域名已经A记录指向cpp65</li>
+</ul>
+<p>搭建目标：</p>
+<ul>
+<li>微信服务器能直接与本地开发机通讯，本地开发能即时直接看到调试效果</li>
+</ul>
+<p>原理和实现：</p>
+<ul>
+<li>SSH Forward 远程端口转发（<code>C2S</code>模式）+ nginx反向代理</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li>本地 <code>@ win7</code> 给nginx 增加一条配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="code"><pre>server {
+        listen       <span class="number">80</span>;
+        server_name  <span class="number">65</span>.hihoku.com;
+        <span class="keyword">set</span> <span class="variable">$generater</span> <span class="string">"wordpress"</span>;
+        <span class="comment">#charset koi8-r;</span>
+        <span class="comment">#access_log  logs/host.access.log  main;</span>
+        location / {
+            root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
+            index  index.php index.html index.htm;
+try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php;  
+        }
+ 
+ 
+        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;
+        location = /<span class="number">50</span>x.html {
+            root   html;
+        }
+        location ~ \.php$ {
+     root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
+            fastcgi_pass localhost:<span class="number">9000</span>;
+            fastcgi_index index.php;
+            include fastcgi_params;
+fastcgi_param XGEN <span class="variable">$generater</span>;
+            fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;
+        }
+ 
+ 
+    }
+<span class="comment">#server 65.hihoku.com end}</span>
+</pre></td></tr></table></figure><br><code>nginx -t</code> 测试没有问题后 重启nginx</li>
+</ol>
+<ol>
+<li>首先在windows下安装ssh客户端，可以使用<code>putty</code>，或者<code>cygwin</code>、<code>minGW</code>里的ssh命令，我机器上有<code>minGW</code>，执行<code>ssh -v</code>查看。</li>
+</ol>
+<ul>
+<li>使用密钥 登陆 :   <code>@ win7</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>f:\&gt;ssh root@cpp65 -i C:\Users\Administrator\ .ssh\id_rsa_cpp
+</pre></td></tr></table></figure>
+
+
+<p>登录成功，密钥可用 。</p>
+<p>进行 ssh forward <code>@win7</code> :</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>C:\Users\Administrator&gt;ssh -C -N -g -R <span class="number">7002</span>:localhost:<span class="number">80</span> root@cpp65 -i C:\Users\Admini strator\.ssh\id_rsa_cpp
+</pre></td></tr></table></figure><br>这是整个过程中最不好理解的一个步骤，实际上可以看作一个变相的端口映射过程，即将本地的80端口通过ssh映射到远程<code>cpp65</code>的7002端口。这里的<code>localhost</code>指是<code>cpp65</code>而不是本地的<code>win7</code>，也可以修改为其他机器，比如cpp66之类的，只要cpp65能访问到。具体参数可参考文章 ​ 附录</p>
+<blockquote>
+<p>注意，此命令成功后<strong>没有任何提示</strong>。在<code>@cpp65</code>查看监听端口，可以看到<code>7002</code>端口正在监听。</p>
+</blockquote>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="comment"># netstat -tlnp | grep :7002</span>
+tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7002</span>              <span class="number">0.0</span>.<span class="number">0.0</span>:*                   LIST
+EN      <span class="number">9016</span>/sshd
+tcp        <span class="number">0</span>      <span class="number">0</span> ::<span class="number">1</span>:<span class="number">7002</span>                    :::*                        LIST
+EN      <span class="number">9016</span>/sshd
+</pre></td></tr></table></figure><br>如果forward失败，提示如下，请检查主机名和登录凭据。</p>
+<blockquote>
+<p>Warning: remote port forwarding failed for listen port 7002</p>
+</blockquote>
+<ol>
+<li>nginx配置反向代理<code>@cpp65</code>:<br>最简单的配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>server{
+         listen  <span class="number">80</span>;
+         server_name <span class="number">65</span>.hihoku.com;
+         access_log /hihoku/log/web/<span class="number">65</span>.access.log;
+ 
+ 
+         location / {
+                 proxy_pass http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7002</span>;
+                 include proxy.conf;
+         }
+ 
+ 
+     }
+</pre></td></tr></table></figure><br><code>@cpp65</code> 重启nginx,  此时再访问 &lt; <a href="http://65.hihoku.com&gt;" target="_blank">http://65.hihoku.com&gt;</a>   可以看到开发机的虚拟服务器了。<br><img src="images/phpinfo.jpg" alt="本机的phpinfo"></li>
+</ol>
+<pre><code> &gt; 注意<span class="symbol">:</span>  由于开发机配置了多个虚拟服务器， 如果`<span class="variable">@cpp65</span>`上直接 访问&lt; <span class="symbol">http:</span>/<span class="regexp">/127.0.0.1:7002 &gt;  可以看到开发机本地按 http:/</span><span class="regexp">/localhost     访问的结果,而非`65.hihoku.com`。</span>
+</code></pre><h4 id="相关参数的解释：">相关参数的解释：</h4>
+<blockquote>
+<p> -f Fork into background after authentication.<br>后台认证用户/密码，通常和-N连用，不用登录到远程主机。<br>-L port:host:hostport<br>将 本地机(客户机)的某个端口转发到远端指定机器的指定端口. 工作原理是这样的, 本地机器上分配了一个 socket 侦听 port 端口, 一旦这 个端口上有了连接, 该连接就经过安全通道转发出去, 同时远程主机和 host 的 hostport 端口建立连接. 可以在配置文件中指定端口的转 发. 只有 root 才能转发特权端口. IPv6 地址用另一种格式说明: port/host/hostport<br>-R port:host:hostport<br>将 远程主机(服务器)的某个端口转发到本地端指定机器的指定端口. 工作原理是这样的, 远程主机上分配了一个 socket 侦听 port 端口, 一 旦这个端口上有了连接, 该连接就经过安全通道转向出去, 同时本地主机和 host 的 hostport 端口建立连接. 可以在配置文件中指定端口 的转发. 只有用 root 登录远程主机才能转发特权端口. IPv6 地址用另一种格式说明: port/host/hostport<br>-D port<br>指 定一个本地机器 “动态的’’ 应用程序端口转发. 工作原理是这样的, 本地机器上分配了一个 socket 侦听 port 端口, 一旦这个端口上 有了连接, 该连接就经过安全通道转发出去, 根据应用程序的协议可以判断出远程主机将和哪里连接. 目前支持 SOCKS4 协议, 将充 当 SOCKS4 服务器. 只有 root 才能转发特权端口. 可以在配置文件中指定动态端口的转发.<br>-C Enable compression.<br>压缩数据传输。<br>-N Do not execute a shell or command.<br>不执行脚本或命令，通常与-f连用。<br>-g Allow remote hosts to connect to forwarded ports.<br>在-L/-R/-D参数中，允许远程主机连接到建立的转发的端口，如果不加这个参数，只允许本地主机建立连接。注：这个参数我在实践中似乎始终不起作用。</p>
+</blockquote>
+<h4 id="参考_:">参考 :</h4>
+<ul>
+<li><a href="http://hi.baidu.com/oldsvn/item/c7940804f216f41d6c9048da" target="_blank">SSH隧道与端口转发及内网穿透<em>oldsvn’ Blog</em>百度空间</a></li>
+</ul>
+<ul>
+<li><a href="http://falcon.sinaapp.com/post-34900.html" target="_blank">实战SSH Forward、ssh-copy-id、autossh及其他 | 雕刻时光</a></li>
+</ul>
+]]></content>
+    
+    
+      <category term="微信" scheme="http://falconchen.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="ssh" scheme="http://falconchen.github.io/tags/ssh/"/>
+    
+      <category term="nginx" scheme="http://falconchen.github.io/tags/nginx/"/>
+    
+      <category term="反向代理" scheme="http://falconchen.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    
+      <category term="微信开发,笔记" scheme="http://falconchen.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91,%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[我不是为了输赢，我就是认真。]]></title>
