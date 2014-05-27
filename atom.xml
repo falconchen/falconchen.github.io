@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-27T06:22:22.819Z</updated>
+  <updated>2014-05-27T06:25:55.212Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
     <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
     <published>2014-05-27T03:34:26.000Z</published>
-    <updated>2014-05-27T06:22:13.000Z</updated>
+    <updated>2014-05-27T06:25:47.000Z</updated>
     <content type="html"><![CDATA[<p>概况：</p>
 <ul>
 <li><p>本地开发机<code>win7</code> ，计算机名：<code>FALCON-PC</code> 公司内网,无法进行80端口映射。 已安装 <code>nginx+php+mysql</code></p>
@@ -116,7 +116,7 @@
 <p>登录成功，密钥可用 。</p>
 <p>进行 <code>ssh forward</code> <code>@win7</code> :</p>
 <pre><code>C:<span class="command">\Users</span><span class="command">\Administrator</span>&gt;ssh -C -N -g -R 7002:localhost:80 root@cpp65 -i C:<span class="command">\Users</span><span class="command">\Admini</span> strator<span class="command">\.</span>ssh<span class="command">\id</span>_rsa_cpp
-</code></pre><p>这是整个过程中最不好理解的一个步骤，实际上可以看作一个变相的端口映射过程，即将本地的80端口通过ssh映射到远程<code>cpp65</code>的7002端口。这里的<code>localhost</code>指是<code>cpp65</code>而不是本地的<code>win7</code>，也可以修改为其他机器，比如cpp66之类的，只要cpp65能访问到。具体参数可参考文章 ​ 附录</p>
+</code></pre><p>这是整个过程中最不好理解的一个步骤，实际上可以看作一个变相的端口映射过程，即将本地的80端口通过ssh映射到远程<code>cpp65</code>的7002端口。这里的<code>localhost</code>指是<code>cpp65</code>而不是本地的<code>win7</code>，也可以修改为其他机器，比如<code>cpp66</code>之类的，只要<code>cpp65</code>能访问到。具体参数参考文章后面的附录</p>
 <blockquote>
 <p>注意，此命令成功后<strong>没有任何提示</strong>。在<code>@cpp65</code>查看监听端口，可以看到<code>7002</code>端口正在监听。</p>
 </blockquote>
@@ -157,7 +157,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
    	}
 </pre></td></tr></table></figure><br><code>@cpp65</code> 重启nginx,  此时再访问 <a href="http://65.hihoku.com" target="_blank">http://65.hihoku.com</a>   可以看到开发机的虚拟服务器了。<br> <img src="/image/phpinfo.jpg" alt="本机的phpinfo"></p>
 <blockquote>
-<p>注意:  由于开发机配置了多个虚拟服务器， 如果<code>@cpp65</code>上直接 访问<a href="http://127.0.0.1:7002" target="_blank">http://127.0.0.1:7002</a>  可以看到开发机本地按 <a href="http://localhost" target="_blank">http://localhost</a>     访问的结果,而非<code>65.hihoku.com</code>。</p>
+<p>注意:  由于开发机配置了多个虚拟服务器， 如果<code>@cpp65</code>上直接 访问<a href="http://127.0.0.1:7002" target="_blank">http://127.0.0.1:7002</a>  可以看到开发机本地按 <a href="http://localhost" target="_blank">http://localhost</a>   访问的结果,而非<code>65.hihoku.com</code>。</p>
 </blockquote>
 <h3 id="Step4:_验证和接入">Step4: 验证和接入</h3>
 <p>登录<a href="https://mp.weixin.qq.com/" target="_blank">微信公众帐号平台</a>,进入<code>开发模式</code>。</p>
