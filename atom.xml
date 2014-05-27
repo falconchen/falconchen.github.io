@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-27T09:14:50.251Z</updated>
+  <updated>2014-05-27T09:15:50.508Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
     <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
     <published>2014-05-27T03:34:26.000Z</published>
-    <updated>2014-05-27T09:14:34.000Z</updated>
+    <updated>2014-05-27T09:15:32.000Z</updated>
     <content type="html"><![CDATA[<p>概况：</p>
 <ul>
 <li><p>本地开发机 <code>win7</code> ,计算机名：<code>FALCON-PC</code> ,公司内网无法进行80端口映射.已安装 <code>nginx+php+mysql</code></p>
@@ -171,7 +171,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <p>token为你自己在<code>wx.php</code>中定义的 token<br>url为<a href="http://65.hihoku.com/wx.php" target="_blank">http://65.hihoku.com/wx.php</a>,提交即可。</p>
 </blockquote>
 <h3 id="Step5:_设置robots协议,_禁止蜘蛛抓取开发机域名下的内容">Step5: 设置robots协议, 禁止蜘蛛抓取开发机域名下的内容</h3>
-<p>这是额外的步骤，可以防止因测试环境与生产环境内容重复破坏主站的SEO <code>@win7</code></p>
+<p>这是额外的步骤，防止因测试环境与生产环境内容重复破坏主站的SEO <code>@win7</code></p>
 <p>nginx虚拟服务器配置加入以下内容：</p>
 <pre><code><span class="keyword">if</span> (<span class="variable">$host</span> ~ <span class="string">'^65.hihoku.com'</span>){
     rewrite ^<span class="regexp">/robots.txt$ /robots</span>_deny.txt last;

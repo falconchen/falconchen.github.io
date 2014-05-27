@@ -218,7 +218,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <p>token为你自己在<code>wx.php</code>中定义的 token<br>url为<a href="http://65.hihoku.com/wx.php" target="_blank">http://65.hihoku.com/wx.php</a>,提交即可。</p>
 </blockquote>
 <h3 id="Step5:_设置robots协议,_禁止蜘蛛抓取开发机域名下的内容">Step5: 设置robots协议, 禁止蜘蛛抓取开发机域名下的内容</h3>
-<p>这是额外的步骤，可以防止因测试环境与生产环境内容重复破坏主站的SEO <code>@win7</code></p>
+<p>这是额外的步骤，防止因测试环境与生产环境内容重复破坏主站的SEO <code>@win7</code></p>
 <p>nginx虚拟服务器配置加入以下内容：</p>
 <pre><code><span class="keyword">if</span> (<span class="variable">$host</span> ~ <span class="string">'^65.hihoku.com'</span>){
     rewrite ^<span class="regexp">/robots.txt$ /robots</span>_deny.txt last;
