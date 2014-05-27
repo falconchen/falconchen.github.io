@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-27T05:40:14.912Z</updated>
+  <updated>2014-05-27T05:57:36.839Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
     <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
     <published>2014-05-27T03:34:26.000Z</published>
-    <updated>2014-05-27T05:38:22.000Z</updated>
+    <updated>2014-05-27T05:56:36.000Z</updated>
     <content type="html"><![CDATA[<p>概况：</p>
 <ul>
 <li><p>本地开发机器win7 ，公司内网，无法进行端口映射。  已安装 <code>nginx+php+mysql</code></p>
@@ -147,7 +147,14 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <blockquote>
 <p>注意:  由于开发机配置了多个虚拟服务器， 如果<code>@cpp65</code>上直接 访问<a href="http://127.0.0.1:7002" target="_blank">http://127.0.0.1:7002</a>  可以看到开发机本地按 <a href="http://localhost" target="_blank">http://localhost</a>     访问的结果,而非<code>65.hihoku.com</code>。</p>
 </blockquote>
-<h3 id="step5:">step5:</h3>
+<h3 id="step5:_验证和接入">step5: 验证和接入</h3>
+<p>登录<a href="https://mp.weixin.qq.com/" target="_blank">微信公众帐号平台</a>,进入<code>开发模式</code>。</p>
+<p>参考：<a href="http://mp.weixin.qq.com/wiki/index.php?title=%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97" target="_blank">接入指南 - 微信公众平台开发者文档</a></p>
+<p>下载php示例并解压，将php文件改名为<code>wx.php</code>并放在开发机配置的web根目录下,本机为<code>F:/kuaipan/hihoku/65.hihoku.com</code><br>将<code>wx.php</code>的<code>define(&quot;TOKEN&quot;, &quot;weixin&quot;);</code>改为你自己的token。</p>
+<p>填写接口配置：<br><img src="http://mp.weixin.qq.com/wiki/images/4/41/%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF.png" alt=""></p>
+<blockquote>
+<p>token为你自己在<code>wx.php</code>中定义的 token<br>url为<a href="http://65.hihoku.com/wx.php" target="_blank">http://65.hihoku.com/wx.php</a>,提交即可。</p>
+</blockquote>
 <h4 id="相关参数的解释：">相关参数的解释：</h4>
 <blockquote>
 <p> -f Fork into background after authentication.<br>后台认证用户/密码，通常和-N连用，不用登录到远程主机。<br>-L port:host:hostport<br>将 本地机(客户机)的某个端口转发到远端指定机器的指定端口. 工作原理是这样的, 本地机器上分配了一个 socket 侦听 port 端口, 一旦这 个端口上有了连接, 该连接就经过安全通道转发出去, 同时远程主机和 host 的 hostport 端口建立连接. 可以在配置文件中指定端口的转 发. 只有 root 才能转发特权端口. IPv6 地址用另一种格式说明: port/host/hostport<br>-R port:host:hostport<br>将 远程主机(服务器)的某个端口转发到本地端指定机器的指定端口. 工作原理是这样的, 远程主机上分配了一个 socket 侦听 port 端口, 一 旦这个端口上有了连接, 该连接就经过安全通道转向出去, 同时本地主机和 host 的 hostport 端口建立连接. 可以在配置文件中指定端口 的转发. 只有用 root 登录远程主机才能转发特权端口. IPv6 地址用另一种格式说明: port/host/hostport<br>-D port<br>指 定一个本地机器 “动态的’’ 应用程序端口转发. 工作原理是这样的, 本地机器上分配了一个 socket 侦听 port 端口, 一旦这个端口上 有了连接, 该连接就经过安全通道转发出去, 根据应用程序的协议可以判断出远程主机将和哪里连接. 目前支持 SOCKS4 协议, 将充 当 SOCKS4 服务器. 只有 root 才能转发特权端口. 可以在配置文件中指定动态端口的转发.<br>-C Enable compression.<br>压缩数据传输。<br>-N Do not execute a shell or command.<br>不执行脚本或命令，通常与-f连用。<br>-g Allow remote hosts to connect to forwarded ports.<br>在-L/-R/-D参数中，允许远程主机连接到建立的转发的端口，如果不加这个参数，只允许本地主机建立连接。注：这个参数我在实践中似乎始终不起作用。</p>
