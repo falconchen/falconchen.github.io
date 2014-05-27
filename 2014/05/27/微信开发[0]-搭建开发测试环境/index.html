@@ -90,7 +90,7 @@
 <a id="more"></a> 
 
 <p>实施步骤：</p>
-<h3 id="Step1:_本地_@_win7_给nginx_增加一条配置如下：">Step1: 本地 <code>@ win7</code> 给nginx 增加一条配置如下：</h3>
+<h3 id="Step1:_@_win7_给nginx_增加一条配置如下：">Step1:  <code>@ win7</code> 给nginx 增加一条配置如下：</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -154,7 +154,7 @@
 </pre></td></tr></table></figure>
 
 <p><code>nginx -t</code> 测试没有问题后 重启nginx</p>
-<h3 id="Step2:_开发机_ssh_forward_@win7">Step2: 开发机 <code>ssh forward</code> <code>@win7</code></h3>
+<h3 id="Step2:_@win7_开发机设置_ssh_forward">Step2: <code>@win7</code> 开发机设置 <code>ssh forward</code></h3>
 <p>可以使用<code>putty</code>，或者<code>cygwin</code>、<code>minGW</code>里的ssh命令，我机器上有<code>minGW</code>，执行<code>ssh -v</code>查看。</p>
 <ul>
 <li>使用密钥 登陆 :   <code>@ win7</code></li>
@@ -177,7 +177,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <blockquote>
 <p>Warning: remote port forwarding failed for listen port 7002</p>
 </blockquote>
-<h3 id="Step3:_nginx配置反向代理@cpp65:">Step3: nginx配置反向代理<code>@cpp65</code>:</h3>
+<h3 id="Step3:_@cpp65_nginx配置反向代理:">Step3: <code>@cpp65</code> nginx配置反向代理:</h3>
 <p>最简单的配置如下：</p>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 2
@@ -217,8 +217,8 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <blockquote>
 <p>token为你自己在<code>wx.php</code>中定义的 token<br>url为<a href="http://65.hihoku.com/wx.php" target="_blank">http://65.hihoku.com/wx.php</a>,提交即可。</p>
 </blockquote>
-<h3 id="Step5:_设置robots协议,_禁止蜘蛛抓取开发机域名下的内容">Step5: 设置robots协议, 禁止蜘蛛抓取开发机域名下的内容</h3>
-<p>这是额外的步骤，防止因测试环境与生产环境内容重复破坏主站的SEO <code>@win7</code></p>
+<h3 id="Step5:_@win7_设置robots协议,_禁止蜘蛛抓取开发机域名下的内容">Step5: <code>@win7</code> 设置robots协议, 禁止蜘蛛抓取开发机域名下的内容</h3>
+<p>这是额外的步骤，防止因测试环境与生产环境内容重复破坏主站的SEO </p>
 <p>nginx虚拟服务器配置加入以下内容：</p>
 <pre><code><span class="keyword">if</span> (<span class="variable">$host</span> ~ <span class="string">'^65.hihoku.com'</span>){
     rewrite ^<span class="regexp">/robots.txt$ /robots</span>_deny.txt last;
