@@ -144,7 +144,17 @@
  
     }
 <span class="comment">#server 65.hihoku.com end}</span>
-</pre></td></tr></table></figure><br><code>nginx -t</code> 测试没有问题后 重启nginx<br><br>### step2: 开发机<code>win7</code>配置<code>ssh forward</code><br><br>可以使用<code>putty</code>，或者<code>cygwin</code>、<code>minGW</code>里的ssh命令，我机器上有<code>minGW</code>，执行<code>ssh -v</code>查看。<br><br><br>- 使用密钥 登陆 :   <code>@ win7</code><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure><br>在web根目录下<code>F:/kuaipan/hihoku/65.hihoku.com</code>，新建<code>index.php</code>,写入内容：<br><figure class="highlight php"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="preprocessor">&lt;?php</span> phpinfo();<span class="preprocessor">?&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><code>nginx -t</code> 测试没有问题后 重启nginx</p>
+<h3 id="step2:_开发机_ssh_forward_@win7">step2: 开发机 <code>ssh forward</code> <code>@win7</code></h3>
+<p>可以使用<code>putty</code>，或者<code>cygwin</code>、<code>minGW</code>里的ssh命令，我机器上有<code>minGW</code>，执行<code>ssh -v</code>查看。</p>
+<ul>
+<li>使用密钥 登陆 :   <code>@ win7</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>f:\&gt;ssh root@cpp65 -i C:\Users\Administrator\ .ssh\id_rsa_cpp
 </pre></td></tr></table></figure>
 
@@ -162,7 +172,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <blockquote>
 <p>Warning: remote port forwarding failed for listen port 7002</p>
 </blockquote>
-<h3 id="step4:_nginx配置反向代理@cpp65:">step4: nginx配置反向代理<code>@cpp65</code>:</h3>
+<h3 id="step3:_nginx配置反向代理@cpp65:">step3: nginx配置反向代理<code>@cpp65</code>:</h3>
 <p>最简单的配置如下：</p>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 2
@@ -194,7 +204,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 <blockquote>
 <p>注意:  由于开发机配置了多个虚拟服务器， 如果<code>@cpp65</code>上直接 访问<a href="http://127.0.0.1:7002" target="_blank">http://127.0.0.1:7002</a>  可以看到开发机本地按 <a href="http://localhost" target="_blank">http://localhost</a>     访问的结果,而非<code>65.hihoku.com</code>。</p>
 </blockquote>
-<h3 id="step5:_验证和接入">step5: 验证和接入</h3>
+<h3 id="step4:_验证和接入">step4: 验证和接入</h3>
 <p>登录<a href="https://mp.weixin.qq.com/" target="_blank">微信公众帐号平台</a>,进入<code>开发模式</code>。</p>
 <p>参考：<a href="http://mp.weixin.qq.com/wiki/index.php?title=%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97" target="_blank">接入指南 - 微信公众平台开发者文档</a></p>
 <p>下载php示例并解压，将php文件改名为<code>wx.php</code>并放在开发机配置的web根目录下,本机为<code>F:/kuaipan/hihoku/65.hihoku.com</code><br>将<code>wx.php</code>的<code>define(&quot;TOKEN&quot;, &quot;weixin&quot;);</code>改为你自己的token。</p>
