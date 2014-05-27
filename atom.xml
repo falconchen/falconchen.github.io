@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-27T06:31:02.872Z</updated>
+  <updated>2014-05-27T06:33:04.032Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
     <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
     <published>2014-05-27T03:34:26.000Z</published>
-    <updated>2014-05-27T06:30:51.000Z</updated>
+    <updated>2014-05-27T06:32:55.000Z</updated>
     <content type="html"><![CDATA[<p>概况：</p>
 <ul>
-<li><p>本地开发机<code>win7</code><br>计算机名：<code>FALCON-PC</code> 公司内网无法进行80端口映射。 已安装 <code>nginx+php+mysql</code></p>
+<li><p>本地开发机 <code>win7</code> ,计算机名：<code>FALCON-PC</code> ,公司内网无法进行80端口映射.已安装 <code>nginx+php+mysql</code></p>
 </li>
 <li><p>外网测试机环境为<code>centos6.4</code>，主机名<code>cpp65</code> 。已安装<code>nginx</code></p>
 </li>
@@ -184,7 +184,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 ]]></content>
     <summary type="html"><![CDATA[<p>概况：</p>
 <ul>
-<li><p>本地开发机<code>win7</code><br>计算机名：<code>FALCON-PC</code> 公司内网无法进行80端口映射。 已安装 <code>nginx+php+mysql</code></p>
+<li><p>本地开发机 <code>win7</code> ,计算机名：<code>FALCON-PC</code> ,公司内网无法进行80端口映射.已安装 <code>nginx+php+mysql</code></p>
 </li>
 <li><p>外网测试机环境为<code>centos6.4</code>，主机名<code>cpp65</code> 。已安装<code>nginx</code></p>
 </li>
