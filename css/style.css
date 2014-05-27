@@ -34,7 +34,6 @@ h4,
 h5,
 h6 {
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
-  background: #eee;
   padding: 5px;
   padding-left: 10px;
 }
@@ -315,6 +314,11 @@ article .entry h5,
 article .entry h6,
 article .entry .video-container {
   margin-top: 15px;
+}
+article .entry h3,
+article .entry h4,
+article .entry h5 {
+  background: #a3b5da;
 }
 article .entry blockquote {
   border-top: 1px solid #ddd;
