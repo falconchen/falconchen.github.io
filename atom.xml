@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-27T05:36:36.848Z</updated>
+  <updated>2014-05-27T05:40:14.912Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
     <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
     <published>2014-05-27T03:34:26.000Z</published>
-    <updated>2014-05-27T05:30:45.000Z</updated>
+    <updated>2014-05-27T05:38:22.000Z</updated>
     <content type="html"><![CDATA[<p>概况：</p>
 <ul>
 <li><p>本地开发机器win7 ，公司内网，无法进行端口映射。  已安装 <code>nginx+php+mysql</code></p>
@@ -144,8 +144,10 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
 
    	}
 </pre></td></tr></table></figure><br><code>@cpp65</code> 重启nginx,  此时再访问 <a href="http://65.hihoku.com" target="_blank">http://65.hihoku.com</a>   可以看到开发机的虚拟服务器了。<br> <img src="/image/phpinfo.jpg" alt="本机的phpinfo"></p>
-<pre><code> &gt; 注意<span class="symbol">:</span>  由于开发机配置了多个虚拟服务器， 如果`<span class="variable">@cpp65</span>`上直接 访问&lt;<span class="symbol">http:</span>/<span class="regexp">/127.0.0.1:7002&gt;  可以看到开发机本地按 http:/</span><span class="regexp">/localhost     访问的结果,而非`65.hihoku.com`。</span>
-</code></pre><h3 id="step5:">step5:</h3>
+<blockquote>
+<p>注意:  由于开发机配置了多个虚拟服务器， 如果<code>@cpp65</code>上直接 访问<a href="http://127.0.0.1:7002" target="_blank">http://127.0.0.1:7002</a>  可以看到开发机本地按 <a href="http://localhost" target="_blank">http://localhost</a>     访问的结果,而非<code>65.hihoku.com</code>。</p>
+</blockquote>
+<h3 id="step5:">step5:</h3>
 <h4 id="相关参数的解释：">相关参数的解释：</h4>
 <blockquote>
 <p> -f Fork into background after authentication.<br>后台认证用户/密码，通常和-N连用，不用登录到远程主机。<br>-L port:host:hostport<br>将 本地机(客户机)的某个端口转发到远端指定机器的指定端口. 工作原理是这样的, 本地机器上分配了一个 socket 侦听 port 端口, 一旦这 个端口上有了连接, 该连接就经过安全通道转发出去, 同时远程主机和 host 的 hostport 端口建立连接. 可以在配置文件中指定端口的转 发. 只有 root 才能转发特权端口. IPv6 地址用另一种格式说明: port/host/hostport<br>-R port:host:hostport<br>将 远程主机(服务器)的某个端口转发到本地端指定机器的指定端口. 工作原理是这样的, 远程主机上分配了一个 socket 侦听 port 端口, 一 旦这个端口上有了连接, 该连接就经过安全通道转向出去, 同时本地主机和 host 的 hostport 端口建立连接. 可以在配置文件中指定端口 的转发. 只有用 root 登录远程主机才能转发特权端口. IPv6 地址用另一种格式说明: port/host/hostport<br>-D port<br>指 定一个本地机器 “动态的’’ 应用程序端口转发. 工作原理是这样的, 本地机器上分配了一个 socket 侦听 port 端口, 一旦这个端口上 有了连接, 该连接就经过安全通道转发出去, 根据应用程序的协议可以判断出远程主机将和哪里连接. 目前支持 SOCKS4 协议, 将充 当 SOCKS4 服务器. 只有 root 才能转发特权端口. 可以在配置文件中指定动态端口的转发.<br>-C Enable compression.<br>压缩数据传输。<br>-N Do not execute a shell or command.<br>不执行脚本或命令，通常与-f连用。<br>-g Allow remote hosts to connect to forwarded ports.<br>在-L/-R/-D参数中，允许远程主机连接到建立的转发的端口，如果不加这个参数，只允许本地主机建立连接。注：这个参数我在实践中似乎始终不起作用。</p>

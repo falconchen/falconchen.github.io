@@ -34,15 +34,26 @@ h4,
 h5,
 h6 {
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: #eee;
+  padding: 5px;
+  padding-left: 10px;
 }
 h1 {
   font-size: 1.8em;
+  background: none;
+  padding: 0;
 }
 h2 {
   font-size: 1.5em;
 }
 h3 {
   font-size: 1.3em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h4 {
+  font-size: 1.1em;
 }
 a {
   text-decoration: none;
@@ -112,9 +123,9 @@ a:hover {
   text-shadow: 0 0 1px #fff;
   margin: 50px auto;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
   #header {
-    margin: 20px auto 0;
+    margin: 20px auto 0px;
   }
 }
 #header a {
