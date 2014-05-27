@@ -315,11 +315,6 @@ article .entry h6,
 article .entry .video-container {
   margin-top: 15px;
 }
-article .entry h3,
-article .entry h4,
-article .entry h5 {
-  background: #a3b5da;
-}
 article .entry blockquote {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -399,7 +394,8 @@ article .entry h3,
 article .entry h4,
 article .entry h5,
 article .entry h6 {
-  font-weight: normal;
+  font-weight: bold;
+  background: #a3b5da;
 }
 article .entry img,
 article .entry video {
