@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-27T07:26:40.403Z</updated>
+  <updated>2014-05-27T07:30:24.876Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/27/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%5B0%5D-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/"/>
     <id>http://falconchen.github.io/2014/05/27/微信开发[0]-搭建开发测试环境/</id>
     <published>2014-05-27T03:34:26.000Z</published>
-    <updated>2014-05-27T07:26:16.000Z</updated>
+    <updated>2014-05-27T07:30:17.000Z</updated>
     <content type="html"><![CDATA[<p>概况：</p>
 <ul>
 <li><p>本地开发机 <code>win7</code> ,计算机名：<code>FALCON-PC</code> ,公司内网无法进行80端口映射.已安装 <code>nginx+php+mysql</code></p>
@@ -77,9 +77,9 @@
         <span class="comment">#charset koi8-r;</span>
         <span class="comment">#access_log  logs/host.access.log  main;</span>
         location / {
-            root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
-            index  index.php index.html index.htm;
-			try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php;  
+        root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
+        index  index.php index.html index.htm;
+        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php;  
         }
  
  
@@ -88,11 +88,11 @@
             root   html;
         }
         location ~ \.php$ {
-     		root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
+            root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
             fastcgi_pass localhost:<span class="number">9000</span>;
             fastcgi_index index.php;
             include fastcgi_params;
-			fastcgi_param XGEN <span class="variable">$generater</span>;
+            fastcgi_param XGEN <span class="variable">$generater</span>;
             fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;
         }
  

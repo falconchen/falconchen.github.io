@@ -124,9 +124,9 @@
         <span class="comment">#charset koi8-r;</span>
         <span class="comment">#access_log  logs/host.access.log  main;</span>
         location / {
-            root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
-            index  index.php index.html index.htm;
-			try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php;  
+        root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
+        index  index.php index.html index.htm;
+        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php;  
         }
  
  
@@ -135,11 +135,11 @@
             root   html;
         }
         location ~ \.php$ {
-     		root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
+            root   F:/kuaipan/hihoku/<span class="number">65</span>.hihoku.com;
             fastcgi_pass localhost:<span class="number">9000</span>;
             fastcgi_index index.php;
             include fastcgi_params;
-			fastcgi_param XGEN <span class="variable">$generater</span>;
+            fastcgi_param XGEN <span class="variable">$generater</span>;
             fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;
         }
  
