@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-28T03:48:01.024Z</updated>
+  <updated>2014-05-28T05:55:23.435Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -37,7 +37,7 @@
     <link href="http://falconchen.github.io/2014/05/28/helloLiteIde/"/>
     <id>http://falconchen.github.io/2014/05/28/helloLiteIde/</id>
     <published>2014-05-27T16:00:00.000Z</published>
-    <updated>2014-05-28T03:33:39.000Z</updated>
+    <updated>2014-05-28T04:21:14.000Z</updated>
     <content type="html"><![CDATA[<p>一直用 <code>markdownPad2</code> 写作，但毕竟是个商业软件，限制还是太多，尤其是它不支持github的扩展markdown语法高亮,今天换成<code>LiteIde</code>了，一个Go语言的IDE，用着还挺顺手的，启动速度也很快，不仅有html即时预览，还有文件目录列表，还可以右键启动命令行终端（这个对我很重要，可以进入<code>hexo</code>,编译和发布文章到<code>github</code>），支持<code>markdown语法高亮</code>，支持导出为<code>PDF格式</code> ，这些功能都是<code>markdownPad2</code>收费版才有的，甚至还能自定义css，支持多个平台。</p>
 <p>windows版的下载地址：<br><a href="https://golangide.googlecode.com/files/liteidex19.windows.7z" target="_blank">https://golangide.googlecode.com/files/liteidex19.windows.7z</a></p>
 <p><img src="/image/LiteIde.jpg" alt="liteIde"></p>
@@ -404,7 +404,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
     <link href="http://falconchen.github.io/2014/05/26/hexo%E5%91%BD%E4%BB%A4%E5%8F%8A%E7%94%A8%E6%B3%95/"/>
     <id>http://falconchen.github.io/2014/05/26/hexo命令及用法/</id>
     <published>2014-05-26T01:47:53.000Z</published>
-    <updated>2014-05-26T01:48:50.000Z</updated>
+    <updated>2014-05-28T04:21:01.000Z</updated>
     <content type="html"><![CDATA[<p>安装和本地预览：</p>
 <pre><code>npm <span class="keyword">install</span> hexo -g <span class="comment">#全局安装hexo模块，安装缓慢或出错请看上文</span>
 hexo init blog <span class="comment">#初始化本地目录，也可cd到指定目录直接执行 hexo init</span>
@@ -453,42 +453,6 @@ hexo d
       <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
     
       <category term="404" scheme="http://falconchen.github.io/tags/404/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nodejs笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
-    <published>2014-05-23T02:06:04.000Z</published>
-    <updated>2014-05-26T06:41:37.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
@@ -635,6 +599,42 @@ hexo d
       <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="学习笔记" scheme="http://falconchen.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[nodejs笔记]]></title>
+    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
+    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
+    <published>2014-05-23T02:06:04.000Z</published>
+    <updated>2014-05-26T06:41:37.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
+    
+      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
   </entry>
   
