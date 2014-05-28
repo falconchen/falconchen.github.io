@@ -140,6 +140,7 @@ a:hover {
   font-weight: normal;
   font-size: 2.5em;
   line-height: 1;
+  margin-bottom: 5%;
 }
 #header h2 {
   font-weight: normal;
@@ -147,9 +148,19 @@ a:hover {
   line-height: 1;
   margin-top: 10px;
 }
+@media screen and (max-width: 600px) {
+  #header h2 {
+    display: none;
+  }
+}
 #header #main-nav {
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
+}
+@media screen and (max-width: 600px) {
+  #header #main-nav {
+    display: none;
+  }
 }
 #header #main-nav ul {
   list-style: none;
@@ -157,6 +168,11 @@ a:hover {
 #header #main-nav ul li {
   float: left;
   margin-left: 30px;
+}
+@media screen and (max-width: 600px) {
+  #header .alignleft {
+    float: none;
+  }
 }
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
@@ -193,6 +209,7 @@ article .post-content {
 @media screen and (max-width: 600px) {
   article .post-content {
     padding-left: 20px;
+    margin-bottom: 20px;
   }
 }
 article .gallery {
@@ -510,6 +527,11 @@ article footer .addthis iframe {
   box-shadow: 1px 2px 3px #ddd;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 600px) {
+  #comment {
+    display: none;
+  }
+}
 #comment .title {
   font-weight: normal;
   margin-bottom: 15px;
@@ -577,6 +599,11 @@ article footer .addthis iframe {
   #sidebar {
     float: none;
     width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  #sidebar {
+    display: none;
   }
 }
 #sidebar .widget {
@@ -668,6 +695,17 @@ article footer .addthis iframe {
   margin-bottom: 50px;
   font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
+}
+@media screen and (max-width: 600px) {
+  #footer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #footer .alignleft {
+    float: none;
+  }
 }
 .entry .gist {
   background: #eee;
