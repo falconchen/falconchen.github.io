@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>微信开发 | 琴心剑胆</title>
+  <title>liteIde | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -52,7 +52,7 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title category">微信开发</h2>
+<h2 class="archive-title tag">liteIde</h2>
 
 
   
@@ -62,45 +62,24 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-05-27T03:34:26.000Z"><a href="/2014/05/27/微信开发[0]-搭建开发测试环境/">2014年05月27日</a></time>
+        <time datetime="2014-05-27T16:00:00.000Z"><a href="/2014/05/28/helloLiteIde/">2014年05月28日</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/05/27/微信开发[0]-搭建开发测试环境/">微信开发笔记[0]:搭建开发测试环境</a></h1>
+    <h1 class="title"><a href="/2014/05/28/helloLiteIde/">hello LiteIde</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>概况：</p>
-<ul>
-<li><p>本地开发机 <code>win7</code> ,计算机名：<code>FALCON-PC</code> ,公司内网无法进行80端口映射.已安装 <code>nginx+php+mysql</code></p>
-</li>
-<li><p>外网测试机环境为<code>centos6.4</code>，主机名<code>cpp65</code> 。已安装<code>nginx</code></p>
-</li>
-<li><p>使用域名 <code>65.hihoku.com</code> 进行开发测试，A记录已指向<code>cpp65</code></p>
-</li>
-</ul>
-<p>搭建目标：</p>
-<ul>
-<li>微信服务器能直接与本地开发机通讯，本地开发即时看到调试效果</li>
-</ul>
-<p>原理和实现：</p>
-<ul>
-<li><p>由于微信服务器不能直接访问内网的开发机，所以先让微信服务器访问外网测试主机，测试主机通过ssh隧道将请求转发至开发机，取得开发机响应的数据后，再返回给微信服务器。</p>
-</li>
-<li><p>SSH Forward 远程端口转发（<code>C2S</code>模式）+ <code>nginx反向代理</code> </p>
-</li>
-</ul>
+        <p>一直用 <code>markdownPad2</code> 写作，毕竟是个商业软件，限制还是太多，尤其是它不支持github的扩展markdown语法高亮,今天换成<code>LiteIde</code>了，一个Go语言的IDE，用着还挺顺手的，启动速度很快，不仅有html即时预览，还有文件目录列表，启动命令行终端（这个对我很重要，可以进入<code>hexo</code>,编译和发布到<code>github</code>），支持<code>markdown语法高亮</code>，支持导出为<code>PDF格式</code> ，这些功能都是<code>markdownPad2</code>收费版才有的，甚至还能自定义css，支持多个平台。</p>
+<p>windows版的下载地址：<a href="https://golangide.googlecode.com/files/liteidex19.windows.7z" target="_blank">https://golangide.googlecode.com/files/liteidex19.windows.7z</a></p>
+<p>截图：<br><img src="/image/LiteIde.jpg" alt="liteIde"></p>
 
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2014/05/27/微信开发[0]-搭建开发测试环境/#more" class="more-link">Read More</a>
-          </div>
         
         
       
