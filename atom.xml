@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-28T02:07:29.103Z</updated>
+  <updated>2014-05-28T02:11:31.777Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -15,18 +15,20 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[]]></title>
+    <title><![CDATA[hello LiteIde]]></title>
     <link href="http://falconchen.github.io/2014/05/28/helloLiteIde/"/>
     <id>http://falconchen.github.io/2014/05/28/helloLiteIde/</id>
-    <published>2014-05-28T01:38:02.000Z</published>
-    <updated>2014-05-28T02:07:19.000Z</updated>
-    <content type="html"><![CDATA[<p>date: 2014.05.28<br>title: hello LiteIde</p>
-<h1 id="tag:_[markdown,tools]">tag: [markdown,tools]</h1>
-<p>一直用 <code>markdownPad2</code> 写作，毕竟是个商业软件，限制还是太多，尤其是它不支持github的扩展markdown语法高亮,今天换成<code>LiteIde</code>了，一个Go语言的IDE，用着还挺顺手的，启动速度很快，不仅有html即时预览，还有文件目录列表，启动命令行终端（这个对我很重要，可以进入hexo来编译），支持<code>markdown语法高亮</code>，支持导出为<code>PDF格式</code> ，这些功能都是<code>markdownPad2</code>收费版才有的，甚至还能自定义css，支持多个平台。</p>
+    <published>2014-05-27T16:00:00.000Z</published>
+    <updated>2014-05-28T02:10:32.000Z</updated>
+    <content type="html"><![CDATA[<p>一直用 <code>markdownPad2</code> 写作，毕竟是个商业软件，限制还是太多，尤其是它不支持github的扩展markdown语法高亮,今天换成<code>LiteIde</code>了，一个Go语言的IDE，用着还挺顺手的，启动速度很快，不仅有html即时预览，还有文件目录列表，启动命令行终端（这个对我很重要，可以进入<code>hexo</code>,编译和发布到<code>github</code>），支持<code>markdown语法高亮</code>，支持导出为<code>PDF格式</code> ，这些功能都是<code>markdownPad2</code>收费版才有的，甚至还能自定义css，支持多个平台。</p>
 <p>windows版的下载地址：<a href="https://golangide.googlecode.com/files/liteidex19.windows.7z" target="_blank">https://golangide.googlecode.com/files/liteidex19.windows.7z</a></p>
-<p>截图：<br><img src="/images/liteIde.jpg" alt="liteIde"></p>
+<p>截图：<br><img src="/image/LiteIde.jpg" alt="liteIde"></p>
 ]]></content>
     
+    
+      <category term="markdown" scheme="http://falconchen.github.io/tags/markdown/"/>
+    
+      <category term="tools" scheme="http://falconchen.github.io/tags/tools/"/>
     
   </entry>
   
