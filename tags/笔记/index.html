@@ -175,6 +175,32 @@
 <pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
 </code></pre></li>
 </ul>
+<ul>
+<li><p>方法二，批量设置别名    (推荐)</p>
+<pre><code>  1. 新建一个文件`aliases.txt`，放在任意目录下，写入如下别名内容：
+
+          ls=dir /ONE <span class="formula">$*
+          ll=dir /ONE $</span>*
+          cat=type <span class="formula">$*
+          rm=del $</span>*
+          cd=cd /d <span class="formula">$*
+          vi=G:<span class="command">\falconDisk</span><span class="command">\Vim</span><span class="command">\vim</span>74<span class="command">\gvim</span> $</span>*
+
+  2. 新建另一个文件 `autorun.bat` ，放在任意目录，内容如下：
+
+          @echo off
+          cls
+          color 0A
+          doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
+  3.  找到注册表如下位置:
+
+      <span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Command</span> Processor<span class="special">]</span>
+
+      添加一个字符串值Autorun，值为<span class="command">\path</span><span class="command">\to</span><span class="command">\autorun</span>.bat
+
+  4. 启动命令行可以看到效果了
+</code></pre></li>
+</ul>
 <p>
       
     </div>

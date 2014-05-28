@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-28T02:14:32.119Z</updated>
+  <updated>2014-05-28T02:16:09.361Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -625,40 +625,40 @@ hexo d
     <link href="http://falconchen.github.io/2014/05/23/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/vim笔记/</id>
     <published>2014-05-22T16:00:00.000Z</published>
-    <updated>2014-05-27T10:14:51.000Z</updated>
+    <updated>2014-05-28T02:15:59.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Windows下设置别名">Windows下设置别名</h3>
 <ul>
 <li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
 <pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
 </code></pre></li>
 </ul>
-<p><a id="more"></a></p>
 <ul>
 <li><p>方法二，批量设置别名    (推荐)</p>
-<ol>
-<li><p>新建一个文件<code>aliases.txt</code>，放在任意目录下，写入如下别名内容：</p>
-<pre><code> <span class="keyword">ls</span>=dir /ONE <span class="variable">$*</span>
- ll=dir /ONE <span class="variable">$*</span>
- cat=type <span class="variable">$*</span>
- rm=del <span class="variable">$*</span>
- cd=cd /d <span class="variable">$*</span>
- vi=G:\falconDisk\Vim\vim74\gvim <span class="variable">$*</span>
+<pre><code>  1. 新建一个文件`aliases.txt`，放在任意目录下，写入如下别名内容：
+
+          ls=dir /ONE <span class="formula">$*
+          ll=dir /ONE $</span>*
+          cat=type <span class="formula">$*
+          rm=del $</span>*
+          cd=cd /d <span class="formula">$*
+          vi=G:<span class="command">\falconDisk</span><span class="command">\Vim</span><span class="command">\vim</span>74<span class="command">\gvim</span> $</span>*
+
+  2. 新建另一个文件 `autorun.bat` ，放在任意目录，内容如下：
+
+          @echo off
+          cls
+          color 0A
+          doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
+  3.  找到注册表如下位置:
+
+      <span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Command</span> Processor<span class="special">]</span>
+
+      添加一个字符串值Autorun，值为<span class="command">\path</span><span class="command">\to</span><span class="command">\autorun</span>.bat
+
+  4. 启动命令行可以看到效果了
 </code></pre></li>
-<li><p>新建另一个文件 <code>autorun.bat</code> ，放在任意目录，内容如下：</p>
-<pre><code> @echo off
- cls
- color 0A
- doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
-</code></pre></li>
-<li><p>找到注册表如下位置:</p>
-<p>[HKEY_CURRENT_USER\Software\Microsoft\Command Processor]</p>
-<p>添加一个字符串值Autorun，值为\path\to\autorun.bat</p>
-</li>
-<li><p>启动命令行可以看到效果了</p>
-</li>
-</ol>
-</li>
 </ul>
+<p><a id="more"></a></p>
 <h3 id="多文件操作">多文件操作</h3>
 <ol>
 <li><p>列出当前缓冲区文件</p>
@@ -745,6 +745,32 @@ hexo d
 <ul>
 <li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
 <pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
+</code></pre></li>
+</ul>
+<ul>
+<li><p>方法二，批量设置别名    (推荐)</p>
+<pre><code>  1. 新建一个文件`aliases.txt`，放在任意目录下，写入如下别名内容：
+
+          ls=dir /ONE <span class="formula">$*
+          ll=dir /ONE $</span>*
+          cat=type <span class="formula">$*
+          rm=del $</span>*
+          cd=cd /d <span class="formula">$*
+          vi=G:<span class="command">\falconDisk</span><span class="command">\Vim</span><span class="command">\vim</span>74<span class="command">\gvim</span> $</span>*
+
+  2. 新建另一个文件 `autorun.bat` ，放在任意目录，内容如下：
+
+          @echo off
+          cls
+          color 0A
+          doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
+  3.  找到注册表如下位置:
+
+      <span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Command</span> Processor<span class="special">]</span>
+
+      添加一个字符串值Autorun，值为<span class="command">\path</span><span class="command">\to</span><span class="command">\autorun</span>.bat
+
+  4. 启动命令行可以看到效果了
 </code></pre></li>
 </ul>
 <p>]]></summary>
