@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>markdown | 琴心剑胆</title>
+  <title>hexo生成css的问题 | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="hexo生成css的问题"/>
   <meta property="og:site_name" content="琴心剑胆"/>
 
   
@@ -51,30 +51,23 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">markdown</h2>
-
-
-  
-    <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-05-27T16:00:00.000Z"><a href="/2014/05/28/helloLiteIde/">2014年05月28日</a></time>
+        <time datetime="2014-05-27T16:00:00.000Z"><a href="/2014/05/28/hexo_css_issue/">2014年05月28日</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/05/28/helloLiteIde/">hello LiteIde</a></h1>
+    <h1 class="title">hexo生成css的问题</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>一直用 <code>markdownPad2</code> 写作，但毕竟是个商业软件，限制还是太多，尤其是它不支持github的扩展markdown语法高亮,今天换成<code>LiteIde</code>了，一个Go语言的IDE，用着还挺顺手的，启动速度也很快，不仅有html即时预览，还有文件目录列表，还可以右键启动命令行终端（这个对我很重要，可以进入<code>hexo</code>,编译和发布文章到<code>github</code>），支持<code>markdown语法高亮</code>，支持导出为<code>PDF格式</code> ，这些功能都是<code>markdownPad2</code>收费版才有的，甚至还能自定义css，支持多个平台。</p>
-<p>windows版的下载地址：<a href="https://golangide.googlecode.com/files/liteidex19.windows.7z" target="_blank">https://golangide.googlecode.com/files/liteidex19.windows.7z</a></p>
-<p><img src="/image/LiteIde.jpg" alt="liteIde"></p>
+        <p>修改了主题的样式文件如：<code>layout.styl</code><br>在本地预览是可以即时看到效果的，但是当执行<code>hexo g</code>,在<code>public</code>目录下的 <code>style.css</code>却没有发生修改，<code>hexo d</code>部署时也是没有修改版本的样式，不清楚具体原因，现在的解决方法是修改完主题样式后，删除<code>public</code>下的<code>style.css</code>,再重新生成方可生效。</p>
 
       
     </div>
@@ -82,6 +75,18 @@
       
         
         
+  
+  <div class="tags">
+    <a href="/tags/hexo/">hexo</a>, <a href="/tags/css/">css</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  </div>
+
+
       
       <div class="clearfix"></div>
     </footer>
@@ -89,15 +94,26 @@
 </article>
 
 
+<section id="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="" data-title="" data-url=""></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"falconchen"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
 
 
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
