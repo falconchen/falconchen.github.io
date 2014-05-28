@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-28T03:30:25.144Z</updated>
+  <updated>2014-05-28T03:31:15.824Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[hexo生成css的问题]]></title>
     <link href="http://falconchen.github.io/2014/05/28/hexo_css_issue/"/>
     <id>http://falconchen.github.io/2014/05/28/hexo_css_issue/</id>
-    <published>2014-05-27T16:00:00.000Z</published>
-    <updated>2014-05-28T03:30:10.000Z</updated>
+    <published>2014-05-28T03:30:59.000Z</published>
+    <updated>2014-05-28T03:31:06.000Z</updated>
     <content type="html"><![CDATA[<p>修改了主题的样式文件如：<code>layout.styl</code><br>在本地预览是可以即时看到效果的，但是当执行<code>hexo g</code>,在<code>public</code>目录下的 <code>style.css</code>却没有发生修改，<code>hexo d</code>部署时也是没有修改版本的样式，不清楚具体原因，现在的解决方法是修改完主题样式后，删除<code>public</code>下的<code>style.css</code>,再重新生成方可生效。</p>
 ]]></content>
     
