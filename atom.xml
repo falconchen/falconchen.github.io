@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-29T09:35:14.721Z</updated>
+  <updated>2014-05-29T09:45:10.213Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,12 +19,12 @@
     <link href="http://falconchen.github.io/2014/05/29/%E5%88%A9%E7%94%A8ssh%E9%9A%A7%E9%81%93%E8%BF%9B%E8%A1%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
     <id>http://falconchen.github.io/2014/05/29/利用ssh隧道进行反向代理/</id>
     <published>2014-05-29T08:01:07.000Z</published>
-    <updated>2014-05-29T09:34:48.000Z</updated>
+    <updated>2014-05-29T09:44:54.000Z</updated>
     <content type="html"><![CDATA[<p>公司有几个网站要迁移到<code>阿里云</code>，数据已经被我迁移过去了，域名还在备案，使用未备案的域名访问，阿里云是会直接封锁的，万恶的备案！！！</p>
-<p>公司有一个临时方案，先把域名和数据暂时放在北京office的一台Linux服务器上，把数据转移后，我发现网站的一个功能模块有兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且代码写得有些凌乱，,这模块不是我开发的,改了两天也算勉强能用了，但不知道后面是否还会出现其他问题。<br><a id="more"></a><br>还有一个问题，北京office的服务器不是很稳定，SSH连接偶尔会掉线，这个会影响后面的部署和选择。</p>
-<p>于是我想来想去觉得用反向代理处理好一点</p>
+<p>公司有一个临时方案，把域名和数据暂时放在北京office的一台Linux服务器上，备案通过后再切换到阿里云服务器，但是当把数据弄到临时服务器后，突然发现网站的一个功能模块出现兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且这模块不是我开发的, 代码写得有些凌乱,改了两天也算勉强能用了，不知道后面还会不会出现别的问题。<br><a id="more"></a><br>还有一个问题，北京office的服务器似乎不太很稳定，SSH连接偶尔会掉线，这个影响后面的部署和选择。</p>
+<p>我想来想去，最终觉得用反向代理处理。好处是显而易见的：</p>
 <ol>
-<li><p>解决代码的兼容问题</p>
+<li><p>解决代码的平台的兼容问题</p>
 </li>
 <li><p>不用重复迁移，否则当域名备案成功后还要把临时服务器的数据转移到阿里云来，不堪其扰。</p>
 </li>
@@ -54,7 +54,7 @@
    }
 </pre></td></tr></table></figure>
 </li>
-<li><p>重启nginx后即生效，访问似乎正常，几分钟后域名被拦截了，意料之中，反向代理访问在后端主机看来跟正常访问其实是一样的，都是常规的http请求，阿里云判断请求头的信息进行拦截。</p>
+<li><p>重启nginx后即生效，访问似乎正常，几分钟后域名被拦截了，意料之中，反向代理访问在后端主机看来跟正常访问其实是一样的，都是常规的<code>http请求</code>，阿里云根据请求头的信息拦截。</p>
 </li>
 </ol>
 <p><img src="/image/aliyunban.jpg" alt="阿里云拦截"></p>
@@ -65,7 +65,7 @@
 </pre></td><td class="code"><pre>c:\ssh -R <span class="number">7002</span>:localhost:<span class="number">80</span> 用户名@远程主机IP
 </pre></td></tr></table></figure>
 
-<p>这条命令的意思是在阿里云服务器向临时服务器建立一个ssh连接，将阿里云的80端口映射到临时服务器的7002端口，这样请求临时服务器的7002端口时会被转发到阿里云的80端口了，而且借助SSH这条隧道，还实现了<code>加密传输</code>，这样阿里云就不能拦截下去了。</p>
+<p>这条命令的意思是在阿里云服务器向临时服务器建立一个ssh连接，将阿里云的80端口映射到临时服务器的7002端口，这样请求临时服务器的7002端口时会被转发到阿里云的80端口了，而且借助SSH隧道，还实现了<code>加密传输</code>，这样阿里云的系统根本不能拦截。</p>
 <p>同时临时服务器nginx做以下配置：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
@@ -112,7 +112,7 @@ LogFormat <span class="string">"%{X-Forwarded-For}i <span class="variable">%l</s
 </ul>
 ]]></content>
     <summary type="html"><![CDATA[<p>公司有几个网站要迁移到<code>阿里云</code>，数据已经被我迁移过去了，域名还在备案，使用未备案的域名访问，阿里云是会直接封锁的，万恶的备案！！！</p>
-<p>公司有一个临时方案，先把域名和数据暂时放在北京office的一台Linux服务器上，把数据转移后，我发现网站的一个功能模块有兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且代码写得有些凌乱，,这模块不是我开发的,改了两天也算勉强能用了，但不知道后面是否还会出现其他问题。<br>]]></summary>
+<p>公司有一个临时方案，把域名和数据暂时放在北京office的一台Linux服务器上，备案通过后再切换到阿里云服务器，但是当把数据弄到临时服务器后，突然发现网站的一个功能模块出现兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且这模块不是我开发的, 代码写得有些凌乱,改了两天也算勉强能用了，不知道后面还会不会出现别的问题。<br>]]></summary>
     
       <category term="ssh" scheme="http://falconchen.github.io/tags/ssh/"/>
     
