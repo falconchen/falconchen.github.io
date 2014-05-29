@@ -546,6 +546,7 @@ article footer .tags:before {
 }
 article footer .addthis {
   margin-top: 15px;
+  margin-left: 15px;
 }
 article footer .addthis iframe {
   margin-top: 0;
