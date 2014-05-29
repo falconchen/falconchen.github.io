@@ -42,8 +42,13 @@ h1 {
   background: none;
   padding: 0;
 }
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5em;
+  }
+}
 h2 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   background: none;
   padding: 0;
 }
