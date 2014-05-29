@@ -61,6 +61,11 @@ h4 {
 h5 {
   font-size: 1.1em;
 }
+em {
+  color: #f00;
+  font-style: normal;
+  font-weight: bold;
+}
 a {
   text-decoration: none;
   color: #258fb8;

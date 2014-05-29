@@ -61,6 +61,75 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/05/23/vim笔记/">vim笔记</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-22T16:00:00.000Z"><a href="/2014/05/23/vim笔记/">2014年05月23日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="Windows下设置别名">Windows下设置别名</h3>
+<ul>
+<li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
+<pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
+</code></pre></li>
+</ul>
+<ul>
+<li><p>方法二，批量设置别名    (推荐)</p>
+<pre><code>  1. 新建一个文件`aliases.txt`，放在任意目录下，写入如下别名内容：
+
+          ls=dir /ONE <span class="formula">$*
+          ll=dir /ONE $</span>*
+          cat=type <span class="formula">$*
+          rm=del $</span>*
+          cd=cd /d <span class="formula">$*
+          vi=G:<span class="command">\falconDisk</span><span class="command">\Vim</span><span class="command">\vim</span>74<span class="command">\gvim</span> $</span>*
+
+  2. 新建另一个文件 `autorun.bat` ，放在任意目录，内容如下：
+
+          @echo off
+          cls
+          color 0A
+          doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
+  3.  找到注册表如下位置:
+
+      <span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Command</span> Processor<span class="special">]</span>
+
+      添加一个字符串值Autorun，值为<span class="command">\path</span><span class="command">\to</span><span class="command">\autorun</span>.bat
+
+  4. 启动命令行可以看到效果了
+</code></pre></li>
+</ul>
+<p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2014/05/23/vim笔记/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/05/21/hello-world/">Hello World</a></h1>
   
 
@@ -115,6 +184,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/05/29/利用ssh隧道进行反向代理/">利用SSH隧道进行反向代理</a>
+      </li>
+    
+      <li>
         <a href="/2014/05/28/hexo_css_issue/">hexo生成css的问题</a>
       </li>
     
@@ -128,10 +201,6 @@
     
       <li>
         <a href="/2014/05/26/luo/">我不是为了输赢，我就是认真。</a>
-      </li>
-    
-      <li>
-        <a href="/2014/05/26/hexo安装插件/">hexo安装插件</a>
       </li>
     
   </ul>
@@ -154,6 +223,8 @@
     <li><a href="/categories/开发工具/">开发工具</a><small>1</small></li>
   
     <li><a href="/categories/微信开发/">微信开发</a><small>1</small></li>
+  
+    <li><a href="/categories/服务器/">服务器</a><small>1</small></li>
   
     <li><a href="/categories/转载/">转载</a><small>1</small></li>
   
@@ -180,7 +251,7 @@
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
   
-    <li><a href="/tags/nginx/">nginx</a><small>1</small></li>
+    <li><a href="/tags/nginx/">nginx</a><small>2</small></li>
   
     <li><a href="/tags/nmp/">nmp</a><small>1</small></li>
   
@@ -188,7 +259,7 @@
   
     <li><a href="/tags/npm/">npm</a><small>1</small></li>
   
-    <li><a href="/tags/ssh/">ssh</a><small>1</small></li>
+    <li><a href="/tags/ssh/">ssh</a><small>2</small></li>
   
     <li><a href="/tags/vim/">vim</a><small>1</small></li>
   
@@ -199,6 +270,8 @@
     <li><a href="/tags/工匠情怀/">工匠情怀</a><small>1</small></li>
   
     <li><a href="/tags/微信/">微信</a><small>1</small></li>
+  
+    <li><a href="/tags/服务器/">服务器</a><small>1</small></li>
   
     <li><a href="/tags/笔记/">笔记</a><small>3</small></li>
   
