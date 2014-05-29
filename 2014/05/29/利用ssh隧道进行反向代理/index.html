@@ -142,7 +142,7 @@
 <p><img src="/image/puttys2c.jpg" alt="putty设置"></p>
 <p><img src="/image/bitvises2c.jpg" alt="bitvise设置"></p>
 <h3 id="Apache的日志格式修改">Apache的日志格式修改</h3>
-<p>使用反向代理后，后端的apache就不能直接取得<code>真实访问IP了</code>，在代理服务器nginx的<code>proxy.conf</code>可见如下内容：</p>
+<p>使用反向代理后，后端的apache就不能直接取得<code>访客真实IP</code>了，在代理服务器nginx的<code>proxy.conf</code>可见如下内容：</p>
 <pre><code>proxy_set_header        X<span class="attribute">-Real</span><span class="attribute">-IP</span> <span class="variable">$remote_addr</span>
 proxy_set_header       X<span class="attribute">-Forwarded</span><span class="attribute">-For</span>   <span class="variable">$proxy_add_x_forwarded_for</span>;
 </code></pre><p>即为转发到apache上的请求增加了两个请求头<code>X-Real-IP</code>和<code>X-Forwarded-For</code>。</p>
