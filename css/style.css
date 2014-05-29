@@ -317,7 +317,7 @@ article header .icon:before {
 article header time {
   color: #999;
   font: 0.9em "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
-  margin-bottom: 5px;
+  margin: 5px;
   display: block;
   line-height: 1;
 }
