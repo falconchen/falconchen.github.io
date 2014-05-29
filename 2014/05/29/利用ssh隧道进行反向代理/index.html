@@ -84,9 +84,7 @@
 <li><p>在阿里云上安装必要的软件，配置网站，这里使用<code>apache</code> , 开放服务器80端口。</p>
 </li>
 <li><p>在临时服务器上配置反向代理，这里我使用<code>nginx</code>,配置如下：</p>
-</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
+ <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -105,9 +103,9 @@
        }	
    }
 </pre></td></tr></table></figure>
-
-<ol>
-<li>重启nginx后即生效，访问似乎正常，几分钟后域名被拦截了，意料之中，反向代理访问在后端主机看来跟正常访问其实是一样的，都是常规的http请求，阿里云判断请求头的信息进行拦截。</li>
+</li>
+<li><p>重启nginx后即生效，访问似乎正常，几分钟后域名被拦截了，意料之中，反向代理访问在后端主机看来跟正常访问其实是一样的，都是常规的http请求，阿里云判断请求头的信息进行拦截。</p>
+</li>
 </ol>
 <p><img src="/image/aliyunban.jpg" alt="阿里云拦截"></p>
 <p>一句话说白了，<em>此路不通</em></p>
