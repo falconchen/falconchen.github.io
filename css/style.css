@@ -159,7 +159,9 @@ a:hover {
 }
 @media screen and (max-width: 600px) {
   #header #main-nav {
-    display: none;
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
   }
 }
 #header #main-nav ul {
@@ -170,8 +172,24 @@ a:hover {
   margin-left: 30px;
 }
 @media screen and (max-width: 600px) {
+  #header #main-nav ul li {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  #header #main-nav ul #nav_Home,
+  #header #main-nav ul #nav_Archives {
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  #header #main-nav.alignright {
+    clear: none;
+  }
+}
+@media screen and (max-width: 600px) {
   #header .alignleft {
-    float: none;
+    float: left;
   }
 }
 article {
