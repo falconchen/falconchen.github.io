@@ -115,7 +115,7 @@
 </pre></td><td class="code"><pre>c:\ssh -R <span class="number">7002</span>:localhost:<span class="number">80</span> 用户名@远程主机IP
 </pre></td></tr></table></figure>
 
-<p>这条命令的意思是在阿里云服务器向临时服务器建立一个ssh连接，将阿里云的80端口映射到临时服务器的7002端口，这样请求临时服务器的7002端口时会被转发到阿里云的80端口了，而且借助SSH隧道，还实现了<code>加密传输</code>，这样阿里云的系统根本不能拦截。</p>
+<p>这条命令的意思是在阿里云服务器向临时服务器建立一个ssh连接，将阿里云的80端口映射到临时服务器的7002端口，这样请求临时服务器的7002端口数据时，就会被转发往阿里云服务器的80端口，而且借助SSH隧道，还实现了<code>加密传输</code>，于是阿里云的系统根本不能拦截。</p>
 <p>同时临时服务器nginx做以下配置：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
