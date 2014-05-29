@@ -126,7 +126,7 @@ a:hover {
 }
 @media screen and (max-width: 600px) {
   #header {
-    margin: 20px auto 0px;
+    margin: 20px auto 10px;
   }
 }
 #header a {
@@ -161,7 +161,6 @@ a:hover {
   #header #main-nav {
     float: left;
     margin-top: 10px;
-    margin-left: 20px;
   }
 }
 #header #main-nav ul {
