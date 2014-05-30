@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-05-29T10:02:39.951Z</updated>
+  <updated>2014-05-30T08:36:37.284Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -13,6 +13,17 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[PageSpeed Insights]]></title>
+    <link href="http://falconchen.github.io/2014/05/29/%E7%94%A8pagespeed-insights%E4%BC%98%E5%8C%96%E7%BD%91%E7%AB%99/"/>
+    <id>http://falconchen.github.io/2014/05/29/用pagespeed-insights优化网站/</id>
+    <published>2014-05-29T10:19:02.000Z</published>
+    <updated>2014-05-29T10:19:54.000Z</updated>
+    <content type="html"><![CDATA[]]></content>
+    
+    
+  </entry>
   
   <entry>
     <title><![CDATA[利用SSH隧道进行反向代理]]></title>
