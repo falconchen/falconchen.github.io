@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-05T09:47:02.050Z</updated>
+  <updated>2014-06-05T09:55:37.358Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/05/29/pagespeed-insights-opt/"/>
     <id>http://falconchen.github.io/2014/05/29/pagespeed-insights-opt/</id>
     <published>2014-05-29T10:19:02.000Z</published>
-    <updated>2014-06-05T09:46:42.000Z</updated>
+    <updated>2014-06-05T09:55:23.000Z</updated>
     <content type="html"><![CDATA[<p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，<code>PageSpeed Insights</code>得分仅为57。</p>
 <p><code>pagespeed insight</code>测试网址：<a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">http://developers.google.com/speed/pagespeed/insights</a>， 如果无法访问或者检测出错，敬请翻墙.</p>
 <h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
@@ -136,17 +136,16 @@ sudo make install
 <p>ngx_pagespeed既可部署在独立服务器，也可部署到主机服务提供商，或者CDN主机上，提高站点性能、降低延迟和带宽占用。</p>
 <h3 id="优化前后对比：">优化前后对比：</h3>
 <ul>
-<li>page speed insights: </li>
-</ul>
-<p><img src="/image/pagespeed1.jpg" alt="优化前"></p>
-<p><img src="/image/pagespeed2.jpg" alt="优化后"></p>
-<ul>
-<li>网站速度诊断 :</li>
-</ul>
-<p><img src="/image/baidu_speed1.jpg" alt="优化前"></p>
-<p><img src="/image/baidu_speed2.jpg" alt="优化后"></p>
-<ul>
-<li>带宽占用:</li>
+<li><p>page speed insights: </p>
+<p>  <img src="/image/pagespeed1.jpg" alt="优化前"></p>
+<p>  <img src="/image/pagespeed2.jpg" alt="优化后"></p>
+</li>
+<li><p>网站速度诊断 :</p>
+<p>  <img src="/image/baidu_speed1.jpg" alt="优化前"></p>
+<p>  <img src="/image/baidu_speed2.jpg" alt="优化后"></p>
+</li>
+<li><p>带宽占用:</p>
+</li>
 </ul>
 <p><img src="/image/bandwidth.jpg" alt="红线为优化后的带宽"></p>
 <p>总的来说作用还是比较理想的</p>
