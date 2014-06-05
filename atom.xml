@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-05T09:42:47.890Z</updated>
+  <updated>2014-06-05T09:47:02.050Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://falconchen.github.io/2014/05/29/pagespeed-insights-opt/"/>
     <id>http://falconchen.github.io/2014/05/29/pagespeed-insights-opt/</id>
     <published>2014-05-29T10:19:02.000Z</published>
-    <updated>2014-06-05T09:42:28.000Z</updated>
-    <content type="html"><![CDATA[<p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，<code>PageSpeed Insights</code>得分57。</p>
-<p><a href="http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.hihoku.com%2F&amp;tab=desktop" target="_blank">http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.hihoku.com%2F&amp;tab=desktop</a>， 如果无法访问或者检测出错，敬请翻墙！</p>
+    <updated>2014-06-05T09:46:42.000Z</updated>
+    <content type="html"><![CDATA[<p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，<code>PageSpeed Insights</code>得分仅为57。</p>
+<p><code>pagespeed insight</code>测试网址：<a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">http://developers.google.com/speed/pagespeed/insights</a>， 如果无法访问或者检测出错，敬请翻墙.</p>
 <h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
 <p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br><a id="more"></a></p>
 <blockquote>
@@ -166,8 +166,8 @@ sudo make install
 </li>
 </ul>
 ]]></content>
-    <summary type="html"><![CDATA[<p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，<code>PageSpeed Insights</code>得分57。</p>
-<p><a href="http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.hihoku.com%2F&amp;tab=desktop" target="_blank">http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.hihoku.com%2F&amp;tab=desktop</a>， 如果无法访问或者检测出错，敬请翻墙！</p>
+    <summary type="html"><![CDATA[<p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，<code>PageSpeed Insights</code>得分仅为57。</p>
+<p><code>pagespeed insight</code>测试网址：<a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">http://developers.google.com/speed/pagespeed/insights</a>， 如果无法访问或者检测出错，敬请翻墙.</p>
 <h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
 <p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br>]]></summary>
     
@@ -181,7 +181,7 @@ sudo make install
     
       <category term="ngx_pagespeed" scheme="http://falconchen.github.io/tags/ngx_pagespeed/"/>
     
-      <category term="开发工具" scheme="http://falconchen.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
