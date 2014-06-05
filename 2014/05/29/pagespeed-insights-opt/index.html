@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PageSpeed Insights优化网站 | 琴心剑胆</title>
+  <meta name="author" content="Falcon Chen">
+  
+  <meta name="description" content="Everything about Falcon.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="PageSpeed Insights优化网站"/>
+  <meta property="og:site_name" content="琴心剑胆"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="琴心剑胆" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <!--
+  <style>
+
+	#header #main-nav ul li#nav_Home{
+		margin-left:0;
+	}
+  </style>
+  -->
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">琴心剑胆</a></h1>
+  <h2><a href="/">Life is painting a picture, not doing a sum.</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li id="nav_Home"><a href="/">Home</a></li>
+    
+      <li id="nav_Archives"><a href="/archives">Archives</a></li>
+    
+	<li><a href="/atom.xml" title="rss feed">RSS</a></li>
+	<li><a href="/sitemap.xml" title="rss feed">Sitemap</a></li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">PageSpeed Insights优化网站</h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-29T10:19:02.000Z"><a href="/2014/05/29/pagespeed-insights-opt/">2014年05月29日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，<code>PageSpeed Insights</code>得分57。</p>
+<p><a href="http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.hihoku.com%2F&amp;tab=desktop" target="_blank">http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.hihoku.com%2F&amp;tab=desktop</a>， 如果无法访问或者检测出错，敬请翻墙！</p>
+<h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
+<p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br><a id="more"></a></p>
+<blockquote>
+<p>Page Speed Insights能针对移动设备和桌面设备衡量网页的性能。该工具会抓取网址两次，一次是通过移动设备用户代理，另一次是通过桌面设备用户代理。</p>
+<p>PageSpeed得分范围是从0到100分。分数越高，代表性能越好。85分或更高分表明网页性能良好。请注意，PageSpeed Insights正在不断改进，因此，分数可能会随着我们添加新规则或完善分析而发生变化。</p>
+<p>PageSpeed Insights能根据以下内容衡量网页如何提升其性能：</p>
+</blockquote>
+<pre><code> 1.首屏加载时间：从用户请求新页面到浏览器呈现首屏内容所用的时间。
+
+ 2.完整的网页加载时间：从用户请求新网页到浏览器完全呈现网页所用的时间。
+</code></pre><blockquote>
+<p>然而，由于网络连接性能有很大差异，因此，PageSpeed Insights只考虑网页性能中与网络无关的方面：服务器配置、网页的HTML结构及其所用的外部资源（例如，图片、JavaScript和&gt; CSS）。实施这些建议应该能改进网页的相对性能。但网页的绝对性能将仍取决于用户的网络连接。</p>
+</blockquote>
+<p>PageSpeed同时提供浏览器插件和服务器模块。</p>
+<ul>
+<li><p>浏览器插件支持firefox跟chrome浏览器，Firefox插件需要先安装firebug，如果需要显示打分情况请在<code>about:config</code>中将<code>extensions.PageSpeed.show_score</code>改为true</p>
+</li>
+<li><p>服务器模块支持apache和nginx，安装后会根据<a href="https://developers.google.com/speed/docs/best-practices/rules_intro" target="_blank">Web Performance Best Practices</a>原则进行自动优化。</p>
+</li>
+</ul>
+<h3 id="安装ngx_pagespeed模块">安装ngx_pagespeed模块</h3>
+<p>生产环境使用的服务器为 nginx1.4.4，源代码编译安装</p>
+<p>原服务器 <code>nginx</code> 编译参数：</p>
+<pre><code>configure arguments: <span class="subst">--</span>prefix<span class="subst">=</span>/usr/<span class="built_in">local</span>/nginx <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-http_sub_module</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-http_stub_status_module</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-http_geoip_module</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-http_mp4_module</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-http_ssl_module</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-http_realip_module</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-http_flv_module</span>
+</code></pre><p>下载和编译：</p>
+<pre><code>cd ~
+wget https://github<span class="preprocessor">.com</span>/pagespeed/ngx_pagespeed/archive/release-<span class="number">1.7</span><span class="number">.30</span><span class="number">.4</span>-beta<span class="preprocessor">.zip</span>
+unzip release-<span class="number">1.7</span><span class="number">.30</span><span class="number">.4</span>-beta<span class="preprocessor">.zip</span>
+cd ngx_pagespeed-release-<span class="number">1.7</span><span class="number">.30</span><span class="number">.4</span>-beta/
+wget https://dl<span class="preprocessor">.google</span><span class="preprocessor">.com</span>/dl/page-speed/psol/<span class="number">1.7</span><span class="number">.30</span><span class="number">.4</span><span class="preprocessor">.tar</span><span class="preprocessor">.gz</span>
+tar -xzvf <span class="number">1.7</span><span class="number">.30</span><span class="number">.4</span><span class="preprocessor">.tar</span><span class="preprocessor">.gz</span> <span class="preprocessor"># expands to psol/</span>
+
+cd ~
+<span class="preprocessor"># check http://nginx.org/en/download.html for the latest version</span>
+wget http://nginx<span class="preprocessor">.org</span>/download/nginx-<span class="number">1.4</span><span class="number">.4</span><span class="preprocessor">.tar</span><span class="preprocessor">.gz</span>
+tar -xvzf nginx-<span class="number">1.4</span><span class="number">.4</span><span class="preprocessor">.tar</span><span class="preprocessor">.gz</span>
+cd nginx-<span class="number">1.4</span><span class="number">.4</span>/
+./configure --<span class="keyword">add</span>-module=$HOME/ngx_pagespeed-release-<span class="number">1.7</span><span class="number">.30</span><span class="number">.4</span>-beta
+make
+sudo make install
+</code></pre><p>编译参数因人而异：</p>
+<pre><code>[root<span class="keyword">@cpp76</span> nginx-<span class="number">1.4</span>.4]# ./configure --prefix=/usr/local/nginx --<span class="keyword">with</span>-http_sub_module --<span class="keyword">with</span>-http_stub_status_module --<span class="keyword">with</span>-http_geoip_module --<span class="keyword">with</span>-http_mp4_module --<span class="keyword">with</span>-http_ssl_module --<span class="keyword">with</span>-http_realip_module --<span class="keyword">with</span>-http_flv_module --add-<span class="keyword">module</span>=$HOME/ngx_pagespeed-release-<span class="number">1.7</span>.30.4-beta
+[root<span class="keyword">@cpp76</span> nginx-<span class="number">1.4</span>.4]# mv /usr/sbin/nginx  /usr/sbin/nginx.old
+[root<span class="keyword">@cpp76</span> nginx-<span class="number">1.4</span>.4]# ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
+</code></pre><p>为立即生效，可使用暴力重启，测试发现，直接使用<code>nginx -s reload</code>并不生效</p>
+<pre><code>[root<span class="variable">@cpp76</span> nginx-<span class="number">1.4</span>.<span class="number">4</span>]<span class="comment"># pkill -9 nginx </span>
+[root<span class="variable">@cpp76</span> nginx-<span class="number">1.4</span>.<span class="number">4</span>]<span class="comment"># nginx</span>
+</code></pre><p>生产机请使用优雅重启，会等待已建立的连接结束，再使用新安装的nginx重启线程</p>
+<pre><code><span class="built_in">kill</span> -USR2 `cat /usr/<span class="built_in">local</span>/php/var/run/php-fpm.pid` 
+</code></pre><p>附录：</p>
+<ul>
+<li><code>ngx_pagespeed</code> 最新版本为： <a href="https://github.com/pagespeed/ngx_pagespeed" target="_blank">https://github.com/pagespeed/ngx_pagespeed</a></li>
+<li>如果使用<code>Tengine</code>,可动态加载模块:<a href="https://github.com/pagespeed/ngx_pagespeed/wiki/Using-ngx_pagespeed-with-Tengine" target="_blank">https://github.com/pagespeed/ngx_pagespeed/wiki/Using-ngx_pagespeed-with-Tengine</a></li>
+</ul>
+<h3 id="ngx_pagespeed_配置">ngx_pagespeed  配置</h3>
+<p>配置详细文档见：<br><a href="http://ngxpagespeed.com/ngx_pagespeed_example/" target="_blank">http://ngxpagespeed.com/ngx_pagespeed_example/</a></p>
+<p>我的配置：</p>
+<pre><code> <span class="comment"># 启用ngx_pagespeed</span>
+ pagespeed <span class="literal">on</span>;
+ pagespeed FileCachePath /<span class="reserved">var</span>/ngx_pagespeed_cache;
+ <span class="comment"># 禁用CoreFilters</span>
+ pagespeed RewriteLevel PassThrough;
+ <span class="comment"># 启用压缩空白过滤器</span>
+ pagespeed EnableFilters collapse_whitespace;
+ <span class="comment"># 启用JavaScript库卸载</span>
+ pagespeed EnableFilters canonicalize_javascript_libraries;
+ <span class="comment"># 把多个CSS文件合并成一个CSS文件</span>
+ pagespeed EnableFilters combine_css;
+ <span class="comment"># 把多个JavaScript文件合并成一个JavaScript文件</span>
+ pagespeed EnableFilters combine_javascript;
+ <span class="comment"># 删除带默认属性的标签</span>
+ pagespeed EnableFilters elide_attributes;
+ <span class="comment"># 改善资源的可缓存性</span>
+ pagespeed EnableFilters extend_cache;
+ <span class="comment"># 更换被导入文件的@import，精简CSS文件</span>
+ pagespeed EnableFilters flatten_css_imports;
+ pagespeed CssFlattenMaxBytes <span class="number">5120</span>;
+ <span class="comment"># 延时加载客户端看不见的图片</span>
+ pagespeed EnableFilters lazyload_images;
+ <span class="comment"># 启用JavaScript缩小机制</span>
+ pagespeed EnableFilters rewrite_javascript;
+ <span class="comment"># 启用图片优化机制</span>
+ pagespeed EnableFilters rewrite_images;
+ <span class="comment"># 预解析DNS查询</span>
+ pagespeed EnableFilters insert_dns_prefetch;
+ <span class="comment"># 重写CSS，首先加载渲染页面的CSS规则</span>
+ pagespeed EnableFilters prioritize_critical_css;
+ <span class="comment"># 嵌入小的外部css文件</span>
+ pagespeed EnableFilters inline_css;
+ <span class="comment"># 嵌入小js</span>
+ pagespeed EnableFilters inline_javascript;
+ <span class="comment"># 移除html注释</span>
+ pagespeed EnableFilters remove_comments;
+ <span class="comment"># 重要的样式优先</span>
+ pagespeed EnableFilters prioritize_critical_css;
+ <span class="comment">#延迟执行js</span>
+ pagespeed EnableFilters defer_javascript;
+ <span class="comment">#css移到js前</span>
+ pagespeed EnableFilters move_css_above_scripts;
+</code></pre><p>放在<code>http{ }</code>标签内，重启nginx即可，如果遇到冲突,某些地址可禁用ngx_pagespeed,或者禁用某些filter.比如ngx_pagespeed开启<code>defer_javascript fileter</code>后会向xml文件加入一段js,可禁用。</p>
+<pre><code> location ~*\.xml<span class="variable">$ </span>{
+         pagespeed off;
+ }
+</code></pre><h3 id="ngx_pagespeed加速原理">ngx_pagespeed加速原理</h3>
+<p>在nginx中通过自定义的filter 修改网页资源来实现网站最佳实践，达到降低网页延迟和减少带宽占用的目的。</p>
+<ul>
+<li>一些filter改变html结构，如压缩精简html,调整css与js位置</li>
+<li>还有一些改变CSS, JavaScript, 如合并css和js文件，内嵌css</li>
+<li>动态优化图片，自动生成无损和压缩的图片，通过脚本延迟加载图片</li>
+<li>缓存控制，<code>ngx_pagespeed</code> 处理后的图片缓存时间为一年。</li>
+</ul>
+<p>ngx_pagespeed既可部署在独立服务器，也可部署到主机服务提供商，或者CDN主机上，提高站点性能、降低延迟和带宽占用。</p>
+<h3 id="优化前后对比：">优化前后对比：</h3>
+<ul>
+<li>page speed insights: </li>
+</ul>
+<p><img src="/image/pagespeed1.jpg" alt="优化前"></p>
+<p><img src="/image/pagespeed2.jpg" alt="优化后"></p>
+<ul>
+<li>网站速度诊断 :</li>
+</ul>
+<p><img src="/image/baidu_speed1.jpg" alt="优化前"></p>
+<p><img src="/image/baidu_speed2.jpg" alt="优化后"></p>
+<ul>
+<li>带宽占用:</li>
+</ul>
+<p><img src="/image/bandwidth.jpg" alt="红线为优化后的带宽"></p>
+<p>总的来说作用还是比较理想的</p>
+<h3 id="关于最佳实践">关于最佳实践</h3>
+<p>除了安装服务器模块外，其实还修改了部分模板，虽然有些做法需要符合最佳实践原则，像要把js要放在页脚，但因某些页面冲突，比如把<code>jquery.js</code>的加载放在页脚时，有些页面内嵌的js会使用到jquery 选择器，这时如果<code>jquery.js</code>放页脚就会出错。 当然也可以重构页面，不可一概而论，还是切合实际量力而行吧。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><p><a href="https://developers.google.com/speed/pagespeed/module" target="_blank">Make the Web Faster</a></p>
+</li>
+<li><p><a href="http://os.51cto.com/art/201402/428780.htm" target="_blank">如何借助PageSpeed，为Nginx网站服务器提速？ - 51CTO.COM</a></p>
+</li>
+<li><p><a href="http://ngxpagespeed.com/ngx_pagespeed_example/" target="_blank">PageSpeed Examples Directory</a></p>
+</li>
+<li><p><a href="https://developers.google.com/speed/docs/insights/about" target="_blank">PageSpeed Insights简介 - PageSpeed Insights — Google Developers</a></p>
+</li>
+<li><p><a href="https://github.com/pagespeed/ngx_pagespeed/wiki/Using-ngx_pagespeed-with-Tengine" target="_blank">Using ngx_pagespeed with Tengine · pagespeed/ngx_pagespeed Wiki · GitHub</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/开发工具/">开发工具</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/pagespeed/">pagespeed</a>, <a href="/tags/优化/">优化</a>, <a href="/tags/前端/">前端</a>, <a href="/tags/nginx/">nginx</a>, <a href="/tags/ngx_pagespeed/">ngx_pagespeed</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  </div>
+
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="" data-title="" data-url=""></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"falconchen"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:falconchen.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/05/29/pagespeed-insights-opt/">PageSpeed Insights优化网站</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/29/利用ssh隧道进行反向代理/">利用SSH隧道进行反向代理</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/28/hexo-css-issue/">hexo生成css的问题</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/28/hello-liteIde/">hello LiteIde</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/27/微信开发[0]-搭建开发测试环境/">微信开发笔记[0]:搭建开发测试环境</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>2</small></li>
+  
+    <li><a href="/categories/nodejs/">nodejs</a><small>4</small></li>
+  
+    <li><a href="/categories/vim/">vim</a><small>1</small></li>
+  
+    <li><a href="/categories/学习笔记/">学习笔记</a><small>1</small></li>
+  
+    <li><a href="/categories/开发工具/">开发工具</a><small>2</small></li>
+  
+    <li><a href="/categories/微信开发/">微信开发</a><small>1</small></li>
+  
+    <li><a href="/categories/服务器/">服务器</a><small>1</small></li>
+  
+    <li><a href="/categories/转载/">转载</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/404/">404</a><small>1</small></li>
+  
+    <li><a href="/tags/IDE/">IDE</a><small>1</small></li>
+  
+    <li><a href="/tags/css/">css</a><small>1</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>5</small></li>
+  
+    <li><a href="/tags/java/">java</a><small>1</small></li>
+  
+    <li><a href="/tags/liteIde/">liteIde</a><small>1</small></li>
+  
+    <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/tags/nginx/">nginx</a><small>3</small></li>
+  
+    <li><a href="/tags/ngx_pagespeed/">ngx_pagespeed</a><small>1</small></li>
+  
+    <li><a href="/tags/nmp/">nmp</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>4</small></li>
+  
+    <li><a href="/tags/npm/">npm</a><small>1</small></li>
+  
+    <li><a href="/tags/pagespeed/">pagespeed</a><small>1</small></li>
+  
+    <li><a href="/tags/ssh/">ssh</a><small>2</small></li>
+  
+    <li><a href="/tags/vim/">vim</a><small>1</small></li>
+  
+    <li><a href="/tags/业界/">业界</a><small>1</small></li>
+  
+    <li><a href="/tags/优化/">优化</a><small>1</small></li>
+  
+    <li><a href="/tags/前端/">前端</a><small>1</small></li>
+  
+    <li><a href="/tags/反向代理/">反向代理</a><small>1</small></li>
+  
+    <li><a href="/tags/工匠情怀/">工匠情怀</a><small>1</small></li>
+  
+    <li><a href="/tags/微信/">微信</a><small>1</small></li>
+  
+    <li><a href="/tags/服务器/">服务器</a><small>1</small></li>
+  
+    <li><a href="/tags/笔记/">笔记</a><small>3</small></li>
+  
+    <li><a href="/tags/罗永浩/">罗永浩</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 Falcon Chen
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<script type="text/javascript">
+//百度统计
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3dcba7c5b68e950526782605e5d31ffb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+</body>
+</html>
