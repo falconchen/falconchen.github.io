@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-05T10:27:06.836Z</updated>
+  <updated>2014-06-05T10:30:25.761Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://falconchen.github.io/2014/06/05/pagespeed-insights-opt/"/>
     <id>http://falconchen.github.io/2014/06/05/pagespeed-insights-opt/</id>
     <published>2014-06-05T10:02:35.000Z</published>
-    <updated>2014-06-05T10:02:39.000Z</updated>
+    <updated>2014-06-05T10:30:15.000Z</updated>
     <content type="html"><![CDATA[<p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，PageSpeed Insights得分仅为57。</p>
-<p>pagespeed insight测试网址：<a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">http://developers.google.com/speed/pagespeed/insights</a>， 如果无法访问或者检测出错，敬请翻墙.</p>
+<p><a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">pagespeed insight测试网址</a>，如果无法访问或者检测出错，请自觉翻墙.</p>
 <h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
 <p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br><a id="more"></a></p>
 <blockquote>
@@ -166,7 +166,7 @@ sudo make install
 </ul>
 ]]></content>
     <summary type="html"><![CDATA[<p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，PageSpeed Insights得分仅为57。</p>
-<p>pagespeed insight测试网址：<a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">http://developers.google.com/speed/pagespeed/insights</a>， 如果无法访问或者检测出错，敬请翻墙.</p>
+<p><a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">pagespeed insight测试网址</a>，如果无法访问或者检测出错，请自觉翻墙.</p>
 <h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
 <p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br>]]></summary>
     
