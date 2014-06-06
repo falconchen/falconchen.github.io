@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-05T10:30:25.761Z</updated>
+  <updated>2014-06-06T09:46:09.290Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -784,7 +784,7 @@ hexo d
     <link href="http://falconchen.github.io/2014/05/23/java%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/java笔记/</id>
     <published>2014-05-23T02:06:04.000Z</published>
-    <updated>2014-05-26T06:41:26.000Z</updated>
+    <updated>2014-06-06T09:45:41.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li>参考书目 </li>
 </ul>
@@ -902,7 +902,63 @@ hexo d
 </code></pre><p>将在当前目录生成DogTestDrive.class和Dog.class</p>
 <p>运行：</p>
 <pre><code>java DogTestDrive
-</code></pre>]]></content>
+</code></pre><hr>
+<h3 id="静态变量">静态变量</h3>
+<ul>
+<li>静态变量会在任何对象创立前就完成初始化.</li>
+<li>静态变量会在类的任何静态方法执行之前就初始化.</li>
+</ul>
+<h3 id="静态初始化程序">静态初始化程序</h3>
+<p>一段在加载类时会执行的程序代码，它会在其他程序可以使用该类之前就执行，所以很适合放<code>静态final变量</code>的起始程序：</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> {</span>
+    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> x;
+    <span class="keyword">static</span> {
+        x = <span class="number">42</span>;
+
+    }
+
+}
+</code></pre><blockquote>
+<p>静态final变量如果没有在声明中或者在静态初始化程序中赋值，编译将报错。</p>
+</blockquote>
+<h3 id="常量">常量</h3>
+<ul>
+<li>在 java 中，常量是把变量同时标志为static和final的。</li>
+<li>常量的命名惯例是全部大写，使用<code>_</code>来分隔</li>
+<li>final 变量一旦被赋值无法更改</li>
+</ul>
+<h3 id="autoboxing类型转换">autoboxing类型转换</h3>
+<p>将String转为其他类型</p>
+<pre><code><span class="built_in">String</span> s = <span class="string">"2"</span>;
+int x = <span class="built_in">Integer</span>.parseInt(s);
+<span class="built_in">double</span> d = <span class="built_in">Double</span>.parseDouble(<span class="string">"43.42"</span>);
+<span class="built_in">boolean</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="string">"true"</span>).booleanValue();
+</code></pre><p>将其他类型转为String:</p>
+<pre><code>double d = <span class="string">"43.12"</span>;
+<span class="built_in">String</span> s = <span class="string">""</span> + d; <span class="comment">//+被重载过，double接空字符串转为字符类型</span>
+<span class="comment">//或者</span>
+<span class="built_in">String</span> s = Double.toString(d);<span class="comment">//静态方法</span>
+</code></pre><h3 id="数字格式化打印">数字格式化打印</h3>
+<p>通过<code>java.util</code>的<code>Formate</code>类进行打印</p>
+<p>以逗号分隔打印：</p>
+<pre><code><span class="built_in">String</span> s = <span class="built_in">String</span>.format(<span class="string">"%,d"</span>,<span class="number">100000000</span>);
+</code></pre><p>保留两位小数：</p>
+<pre><code>s = <span class="built_in">String</span>.format(<span class="string">"I have $%.2f "</span>,<span class="number">5926.2259</span>);
+</code></pre><p>逗号和保留两位小数：</p>
+<pre><code>s = <span class="built_in">String</span>.format(<span class="string">"I have $%,.2f "</span>,<span class="number">1115926.2259</span>);    
+</code></pre><h3 id="时间日期的格式化打印">时间日期的格式化打印</h3>
+<p>先要引入时间日期类</p>
+<pre><code><span class="preprocessor"><span class="keyword">import</span> java.util.Date;</span>
+</code></pre><p>当前日期：</p>
+<pre><code><span class="built_in">String</span> t = <span class="built_in">String</span>.format(<span class="string">"%tc"</span>,<span class="keyword">new</span> <span class="built_in">Date</span>());
+</code></pre><p>只有时间：</p>
+<pre><code>t = <span class="built_in">String</span>.format(<span class="string">"%tr"</span>,<span class="keyword">new</span> <span class="built_in">Date</span>());
+</code></pre><p>周、年、月:</p>
+<pre><code>t = String.<span class="keyword">format</span>(<span class="string">"<span class="variable">%tA</span> <span class="variable">%tB</span> <span class="variable">%td</span>"</span>,today,today,today);
+</code></pre><p>同上，不使用重复参数时:</p>
+<pre><code>t = String.<span class="keyword">format</span>(<span class="string">"<span class="variable">%tA</span> <span class="variable">%&lt;</span>tB <span class="variable">%&lt;</span>d"</span>,today);
+</code></pre><p>更多参考：<a href="http://www.blogjava.net/juhongtao/articles/12230.html" target="_blank">http://www.blogjava.net/juhongtao/articles/12230.html</a>    </p>
+]]></content>
     <summary type="html"><![CDATA[<ul>
 <li>参考书目 </li>
 </ul>
@@ -928,7 +984,7 @@ hexo d
     <link href="http://falconchen.github.io/2014/05/23/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/vim笔记/</id>
     <published>2014-05-22T16:00:00.000Z</published>
-    <updated>2014-05-28T02:15:59.000Z</updated>
+    <updated>2014-06-06T06:53:52.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Windows下设置别名">Windows下设置别名</h3>
 <ul>
 <li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
@@ -1043,6 +1099,33 @@ hexo d
 <li><p>Normal模式下，寻找上次光标所在位置为<code>ctrl + o</code>，下次的为<code>ctrl + i</code>，跳到某行修改并返回的时候非常方便</p>
 </li>
 </ul>
+<h3 id="添加删除注释">添加删除注释</h3>
+<ul>
+<li>添加注释：</li>
+</ul>
+<ol>
+<li>按<code>CTRL+V</code>进入可视化模式（VISUAL BLOCK）</li>
+<li>选中需要注释的代码块</li>
+<li>按 <code>I</code> 进入插入模式，在选中首行输入注释符，如 <code>#</code></li>
+<li>按 <code>ESC</code>后其他行也被注释掉了</li>
+</ol>
+<ul>
+<li>删除注释：</li>
+</ul>
+<ol>
+<li>按<code>CTRL+V</code>进入可视化模式（VISUAL BLOCK）</li>
+<li>选中注释符后，按<code>d</code>即可</li>
+</ol>
+<ul>
+<li>替换命令</li>
+</ul>
+<ol>
+<li><p><code>:% s/^/#/g</code> 来在全部内容的行首添加 # 号注释</p>
+</li>
+<li><p><code>:1,10 s/^/#/g</code> 在1~10 行首添加 # 号注释</p>
+</li>
+</ol>
+<p>参考：<a href="http://jingyan.baidu.com/article/9c69d48f43ed6d13c8024e7b.html" target="_blank">http://jingyan.baidu.com/article/9c69d48f43ed6d13c8024e7b.html</a></p>
 ]]></content>
     <summary type="html"><![CDATA[<h3 id="Windows下设置别名">Windows下设置别名</h3>
 <ul>

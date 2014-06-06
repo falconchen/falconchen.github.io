@@ -184,6 +184,33 @@
 <li><p>Normal模式下，寻找上次光标所在位置为<code>ctrl + o</code>，下次的为<code>ctrl + i</code>，跳到某行修改并返回的时候非常方便</p>
 </li>
 </ul>
+<h3 id="添加删除注释">添加删除注释</h3>
+<ul>
+<li>添加注释：</li>
+</ul>
+<ol>
+<li>按<code>CTRL+V</code>进入可视化模式（VISUAL BLOCK）</li>
+<li>选中需要注释的代码块</li>
+<li>按 <code>I</code> 进入插入模式，在选中首行输入注释符，如 <code>#</code></li>
+<li>按 <code>ESC</code>后其他行也被注释掉了</li>
+</ol>
+<ul>
+<li>删除注释：</li>
+</ul>
+<ol>
+<li>按<code>CTRL+V</code>进入可视化模式（VISUAL BLOCK）</li>
+<li>选中注释符后，按<code>d</code>即可</li>
+</ol>
+<ul>
+<li>替换命令</li>
+</ul>
+<ol>
+<li><p><code>:% s/^/#/g</code> 来在全部内容的行首添加 # 号注释</p>
+</li>
+<li><p><code>:1,10 s/^/#/g</code> 在1~10 行首添加 # 号注释</p>
+</li>
+</ol>
+<p>参考：<a href="http://jingyan.baidu.com/article/9c69d48f43ed6d13c8024e7b.html" target="_blank">http://jingyan.baidu.com/article/9c69d48f43ed6d13c8024e7b.html</a></p>
 
       
     </div>
