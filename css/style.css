@@ -412,9 +412,14 @@ article .entry h3 {
   border: 1px solid #ddd;
   margin-top: 15px;
   overflow: auto;
-  padding: 7px 15px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+}
+article .entry pre {
+  padding: 7px 15px;
+}
+article .entry h3 {
+  padding: 3px 15px;
 }
 article .entry pre code,
 article .entry h3 code {
@@ -452,8 +457,10 @@ article .entry h3,
 article .entry h4,
 article .entry h5,
 article .entry h6 {
-  font-weight: bold;
-  background: #a3b5da;
+  border: none;
+  font-weight: normal;
+  background: #dcecfa;
+  border-left: 10px solid #2a8cd8;
 }
 article .entry img,
 article .entry video {
