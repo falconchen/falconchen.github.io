@@ -61,6 +61,56 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/05/23/nodejs笔记/">nodejs笔记</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-23T02:06:04.000Z"><a href="/2014/05/23/nodejs笔记/">2014年05月23日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/05/23/java笔记/">Java学习笔记</a></h1>
   
 
@@ -231,6 +281,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/06/09/fuck-baidu-index/"></a>
+      </li>
+    
+      <li>
         <a href="/2014/06/05/pagespeed-insights-opt/">使用PageSpeed进行网站优化</a>
       </li>
     
@@ -244,10 +298,6 @@
     
       <li>
         <a href="/2014/05/28/hello-liteIde/">hello LiteIde</a>
-      </li>
-    
-      <li>
-        <a href="/2014/05/27/微信开发[0]-搭建开发测试环境/">微信开发笔记[0]:搭建开发测试环境</a>
       </li>
     
   </ul>
