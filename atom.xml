@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-09T07:45:53.650Z</updated>
+  <updated>2014-06-09T07:48:14.447Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -15,14 +15,12 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[]]></title>
+    <title><![CDATA[诡异的百度索引查询]]></title>
     <link href="http://falconchen.github.io/2014/06/09/fuck-baidu-index/"/>
     <id>http://falconchen.github.io/2014/06/09/fuck-baidu-index/</id>
     <published>2014-06-09T06:49:17.000Z</published>
-    <updated>2014-06-09T07:45:35.000Z</updated>
-    <content type="html"><![CDATA[<p>title: ‘诡异的百度索引查询’<br>date: 2014-06-09 14:49:17<br>category:SEO<br>tags:[seo,百度]</p>
-<hr>
-<p>早上打开百度统计看看这些天网站的流量和索引量，不看不知道，一看吓一跳，索引量变成零了。</p>
+    <updated>2014-06-09T07:48:07.000Z</updated>
+    <content type="html"><![CDATA[<p>早上打开百度统计看看这些天网站的流量和索引量，不看不知道，一看吓一跳，索引量变成零了。</p>
 <p><img src="http://falconchen.github.io/image/baidu_index1.jpg" alt="索引量为0"></p>
 <p>然后下午吃饭回来一看，又给恢复回来了。</p>
 <p><img src="http://falconchen.github.io/image/baidu_index2.jpg" alt="索引量恢复"></p>
@@ -30,6 +28,12 @@
 <p>PS:本来这篇文章是在<code>liteIde</code>里写的，没想到插入图片的时候<code>liteIde</code>居然没响应了，没办法，只好先回到<code>MarkdownPad2</code>, Windows上还有没有更好的markdown书写工具？</p>
 ]]></content>
     
+    
+      <category term="seo" scheme="http://falconchen.github.io/tags/seo/"/>
+    
+      <category term="百度" scheme="http://falconchen.github.io/tags/%E7%99%BE%E5%BA%A6/"/>
+    
+      <category term="SEO" scheme="http://falconchen.github.io/categories/SEO/"/>
     
   </entry>
   
