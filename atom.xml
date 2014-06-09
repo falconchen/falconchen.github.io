@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-09T07:19:58.091Z</updated>
+  <updated>2014-06-09T07:23:06.852Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://falconchen.github.io/2014/06/09/fuck-baidu-index/"/>
     <id>http://falconchen.github.io/2014/06/09/fuck-baidu-index/</id>
     <published>2014-06-09T06:49:17.000Z</published>
-    <updated>2014-06-09T07:19:39.000Z</updated>
+    <updated>2014-06-09T07:22:56.000Z</updated>
     <content type="html"><![CDATA[<p>ntitle: ‘诡异的百度索引查询’<br>date: 2014-06-09 14:49:17<br>category:SEO<br>tags:[seo,百度]</p>
 <hr>
 <p>早上打开百度统计看看这些天网站的流量和索引量，不看不知道，一看吓一跳，索引量变成零了。</p>
@@ -27,6 +27,7 @@
 <p>然后下午吃饭回来一看，又给恢复回来了。</p>
 <p><img src="http://falconchen.github.io/image/baidu_index2.jpg" alt="索引量恢复"></p>
 <p>这是什么情况？百度最近抽风，没想到百度统计也这么坑爹的。</p>
+<p>PS:本来这篇文章是在<code>liteIde</code>里写的，没想到插入图片的时候<code>liteIde</code>居然没响应了，没办法，只好先回到<code>MarkdownPad2</code>, Windows上还有没有更好的markdown书写工具？</p>
 ]]></content>
     
     
