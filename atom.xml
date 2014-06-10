@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-09T08:24:32.704Z</updated>
+  <updated>2014-06-10T10:11:22.862Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -13,6 +13,66 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[windows下ftp命令及自动更新]]></title>
+    <link href="http://falconchen.github.io/2014/06/10/windows-ftp-bat/"/>
+    <id>http://falconchen.github.io/2014/06/10/windows-ftp-bat/</id>
+    <published>2014-06-09T16:00:00.000Z</published>
+    <updated>2014-06-10T10:10:53.000Z</updated>
+    <content type="html"><![CDATA[<p>服务器（<code>windows 2008 RC2</code>)迁移到<code>阿里云</code>后， 原来的ftp自动更新脚本（php脚本，使用了ftp模块的函数）出现问题了，连接到海外的FTP服务器（澳大利亚的主机）后，列目录会出错，具体就是<code>ftp_nlist</code>执行超时，原因不明，无法下载主机文件。</p>
+<p>当前服务器已开通FTP服务，用FTP脚本连接本地FTP是没有问题的，于是现在解决方案为：<br>在本地新建一个帐户，想办法用其他方法将海外FTP的文件同步到本地FTP，将FTP脚本的配置修改为本地连接的帐户，使用同步后的文件更新。</p>
+<h3 id="使用windows自带的ftp命令">使用windows自带的ftp命令</h3>
+<p>先写一个批处理 <code>auto.ftp</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>open aaa.com.au 
+user 用户名
+密码
+dir 
+get XXX.zip
+bye
+</pre></td></tr></table></figure>
+
+<p>然后在命令行下执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>ftp -n <span class="operator">-s</span>:auto.ftp
+</pre></td></tr></table></figure>
+
+<p>在本地执行可成功列目录和下载文件，但是放到服务器执行，到列目录时半天没响应，尝试以失败告终。</p>
+<h3 id="使用_wget">使用 <code>wget</code></h3>
+<p>wget不但支持http，支持FTP，这玩意在linux下很流行，在windows下也有相应的版本，下载后扔到%path%里去就行了，写个批处理如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>rem 使用wget获取到本地ftp。
+<span class="built_in">cd</span> /d F:\myftp
+md logs
+del *.zip*
+wget ftp://aaa.com.au/file_%date:~<span class="number">0</span>,<span class="number">4</span>%%date:~<span class="number">5</span>,<span class="number">2</span>%.zip --ftp-user=用户名 --ftp-password=密码 
+wget -q http://myhost/ftp-import.php --output-document=logs\%date:~<span class="number">0</span>,<span class="number">4</span>%%date:~<span class="number">5</span>,<span class="number">2</span>%%date:~<span class="number">8</span>,<span class="number">2</span>%.update.log
+</pre></td></tr></table></figure>
+
+<p>执行后文件将被下载到<code>f:\myftp</code>目录下。值得注意的是批处理的日期表示法。</p>
+]]></content>
+    
+    
+      <category term="ftp" scheme="http://falconchen.github.io/tags/ftp/"/>
+    
+      <category term="windows" scheme="http://falconchen.github.io/tags/windows/"/>
+    
+      <category term="php" scheme="http://falconchen.github.io/tags/php/"/>
+    
+      <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[诡异的百度索引查询]]></title>
@@ -768,42 +828,6 @@ hexo d
   </entry>
   
   <entry>
-    <title><![CDATA[nodejs笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
-    <published>2014-05-23T02:06:04.000Z</published>
-    <updated>2014-05-26T06:41:37.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Java学习笔记]]></title>
     <link href="http://falconchen.github.io/2014/05/23/java%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/java笔记/</id>
@@ -1000,6 +1024,42 @@ int x = <span class="built_in">Integer</span>.parseInt(s);
       <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="学习笔记" scheme="http://falconchen.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[nodejs笔记]]></title>
+    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
+    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
+    <published>2014-05-23T02:06:04.000Z</published>
+    <updated>2014-05-26T06:41:37.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
+    
+      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
   </entry>
   

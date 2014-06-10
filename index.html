@@ -61,6 +61,80 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/06/10/windows-ftp-bat/">windows下ftp命令及自动更新</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-06-09T16:00:00.000Z"><a href="/2014/06/10/windows-ftp-bat/">2014年06月10日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>服务器（<code>windows 2008 RC2</code>)迁移到<code>阿里云</code>后， 原来的ftp自动更新脚本（php脚本，使用了ftp模块的函数）出现问题了，连接到海外的FTP服务器（澳大利亚的主机）后，列目录会出错，具体就是<code>ftp_nlist</code>执行超时，原因不明，无法下载主机文件。</p>
+<p>当前服务器已开通FTP服务，用FTP脚本连接本地FTP是没有问题的，于是现在解决方案为：<br>在本地新建一个帐户，想办法用其他方法将海外FTP的文件同步到本地FTP，将FTP脚本的配置修改为本地连接的帐户，使用同步后的文件更新。</p>
+<h3 id="使用windows自带的ftp命令">使用windows自带的ftp命令</h3>
+<p>先写一个批处理 <code>auto.ftp</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>open aaa.com.au 
+user 用户名
+密码
+dir 
+get XXX.zip
+bye
+</pre></td></tr></table></figure>
+
+<p>然后在命令行下执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>ftp -n <span class="operator">-s</span>:auto.ftp
+</pre></td></tr></table></figure>
+
+<p>在本地执行可成功列目录和下载文件，但是放到服务器执行，到列目录时半天没响应，尝试以失败告终。</p>
+<h3 id="使用_wget">使用 <code>wget</code></h3>
+<p>wget不但支持http，支持FTP，这玩意在linux下很流行，在windows下也有相应的版本，下载后扔到%path%里去就行了，写个批处理如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>rem 使用wget获取到本地ftp。
+<span class="built_in">cd</span> /d F:\myftp
+md logs
+del *.zip*
+wget ftp://aaa.com.au/file_%date:~<span class="number">0</span>,<span class="number">4</span>%%date:~<span class="number">5</span>,<span class="number">2</span>%.zip --ftp-user=用户名 --ftp-password=密码 
+wget -q http://myhost/ftp-import.php --output-document=logs\%date:~<span class="number">0</span>,<span class="number">4</span>%%date:~<span class="number">5</span>,<span class="number">2</span>%%date:~<span class="number">8</span>,<span class="number">2</span>%.update.log
+</pre></td></tr></table></figure>
+
+<p>执行后文件将被下载到<code>f:\myftp</code>目录下。值得注意的是批处理的日期表示法。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/06/09/fuck-baidu-index/">诡异的百度索引查询</a></h1>
   
 
@@ -445,46 +519,6 @@ hexo d
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/23/hexo创建404/">hexo创建404</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-23T10:01:01.000Z"><a href="/2014/05/23/hexo创建404/">2014年05月23日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>先做好一个<code>404.html</code>的html页面，放到<code>source</code>文件夹下，此时如果进行生成，hexo会自作多情地render，要禁止解析，可以在html内容前加入：</p>
-<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="header">layout: false
----</span>
-</pre></td></tr></table></figure><br>即可，此时生成会在public生成一个404.html页面，在<code>github</code>无须设置，在其他服务器(如<code>nginx</code>)还需要改动配置文件。</p>
-<p>这是本站的<code>公益404页面</code>:<a href="http://falconchen.github.io/404.html" target="_blank">http://falconchen.github.io/404.html</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -507,6 +541,10 @@ hexo d
   <ul class="entry">
     
       <li>
+        <a href="/2014/06/10/windows-ftp-bat/">windows下ftp命令及自动更新</a>
+      </li>
+    
+      <li>
         <a href="/2014/06/09/fuck-baidu-index/">诡异的百度索引查询</a>
       </li>
     
@@ -520,10 +558,6 @@ hexo d
     
       <li>
         <a href="/2014/05/28/hexo-css-issue/">hexo生成css的问题</a>
-      </li>
-    
-      <li>
-        <a href="/2014/05/28/hello-liteIde/">hello LiteIde</a>
       </li>
     
   </ul>
@@ -549,7 +583,7 @@ hexo d
   
     <li><a href="/categories/微信开发/">微信开发</a><small>1</small></li>
   
-    <li><a href="/categories/服务器/">服务器</a><small>2</small></li>
+    <li><a href="/categories/服务器/">服务器</a><small>3</small></li>
   
     <li><a href="/categories/转载/">转载</a><small>1</small></li>
   
@@ -567,6 +601,8 @@ hexo d
     <li><a href="/tags/IDE/">IDE</a><small>1</small></li>
   
     <li><a href="/tags/css/">css</a><small>1</small></li>
+  
+    <li><a href="/tags/ftp/">ftp</a><small>1</small></li>
   
     <li><a href="/tags/hexo/">hexo</a><small>5</small></li>
   
@@ -588,11 +624,15 @@ hexo d
   
     <li><a href="/tags/pagespeed/">pagespeed</a><small>1</small></li>
   
+    <li><a href="/tags/php/">php</a><small>1</small></li>
+  
     <li><a href="/tags/seo/">seo</a><small>1</small></li>
   
     <li><a href="/tags/ssh/">ssh</a><small>2</small></li>
   
     <li><a href="/tags/vim/">vim</a><small>1</small></li>
+  
+    <li><a href="/tags/windows/">windows</a><small>1</small></li>
   
     <li><a href="/tags/业界/">业界</a><small>1</small></li>
   
