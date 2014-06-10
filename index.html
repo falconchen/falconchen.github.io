@@ -72,51 +72,15 @@
     <div class="entry">
       
         <p>服务器（<code>windows 2008 RC2</code>)迁移到<code>阿里云</code>后， 原来的ftp自动更新脚本（php脚本，使用了ftp模块的函数）出现问题了，连接到海外的FTP服务器（澳大利亚的主机）后，列目录会出错，具体就是<code>ftp_nlist</code>函数执行超时，无法下载主机文件，具体原因未知。</p>
-<p>当前服务器已开通FTP服务，测试用FTP脚本连接本地FTP没有问题的，于是现在解决方案为：<br>在本地新建一个帐户，想办法用其他方法将海外FTP的文件同步到本地FTP，将FTP脚本的配置修改为本地连接的帐户，使用同步后的文件更新,这样自动更新脚本的逻辑无需更改。</p>
-<h3 id="使用windows自带的ftp命令">使用windows自带的ftp命令</h3>
-<p>先写一个批处理 <code>auto.ftp</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre>open aaa.com.au 
-user 用户名
-密码
-dir 
-get XXX.zip
-bye
-</pre></td></tr></table></figure>
-
-<p>然后在命令行下执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>ftp -n <span class="operator">-s</span>:auto.ftp
-</pre></td></tr></table></figure>
-
-<p>在本地执行可成功列目录和下载文件，但是放到服务器执行，到列目录时半天没响应，尝试以失败告终。</p>
-<h3 id="使用_wget">使用 <code>wget</code></h3>
-<p>wget不但支持http协议，也支持FTP下载，这是个在linux下很流行的一个工具，在windows下也有相应的版本，下载后直接扔<code>%path%</code>的目录里去就行了，完成写个批处理，内容如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre>rem 使用wget获取到本地ftp。
-<span class="built_in">cd</span> /d F:\myftp
-md logs
-del *.zip*
-wget ftp://aaa.com.au/file_%date:~<span class="number">0</span>,<span class="number">4</span>%%date:~<span class="number">5</span>,<span class="number">2</span>%.zip --ftp-user=用户名 --ftp-password=密码 
-wget -q http://myhost/ftp-import.php --output-document=logs\%date:~<span class="number">0</span>,<span class="number">4</span>%%date:~<span class="number">5</span>,<span class="number">2</span>%%date:~<span class="number">8</span>,<span class="number">2</span>%.update.log
-</pre></td></tr></table></figure>
-
-<p>执行后文件将被下载到<code>f:\myftp</code>目录下。值得注意的是批处理的日期表示法。</p>
-
+<p>当前服务器已开通FTP服务，测试用FTP脚本连接本地FTP没有问题的，于是现在解决方案为：<br>在本地新建一个帐户，想办法用其他方法将海外FTP的文件同步到本地FTP，将FTP脚本的配置修改为本地连接的帐户，使用同步后的文件更新,这样自动更新脚本的逻辑无需更改。<br>
       
     </div>
     <footer>
       
+        
+          <div class="alignleft">
+            <a href="/2014/06/10/windows-ftp-bat/#more" class="more-link">Read More</a>
+          </div>
         
         
       
