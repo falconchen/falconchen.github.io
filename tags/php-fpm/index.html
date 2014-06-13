@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>php-fpm | 琴心剑胆</title>
+  <meta name="author" content="Falcon Chen">
+  
+  <meta name="description" content="Everything about Falcon.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="琴心剑胆"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="琴心剑胆" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <!--
+  <style>
+
+	#header #main-nav ul li#nav_Home{
+		margin-left:0;
+	}
+  </style>
+  -->
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">琴心剑胆</a></h1>
+  <h2><a href="/">Life is painting a picture, not doing a sum.</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li id="nav_Home"><a href="/">Home</a></li>
+    
+      <li id="nav_Archives"><a href="/archives">Archives</a></li>
+    
+	<li><a href="/atom.xml" title="rss feed">RSS</a></li>
+	<li><a href="/sitemap.xml" title="rss feed">Sitemap</a></li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title tag">php-fpm</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/06/12/php-fpm优化/">php-fpm优化</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-06-12T06:07:40.000Z"><a href="/2014/06/12/php-fpm优化/">2014年06月12日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="当前内存使用情况">当前内存使用情况</h3>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>[root<span class="variable">@cpp22</span> ~]<span class="comment"># free -m</span>
+			total       used       free     shared    buffers     cached
+<span class="constant">Mem</span><span class="symbol">:</span>          <span class="number">7870</span>       <span class="number">7736</span>        <span class="number">134</span>          <span class="number">0</span>       <span class="number">1009</span>       <span class="number">5010</span>
+-<span class="regexp">/+ buffers/cache</span><span class="symbol">:</span>       <span class="number">1716</span>       <span class="number">6154</span>
+<span class="constant">Swap</span><span class="symbol">:</span>         <span class="number">2047</span>          <span class="number">0</span>       <span class="number">2047</span>
+</pre></td></tr></table></figure></p>
+<h3 id="查看php-fpm进程是否够用：">查看php-fpm进程是否够用：</h3>
+<p>使用 </p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>netstat -napo |grep <span class="string">"php-fpm"</span> | wc <span class="operator">-l</span>
+</pre></td></tr></table></figure><br>查看一下当前fastcgi进程个数，如果个数接近conf里配置的上限，就需要调高进程数。</p>
+<h3 id="php最大执行时间的设置">php最大执行时间的设置</h3>
+<p>如果file_get_contents请求的远程资源如果反应过慢，file_get_contents就会一直卡在那里不会超时。我们知道php.ini 里面max_execution_time 可以设置 PHP 脚本的最大执行时间，但是，在 php-cgi(php-fpm) 中，该参数不会起效。真正能够控制 PHP 脚本最大执行时间的是 php-fpm.conf 配置文件中的request_terminate_timeout参数。</p>
+<h3 id="pm-*的设置">pm.*的设置</h3>
+<p>如果设置成static，php-fpm进程数自始至终都是pm.max_children指定的数量，不再增加或减少。如果设置成 dynamic，则php-fpm进程数是动态的，最开始是pm.start_servers指定的数量，如果请求较多，则会自动增加， 保证空闲的进程数不小于pm.min_spare_servers，如果进程数较多，也会进行相应清理，保证多余的进程数不多于 pm.max_spare_servers。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:falconchen.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/06/13/firefox-search-bar-modify/">Firefox搜索栏修改</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/12/php-fpm优化/">php-fpm优化</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/10/windows-ftp-bat/">windows下ftp自动更新</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/09/fuck-baidu-index/">诡异的百度索引查询</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/SEO/">SEO</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>2</small></li>
+  
+    <li><a href="/categories/nodejs/">nodejs</a><small>4</small></li>
+  
+    <li><a href="/categories/vim/">vim</a><small>1</small></li>
+  
+    <li><a href="/categories/学习笔记/">学习笔记</a><small>1</small></li>
+  
+    <li><a href="/categories/开发工具/">开发工具</a><small>2</small></li>
+  
+    <li><a href="/categories/微信开发/">微信开发</a><small>1</small></li>
+  
+    <li><a href="/categories/服务器/">服务器</a><small>5</small></li>
+  
+    <li><a href="/categories/转载/">转载</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/404/">404</a><small>1</small></li>
+  
+    <li><a href="/tags/IDE/">IDE</a><small>1</small></li>
+  
+    <li><a href="/tags/css/">css</a><small>1</small></li>
+  
+    <li><a href="/tags/firefox/">firefox</a><small>1</small></li>
+  
+    <li><a href="/tags/ftp/">ftp</a><small>1</small></li>
+  
+    <li><a href="/tags/google/">google</a><small>1</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>5</small></li>
+  
+    <li><a href="/tags/java/">java</a><small>1</small></li>
+  
+    <li><a href="/tags/liteIde/">liteIde</a><small>1</small></li>
+  
+    <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/tags/nginx/">nginx</a><small>3</small></li>
+  
+    <li><a href="/tags/ngx_pagespeed/">ngx_pagespeed</a><small>1</small></li>
+  
+    <li><a href="/tags/nmp/">nmp</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>4</small></li>
+  
+    <li><a href="/tags/npm/">npm</a><small>1</small></li>
+  
+    <li><a href="/tags/pagespeed/">pagespeed</a><small>1</small></li>
+  
+    <li><a href="/tags/php/">php</a><small>1</small></li>
+  
+    <li><a href="/tags/php-fpm/">php-fpm</a><small>1</small></li>
+  
+    <li><a href="/tags/seo/">seo</a><small>1</small></li>
+  
+    <li><a href="/tags/ssh/">ssh</a><small>2</small></li>
+  
+    <li><a href="/tags/vim/">vim</a><small>1</small></li>
+  
+    <li><a href="/tags/wget/">wget</a><small>1</small></li>
+  
+    <li><a href="/tags/windows/">windows</a><small>1</small></li>
+  
+    <li><a href="/tags/业界/">业界</a><small>1</small></li>
+  
+    <li><a href="/tags/优化/">优化</a><small>1</small></li>
+  
+    <li><a href="/tags/前端/">前端</a><small>2</small></li>
+  
+    <li><a href="/tags/反向代理/">反向代理</a><small>1</small></li>
+  
+    <li><a href="/tags/工匠情怀/">工匠情怀</a><small>1</small></li>
+  
+    <li><a href="/tags/微信/">微信</a><small>1</small></li>
+  
+    <li><a href="/tags/搜索/">搜索</a><small>1</small></li>
+  
+    <li><a href="/tags/服务器/">服务器</a><small>3</small></li>
+  
+    <li><a href="/tags/百度/">百度</a><small>1</small></li>
+  
+    <li><a href="/tags/笔记/">笔记</a><small>3</small></li>
+  
+    <li><a href="/tags/罗永浩/">罗永浩</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 Falcon Chen
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<script type="text/javascript">
+//百度统计
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3dcba7c5b68e950526782605e5d31ffb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+</body>
+</html>

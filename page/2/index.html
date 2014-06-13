@@ -61,6 +61,151 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/05/26/luo/">我不是为了输赢，我就是认真。</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-26T07:06:04.000Z"><a href="/2014/05/26/luo/">2014年05月26日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <blockquote>本文转自CoolShell.cn 作者：陈皓，原文链接：<a href="http://coolshell.cn/articles/11629.html" title="我只是认真」聊聊工匠情怀 " target="_blank">「我只是认真」聊聊工匠情怀 | 酷 壳 - CoolShell.cn</a></br></blockquote>
+<p>老罗的Smartisan T1手机发布会很多人应该都看了，发布会的最后老罗凝视着自己的工匠自画像，半晌没说话，随后转过身，慢慢离开舞台，屏幕下方只留下一句话：</p>
+<p style="padding-left: 30px;"><strong>我不是为了输赢，我就是认真。</strong></p>
+<p>这一瞬间让我想起93年「狮城舌战」的主角蒋昌建，在「人性本善还是人性本恶」的总结陈词最后，以顾城的名句，「黑夜给了我黑色的眼睛，我却用它寻找光明」，把整个辩论赛的氛围推向高潮。</p>
+<p>而老罗的这句话，和这句话背后的工匠背景，却以另外一种<span style="color: #ff0000;"><strong>无声的却震人心魄的力量</strong></span>，敲打着每一个在场的，或是观看着整个发布会的观众的心绪。</p>
+<p>「工匠情怀」，我深有体会，就像我在 <a href="http://blog.hesey.net/2014/05/gc-oriented-java-programming.html" target="_blank">面向GC的Java编程</a> 一文中所提到的：</p>
+<p style="padding-left: 30px;"><span style="color: #ff6600;"><strong>优秀程序员的价值，不在于其所掌握的几招屠龙之术，而是在细节中见真著。</strong></span></p>
+<p style="padding-left: 30px;"><span style="color: #ff6600;"><strong>如果我们可以一次把事情做对，并且做好，在允许的范围内尽可能追求卓越，为什么不去做呢？</strong></span></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2014/05/26/luo/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/05/26/hexo安装插件/">hexo安装插件</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-26T02:06:04.000Z"><a href="/2014/05/26/hexo安装插件/">2014年05月26日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>安装插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm install &lt;plugin-name&gt; --save
+</pre></td></tr></table></figure><br>启用插件：在<code>hexo\_config.yml</code>文件添加：</p>
+<pre><code>plugins:
+-<span class="ruby"> &lt;plugin-name&gt;  <span class="comment">#插件名</span></span>
+</code></pre><p>升级插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm update
+</pre></td></tr></table></figure><br>卸载插件：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm uninstall &lt;plugin-name&gt;
+</pre></td></tr></table></figure><br>RSS插件<br>将上述命令中的『plugin-name』，替换为<code>hexo-generator-feed</code>。一旦安装完成，你可以在配置显示你站点的RSS，文件路径<code>/atom.xml</code>。</p>
+<p>你可以用rss作为迁移工具，用如下命令读取其他位置的rss：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>hexo migrate rss &lt;<span class="built_in">source</span>&gt;
+</pre></td></tr></table></figure><br>修改主题<code>header.ejs</code>，加入:</p>
+<pre><code><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span> <span class="attribute">title</span>=<span class="value">"rss feed"</span>&gt;</span>Rss<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/05/26/hexo命令及用法/">hexo命令及用法</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-26T01:47:53.000Z"><a href="/2014/05/26/hexo命令及用法/">2014年05月26日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>安装和本地预览：</p>
+<pre><code>npm <span class="keyword">install</span> hexo -g <span class="comment">#全局安装hexo模块，安装缓慢或出错请看上文</span>
+hexo init blog <span class="comment">#初始化本地目录，也可cd到指定目录直接执行 hexo init</span>
+cd blog
+npm <span class="keyword">install</span> <span class="comment">#不要忘记执行此命令，否则生成html会不正常</span>
+hexo server <span class="comment">#默认使用http://localhost:4000/，可在_config.yml更改</span>
+</code></pre><p>撰写文章：</p>
+<pre><code>hexo <span class="keyword">new</span> [模板名] 文章名称 <span class="preprocessor">#使用指定模板创建文章</span>
+hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="preprocessor">#新建页面</span>
+hexo generate            <span class="preprocessor">#生成html，需要在init的目录执行</span>
+hexo deploy              <span class="preprocessor">#部署到github、heroku</span>
+</code></pre><p>命令缩写（精简为命令的首字母）:</p>
+<pre><code>hexo n
+hexo g
+hexo s
+hexo d
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/05/23/hexo创建404/">hexo创建404</a></h1>
   
 
@@ -321,23 +466,23 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/06/13/firefox-search-bar-modify/">Firefox搜索栏修改</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/12/php-fpm优化/">php-fpm优化</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a>
+      </li>
+    
+      <li>
         <a href="/2014/06/10/windows-ftp-bat/">windows下ftp自动更新</a>
       </li>
     
       <li>
         <a href="/2014/06/09/fuck-baidu-index/">诡异的百度索引查询</a>
-      </li>
-    
-      <li>
-        <a href="/2014/06/05/pagespeed-insights-opt/">使用PageSpeed进行网站优化</a>
-      </li>
-    
-      <li>
-        <a href="/2014/05/29/利用ssh隧道进行反向代理/">利用SSH隧道进行反向代理</a>
-      </li>
-    
-      <li>
-        <a href="/2014/05/28/hexo-css-issue/">hexo生成css的问题</a>
       </li>
     
   </ul>
@@ -359,11 +504,11 @@
   
     <li><a href="/categories/学习笔记/">学习笔记</a><small>1</small></li>
   
-    <li><a href="/categories/开发工具/">开发工具</a><small>1</small></li>
+    <li><a href="/categories/开发工具/">开发工具</a><small>2</small></li>
   
     <li><a href="/categories/微信开发/">微信开发</a><small>1</small></li>
   
-    <li><a href="/categories/服务器/">服务器</a><small>3</small></li>
+    <li><a href="/categories/服务器/">服务器</a><small>5</small></li>
   
     <li><a href="/categories/转载/">转载</a><small>1</small></li>
   
@@ -382,7 +527,11 @@
   
     <li><a href="/tags/css/">css</a><small>1</small></li>
   
+    <li><a href="/tags/firefox/">firefox</a><small>1</small></li>
+  
     <li><a href="/tags/ftp/">ftp</a><small>1</small></li>
+  
+    <li><a href="/tags/google/">google</a><small>1</small></li>
   
     <li><a href="/tags/hexo/">hexo</a><small>5</small></li>
   
@@ -404,6 +553,10 @@
   
     <li><a href="/tags/pagespeed/">pagespeed</a><small>1</small></li>
   
+    <li><a href="/tags/php/">php</a><small>1</small></li>
+  
+    <li><a href="/tags/php-fpm/">php-fpm</a><small>1</small></li>
+  
     <li><a href="/tags/seo/">seo</a><small>1</small></li>
   
     <li><a href="/tags/ssh/">ssh</a><small>2</small></li>
@@ -418,7 +571,7 @@
   
     <li><a href="/tags/优化/">优化</a><small>1</small></li>
   
-    <li><a href="/tags/前端/">前端</a><small>1</small></li>
+    <li><a href="/tags/前端/">前端</a><small>2</small></li>
   
     <li><a href="/tags/反向代理/">反向代理</a><small>1</small></li>
   
@@ -426,7 +579,9 @@
   
     <li><a href="/tags/微信/">微信</a><small>1</small></li>
   
-    <li><a href="/tags/服务器/">服务器</a><small>1</small></li>
+    <li><a href="/tags/搜索/">搜索</a><small>1</small></li>
+  
+    <li><a href="/tags/服务器/">服务器</a><small>3</small></li>
   
     <li><a href="/tags/百度/">百度</a><small>1</small></li>
   

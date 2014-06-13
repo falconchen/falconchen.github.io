@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-10T10:29:04.359Z</updated>
+  <updated>2014-06-13T03:57:58.171Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -13,6 +13,114 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Firefox搜索栏修改]]></title>
+    <link href="http://falconchen.github.io/2014/06/13/firefox-search-bar-modify/"/>
+    <id>http://falconchen.github.io/2014/06/13/firefox-search-bar-modify/</id>
+    <published>2014-06-13T03:18:52.000Z</published>
+    <updated>2014-06-13T03:57:32.000Z</updated>
+    <content type="html"><![CDATA[<p>谷歌搜索挂了好几天了，对于技术人员来说真是十分痛苦的事情，众所周知，搜索技术相关的内容google的结果能甩百度好几条街。除了翻墙之外，我发现另外一个好东西：<a href="http://www.gfsoso.com/" target="_blank">谷粉搜搜</a></p>
+<blockquote>
+<p>谷歌搜索-谷粉搜搜：由谷歌粉丝联合建立的方便大家稳定高速地使用谷歌搜索的搜索引擎。谷歌搜索如果您所在地区无法打开google或者比较卡，欢迎使用谷粉搜搜进行谷歌搜索。</p>
+</blockquote>
+<p><a id="more"></a><br>原理应该这样的：在获取用户输入的查询关键字后，通过在墙外的服务器提交到google服务器,取得响应内容后，再将结果返回给用户，也就是间接给你翻了个墙。当然它可以对结果进行一些处理，比如改变样式甚至加点广告什么的。</p>
+<h3 id="在firefox把谷粉搜搜加入搜索栏">在firefox把谷粉搜搜加入搜索栏</h3>
+<p>首先找到firefox的 Profile文件夹下的searchplugins目录，也就是在你个人设置的文件夹下，如：<code>G:\falconDisk\firefox\Profiles\</code> ,如果没有自己定义，则在firefox安装目录的browser下。新建一个<code>wwwgooglecomhk.xml:</code> ,写入以下内容，重启firefox即可</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>谷粉搜搜<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span>
+<span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>打不开就用谷粉搜搜<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span>
+<span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span>
+<span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADRUlEQVQ4jSXT60/VdQDH8c/vd7AlI4EHtjW0WCs1i7U2i8u54GWxYDVtpkabumX5JLs86oLYEgRDQjAIBbsYayTmCjDQMwsrtcgxUBdWkNyyJDkCB9jRw+/8vu8e8OD9D7y2tyTJiUFX/wipWxuJe/pzSo9fwiVGNDzB2ewsei0xa9u4Eq5sIpYYl5AkxRwwwLriU2hTEHtbFwte/I6//p0CEyPyWy/XE+JxJYzlwbVExBIhxTFkCwE4jsMDO9rRtk60vQfl/0jxN5fBgInBUE4OUVnEPCJqWUzKw5glBiVkXCAG3sIO7M0/Y2/vxH7hHJv2dwMOAFfXr2NGcWAJVx6mLfGPRJ/tQeACLkVNl9H6IHEvXcB+/nvyqzpxMXAbfnloGT/dcwctS5JpT02mK2kew7botYT6h29igNFwhGU72tBzp1mwOUiw5xoGqGs5zOI3UtFH6Xhq/ajay/yyJ8h6OY19DyeipVs+43jHFXANE1NRjpwZoG/kJi6GklN1qOgRPPVePIeyUG06qs3EOpCFqrOx9q5GCzceJWntx6x+vZE9DR1zajic6fsV+6370OHHUV06qk/HqvFh1fhQZQZWuR9rbwAtzW9g0YYvuDPvU5KfOsTgaBhjDMOhayypfxbVpGEfzMQ+6EU1GdgferEq/djlflSWge7P3U/Glk/Y+G4rr1X9QE/fOC4Gg8vY1Bg5R1/BqkhDtT5U7Z2r0o/2+dEeP2o8fZGxcRcDzE72Mnq1mYGeWm5N3wBgNuaQ2/gqVsVyVJ2BqrzY5ZnofR8q8SFcmP7vIt3NGQw2x/N3mxj52uZK03LCoT/BxPh9dIi7SrNRVSaeD3zYZX5UEkC7A+i2M0NXYzoT3wpz3sY5G0+kYz43jon+5jyMMZgYPHhgAypbgSq8qNTPvN1rsHYF0FRogD8aUrgVTCIcTGCqLZHJ1kRmTqRw/atHITpNxDEsLslDpZnYJatQqQ/7vZVopx85McPgya2EvkxgsuVuwq0LmTmRQvjYvYyfK8QATRdO4nnzMaxiL56ibLQrgAoC6J01c0c6MyHGzhcy0b6WcMuTTLQ/Q6S7mqgT4dLwAIvezkUFK7ALs1HhSrTThwpWIUn/A1g/hnpCRmiJAAAAAElFTkSuQmCC<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span>
+<span class="tag">&lt;<span class="title">SearchForm</span>&gt;</span>http://www.gfsoso.com/<span class="tag">&lt;/<span class="title">SearchForm</span>&gt;</span>
+<span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://www.gfsoso.com/"</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">os:Param</span> <span class="attribute">name</span>=<span class="value">"q"</span> <span class="attribute">value</span>=<span class="value">"{searchTerms}"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span>
+</pre></td></tr></table></figure>]]></content>
+    <summary type="html"><![CDATA[<p>谷歌搜索挂了好几天了，对于技术人员来说真是十分痛苦的事情，众所周知，搜索技术相关的内容google的结果能甩百度好几条街。除了翻墙之外，我发现另外一个好东西：<a href="http://www.gfsoso.com/" target="_blank">谷粉搜搜</a></p>
+<blockquote>
+<p>谷歌搜索-谷粉搜搜：由谷歌粉丝联合建立的方便大家稳定高速地使用谷歌搜索的搜索引擎。谷歌搜索如果您所在地区无法打开google或者比较卡，欢迎使用谷粉搜搜进行谷歌搜索。</p>
+</blockquote>
+<p>]]></summary>
+    
+      <category term="firefox" scheme="http://falconchen.github.io/tags/firefox/"/>
+    
+      <category term="google" scheme="http://falconchen.github.io/tags/google/"/>
+    
+      <category term="搜索" scheme="http://falconchen.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="开发工具" scheme="http://falconchen.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[php-fpm优化]]></title>
+    <link href="http://falconchen.github.io/2014/06/12/php-fpm%E4%BC%98%E5%8C%96/"/>
+    <id>http://falconchen.github.io/2014/06/12/php-fpm优化/</id>
+    <published>2014-06-12T06:07:40.000Z</published>
+    <updated>2014-06-12T08:00:40.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="当前内存使用情况">当前内存使用情况</h3>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>[root<span class="variable">@cpp22</span> ~]<span class="comment"># free -m</span>
+			total       used       free     shared    buffers     cached
+<span class="constant">Mem</span><span class="symbol">:</span>          <span class="number">7870</span>       <span class="number">7736</span>        <span class="number">134</span>          <span class="number">0</span>       <span class="number">1009</span>       <span class="number">5010</span>
+-<span class="regexp">/+ buffers/cache</span><span class="symbol">:</span>       <span class="number">1716</span>       <span class="number">6154</span>
+<span class="constant">Swap</span><span class="symbol">:</span>         <span class="number">2047</span>          <span class="number">0</span>       <span class="number">2047</span>
+</pre></td></tr></table></figure></p>
+<h3 id="查看php-fpm进程是否够用：">查看php-fpm进程是否够用：</h3>
+<p>使用 </p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>netstat -napo |grep <span class="string">"php-fpm"</span> | wc <span class="operator">-l</span>
+</pre></td></tr></table></figure><br>查看一下当前fastcgi进程个数，如果个数接近conf里配置的上限，就需要调高进程数。</p>
+<h3 id="php最大执行时间的设置">php最大执行时间的设置</h3>
+<p>如果file_get_contents请求的远程资源如果反应过慢，file_get_contents就会一直卡在那里不会超时。我们知道php.ini 里面max_execution_time 可以设置 PHP 脚本的最大执行时间，但是，在 php-cgi(php-fpm) 中，该参数不会起效。真正能够控制 PHP 脚本最大执行时间的是 php-fpm.conf 配置文件中的request_terminate_timeout参数。</p>
+<h3 id="pm-*的设置">pm.*的设置</h3>
+<p>如果设置成static，php-fpm进程数自始至终都是pm.max_children指定的数量，不再增加或减少。如果设置成 dynamic，则php-fpm进程数是动态的，最开始是pm.start_servers指定的数量，如果请求较多，则会自动增加， 保证空闲的进程数不小于pm.min_spare_servers，如果进程数较多，也会进行相应清理，保证多余的进程数不多于 pm.max_spare_servers。</p>
+]]></content>
+    
+    
+      <category term="服务器" scheme="http://falconchen.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="php-fpm" scheme="http://falconchen.github.io/tags/php-fpm/"/>
+    
+      <category term="php" scheme="http://falconchen.github.io/tags/php/"/>
+    
+      <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[partyline优化建议]]></title>
+    <link href="http://falconchen.github.io/2014/06/11/partyline-optimize-advices/"/>
+    <id>http://falconchen.github.io/2014/06/11/partyline-optimize-advices/</id>
+    <published>2014-06-11T07:15:07.000Z</published>
+    <updated>2014-06-11T07:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="_"> </h3>
+]]></content>
+    
+    
+      <category term="服务器" scheme="http://falconchen.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="前端" scheme="http://falconchen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[windows下ftp自动更新]]></title>
