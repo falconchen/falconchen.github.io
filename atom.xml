@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-13T03:57:58.171Z</updated>
+  <updated>2014-06-13T04:00:31.960Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -19,13 +19,13 @@
     <link href="http://falconchen.github.io/2014/06/13/firefox-search-bar-modify/"/>
     <id>http://falconchen.github.io/2014/06/13/firefox-search-bar-modify/</id>
     <published>2014-06-13T03:18:52.000Z</published>
-    <updated>2014-06-13T03:57:32.000Z</updated>
+    <updated>2014-06-13T03:59:50.000Z</updated>
     <content type="html"><![CDATA[<p>谷歌搜索挂了好几天了，对于技术人员来说真是十分痛苦的事情，众所周知，搜索技术相关的内容google的结果能甩百度好几条街。除了翻墙之外，我发现另外一个好东西：<a href="http://www.gfsoso.com/" target="_blank">谷粉搜搜</a></p>
 <blockquote>
 <p>谷歌搜索-谷粉搜搜：由谷歌粉丝联合建立的方便大家稳定高速地使用谷歌搜索的搜索引擎。谷歌搜索如果您所在地区无法打开google或者比较卡，欢迎使用谷粉搜搜进行谷歌搜索。</p>
 </blockquote>
-<p><a id="more"></a><br>原理应该这样的：在获取用户输入的查询关键字后，通过在墙外的服务器提交到google服务器,取得响应内容后，再将结果返回给用户，也就是间接给你翻了个墙。当然它可以对结果进行一些处理，比如改变样式甚至加点广告什么的。</p>
-<h3 id="在firefox把谷粉搜搜加入搜索栏">在firefox把谷粉搜搜加入搜索栏</h3>
+<p>原理应该这样的：在获取用户输入的查询关键字后，通过在墙外的服务器提交到google服务器,取得响应内容后，再将结果返回给用户，也就是间接给你翻了个墙。当然它可以对结果进行一些处理，比如改变样式甚至加点广告什么的。</p>
+<h3 id="把谷粉搜搜加入firefox搜索栏">把谷粉搜搜加入firefox搜索栏</h3>
 <p>首先找到firefox的 Profile文件夹下的searchplugins目录，也就是在你个人设置的文件夹下，如：<code>G:\falconDisk\firefox\Profiles\</code> ,如果没有自己定义，则在firefox安装目录的browser下。新建一个<code>wwwgooglecomhk.xml:</code> ,写入以下内容，重启firefox即可</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre>1
 2
@@ -48,11 +48,7 @@
 <span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span>
 </pre></td></tr></table></figure>]]></content>
-    <summary type="html"><![CDATA[<p>谷歌搜索挂了好几天了，对于技术人员来说真是十分痛苦的事情，众所周知，搜索技术相关的内容google的结果能甩百度好几条街。除了翻墙之外，我发现另外一个好东西：<a href="http://www.gfsoso.com/" target="_blank">谷粉搜搜</a></p>
-<blockquote>
-<p>谷歌搜索-谷粉搜搜：由谷歌粉丝联合建立的方便大家稳定高速地使用谷歌搜索的搜索引擎。谷歌搜索如果您所在地区无法打开google或者比较卡，欢迎使用谷粉搜搜进行谷歌搜索。</p>
-</blockquote>
-<p>]]></summary>
+    
     
       <category term="firefox" scheme="http://falconchen.github.io/tags/firefox/"/>
     
