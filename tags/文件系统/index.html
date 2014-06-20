@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>java | 琴心剑胆</title>
+  <title>文件系统 | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -55,7 +55,7 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">java</h2>
+<h2 class="archive-title tag">文件系统</h2>
 
 
   
@@ -65,35 +65,23 @@
     <header>
       
   
-    <h1 class="title"><a href="/2014/05/23/java笔记/">Java学习笔记</a></h1>
+    <h1 class="title"><a href="/2014/06/20/file-system-broken-reasons/">文件系统损坏原因</a></h1>
   
 
       
         <div class="icon"></div>
-        <time datetime="2014-05-23T02:06:04.000Z"><a href="/2014/05/23/java笔记/">2014年05月23日</a></time>
+        <time datetime="2014-06-20T02:16:22.000Z"><a href="/2014/06/20/file-system-broken-reasons/">2014年06月20日</a></time>
       
     </header>
     <div class="entry">
       
-        <ul>
-<li>参考书目 </li>
-</ul>
-<h3 id="Head_First_Java">Head First Java</h3>
-<p><img src="http://img5.douban.com/lpic/s2171906.jpg" alt="head first java"></p>
-<hr>
-<p>java 的integer与boolean两种类型<strong>并不相容</strong>，只能用下面的boolean变量来测试</p>
-<pre><code><span class="keyword">boolean</span> isHot = <span class="keyword">true</span>;
-<span class="keyword">while</span> (isHot){ }
-</code></pre><hr>
-<p>
+        <p>原因：<br>关于昨天服务器文件系统损坏的原因，我怀疑可能是这样的，上周给服务器装了个<code>ngx_pagespeed</code>，一个用来提高网站性能的nginx模块，它运行时产生大量的cache文件（按默认设置放在系统盘的/var/目录上）。网站高访问量时会对cache文件进行高速读写，可能这样导致系统盘的文件系统损坏。</p>
+<p>现在新服务器上把这些cache放在单独的临时文件系统分区，跟系统盘分离了。</p>
+
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2014/05/23/java笔记/#more" class="more-link">Read More</a>
-          </div>
         
         
       
