@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-20T02:10:15.341Z</updated>
+  <updated>2014-06-20T02:15:19.899Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -170,7 +170,7 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
     <link href="http://falconchen.github.io/2014/06/11/partyline-optimize-advices/"/>
     <id>http://falconchen.github.io/2014/06/11/partyline-optimize-advices/</id>
     <published>2014-06-11T07:15:07.000Z</published>
-    <updated>2014-06-19T10:28:53.000Z</updated>
+    <updated>2014-06-20T02:15:05.000Z</updated>
     <content type="html"><![CDATA[<h3 id="安装浏览器扩展">安装浏览器扩展</h3>
 <p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
 <p>下载处理后的 </p>
@@ -224,12 +224,12 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
 </ul>
 </li>
 </ul>
-<p>需要动态处理的图片如新闻图片，可以使用以上工具在程序内调用，如上传图片成功后，使用代码调用外部程序处理。如php中可使用<code>exec</code>，<code>system</code>等函数</p>
+<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片</p>
 <p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
 <hr>
 <h3 id="另一种方案">另一种方案</h3>
 <p>在源服务器跟squid之间加入一层，放入一个nginx（已安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。</p>
-<p>ngx_pagespeed能完成大部分优化</p>
+<p>ngx_pagespeed能完成大部分优化。</p>
 ]]></content>
     
     
@@ -1056,6 +1056,42 @@ hexo d
   </entry>
   
   <entry>
+    <title><![CDATA[nodejs笔记]]></title>
+    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
+    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
+    <published>2014-05-23T02:06:04.000Z</published>
+    <updated>2014-05-26T06:41:37.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
+    
+      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Java学习笔记]]></title>
     <link href="http://falconchen.github.io/2014/05/23/java%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/java笔记/</id>
@@ -1252,42 +1288,6 @@ int x = <span class="built_in">Integer</span>.parseInt(s);
       <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="学习笔记" scheme="http://falconchen.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nodejs笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
-    <published>2014-05-23T02:06:04.000Z</published>
-    <updated>2014-05-26T06:41:37.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
   </entry>
   

@@ -339,12 +339,12 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
 </ul>
 </li>
 </ul>
-<p>需要动态处理的图片如新闻图片，可以使用以上工具在程序内调用，如上传图片成功后，使用代码调用外部程序处理。如php中可使用<code>exec</code>，<code>system</code>等函数</p>
+<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片</p>
 <p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
 <hr>
 <h3 id="另一种方案">另一种方案</h3>
 <p>在源服务器跟squid之间加入一层，放入一个nginx（已安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。</p>
-<p>ngx_pagespeed能完成大部分优化</p>
+<p>ngx_pagespeed能完成大部分优化。</p>
 
       
     </div>
