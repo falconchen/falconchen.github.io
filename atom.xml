@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-13T04:02:07.729Z</updated>
+  <updated>2014-06-20T02:10:15.341Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -13,6 +13,71 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Windows批处理备份mysql]]></title>
+    <link href="http://falconchen.github.io/2014/06/20/windows-bat-backup-mysql/"/>
+    <id>http://falconchen.github.io/2014/06/20/windows-bat-backup-mysql/</id>
+    <published>2014-06-20T02:04:03.000Z</published>
+    <updated>2014-06-20T02:09:44.000Z</updated>
+    <content type="html"><![CDATA[<p>服务器使用windows2008rc，用批处理写一个mysql的备份脚本，放到Windows计划任务，每天零时执行。</p>
+<ul>
+<li>使用mysql自带的 <code>mysqldump</code> 命令备份整个数据库</li>
+<li>使用好压的命令行压缩</li>
+<li>保留一周备份文件</li>
+<li>写入日志</li>
+</ul>
+<p>详细代码如下：</p>
+<pre><code><span class="variable">@echo</span> off
+set <span class="string">"ymd=%date:~,4%%date:~5,2%%date:~8,2%"</span>
+set storeDir=<span class="string">"F:\databases\%ymd%"</span>
+set /<span class="constant">A</span> keepFromDay=%ymd<span class="string">%-7
+
+md %storeDir% 2&gt;nul
+"E:\xampp\mysql\bin\mysqldump.exe"  -</span>u用户名 -p密码 --lock-tables   --all-databases &gt; %storeDir%\db.sql <span class="number">2</span>&gt;nul
+echo <span class="constant">Haozip</span> loading...
+cd /d %storeDir%
+
+<span class="string">"C:\Program Files\HaoZip\HaoZipC.exe"</span> a -tzip db.sql.zip db.sql
+del /q db.sql
+
+rem del <span class="number">7</span> days backup files
+<span class="variable">@echo</span> off
+
+<span class="keyword">for</span> /f <span class="string">%%i in ('dir /b ..\') do (
+   if %</span>%i <span class="constant">LSS</span> %keepFromDay%   (
+    echo deleting <span class="string">%%i 
+    rd /s /q "F:\databases\%%</span>i<span class="string">" 
+   )    
+)
+
+echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
+</code></pre>]]></content>
+    
+    
+      <category term="mysql" scheme="http://falconchen.github.io/tags/mysql/"/>
+    
+      <category term="bat" scheme="http://falconchen.github.io/tags/bat/"/>
+    
+      <category term="windows" scheme="http://falconchen.github.io/tags/windows/"/>
+    
+      <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[]]></title>
+    <link href="http://falconchen.github.io/2014/06/13/file-system-broken-reasons/"/>
+    <id>http://falconchen.github.io/2014/06/13/file-system-broken-reasons/</id>
+    <published>2014-06-13T06:47:30.000Z</published>
+    <updated>2014-06-13T07:03:10.000Z</updated>
+    <content type="html"><![CDATA[<p>原因：</p>
+<p>关于昨天服务器文件系统损坏的原因，我怀疑可能是这样的，上周给服务器装了个ngx_pagespeed，一个用来提高网站性能的nginx模块，它运行时产生大量的cache文件（按默认设置放在系统盘的/var/目录上）。网站高访问量时会对cache文件进行高速读写，可能这样导致系统盘的文件系统损坏。</p>
+<p>现在新服务器上把这些cache放在单独的临时文件系统分区，跟系统盘分离了。</p>
+]]></content>
+    
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Firefox搜索栏修改]]></title>
@@ -105,8 +170,66 @@
     <link href="http://falconchen.github.io/2014/06/11/partyline-optimize-advices/"/>
     <id>http://falconchen.github.io/2014/06/11/partyline-optimize-advices/</id>
     <published>2014-06-11T07:15:07.000Z</published>
-    <updated>2014-06-11T07:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="_"> </h3>
+    <updated>2014-06-19T10:28:53.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="安装浏览器扩展">安装浏览器扩展</h3>
+<p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
+<p>下载处理后的 </p>
+<h3 id="图片、css、js静态资源缓存时间">图片、css、js静态资源缓存时间</h3>
+<p>除对缓存有特殊要求的资源外， 资源的<code>缓存时间</code>使用expires响应头， 设置为一周以上，一年以下</p>
+<h3 id="内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）">内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）</h3>
+<p>identify and inline the CSS necessary for rendering the above-the-fold content and defer loading the remaining styles until after the above-the-fold content.</p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+      <span class="class">.blue</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;<span class="rule">}</span></span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"blue"</span>&gt;</span>
+      Hello, world!
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      <span class="keyword">var</span> cb = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="keyword">var</span> l = document.createElement(<span class="string">'link'</span>); l.rel = <span class="string">'stylesheet'</span>;
+        l.href = <span class="string">'small.css'</span>;
+        <span class="keyword">var</span> h = document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]; h.parentNode.insertBefore(l, h);
+      };
+      <span class="keyword">var</span> raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      <span class="keyword">if</span> (raf) raf(cb);
+      <span class="keyword">else</span> window.addEventListener(<span class="string">'load'</span>, cb);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>优化css推送：<br><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery" target="_blank">https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery</a></p>
+<h3 id="压缩html,css,js">压缩html,css,js</h3>
+<p><a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">https://developers.google.com/speed/docs/insights/MinifyResources</a></p>
+<h3 id="图片压缩">图片压缩</h3>
+<ul>
+<li>图片格式选择：<code>png</code>格式各方面优于<code>gif</code> , 尽量使用<code>png</code>替代<code>gif</code>格式的图片,仅对简单图像，如小于10x10像素或少于三种颜色的图像。对照片类图片使用<code>jpg</code>格式，不要使用<code>bmp</code>或者<code>tiff</code>格式。</li>
+</ul>
+<ul>
+<li><p>使用<code>jpegtran</code>压缩<code>jpg</code></p>
+<ul>
+<li><a href="http://jpegclub.org/jpegtran/" target="_blank">文档和下载</a></li>
+<li><a href="http://blog.csdn.net/lan861698789/article/details/7738381" target="_blank">如何使用jpegtran - 蓝天白云 - 博客频道 - CSDN.NET</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>使用 <code>optipng</code> 压缩 <code>png</code></p>
+<ul>
+<li><a href="http://optipng.sourceforge.net/" target="_blank">主页</a> </li>
+<li><a href="http://optipng.sourceforge.net/optipng-0.7.5.man.pdf" target="_blank">手册（PDF格式）</a></li>
+</ul>
+</li>
+</ul>
+<p>需要动态处理的图片如新闻图片，可以使用以上工具在程序内调用，如上传图片成功后，使用代码调用外部程序处理。如php中可使用<code>exec</code>，<code>system</code>等函数</p>
+<p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
+<hr>
+<h3 id="另一种方案">另一种方案</h3>
+<p>在源服务器跟squid之间加入一层，放入一个nginx（已安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。</p>
+<p>ngx_pagespeed能完成大部分优化</p>
 ]]></content>
     
     
@@ -933,42 +1056,6 @@ hexo d
   </entry>
   
   <entry>
-    <title><![CDATA[nodejs笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
-    <published>2014-05-23T02:06:04.000Z</published>
-    <updated>2014-05-26T06:41:37.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Java学习笔记]]></title>
     <link href="http://falconchen.github.io/2014/05/23/java%E7%AC%94%E8%AE%B0/"/>
     <id>http://falconchen.github.io/2014/05/23/java笔记/</id>
@@ -1165,6 +1252,42 @@ int x = <span class="built_in">Integer</span>.parseInt(s);
       <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="学习笔记" scheme="http://falconchen.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[nodejs笔记]]></title>
+    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
+    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
+    <published>2014-05-23T02:06:04.000Z</published>
+    <updated>2014-05-26T06:41:37.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
+<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<ol>
+<li><p>通过<code>config</code>命令</p>
+<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
+ npm info underscore （如果上面配置正确这个命令会有字符串response）
+</code></pre></li>
+<li><p>命令行指定</p>
+<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
+</code></pre></li>
+<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
+<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
+</code></pre></li>
+</ol>
+<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
+<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
+<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
+]]></content>
+    
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
+    
+      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
+    
+      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     
   </entry>
   

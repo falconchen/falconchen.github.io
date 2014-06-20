@@ -65,6 +65,71 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/06/20/windows-bat-backup-mysql/">Windows批处理备份mysql</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-06-20T02:04:03.000Z"><a href="/2014/06/20/windows-bat-backup-mysql/">2014年06月20日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>服务器使用windows2008rc，用批处理写一个mysql的备份脚本，放到Windows计划任务，每天零时执行。</p>
+<ul>
+<li>使用mysql自带的 <code>mysqldump</code> 命令备份整个数据库</li>
+<li>使用好压的命令行压缩</li>
+<li>保留一周备份文件</li>
+<li>写入日志</li>
+</ul>
+<p>详细代码如下：</p>
+<pre><code><span class="variable">@echo</span> off
+set <span class="string">"ymd=%date:~,4%%date:~5,2%%date:~8,2%"</span>
+set storeDir=<span class="string">"F:\databases\%ymd%"</span>
+set /<span class="constant">A</span> keepFromDay=%ymd<span class="string">%-7
+
+md %storeDir% 2&gt;nul
+"E:\xampp\mysql\bin\mysqldump.exe"  -</span>u用户名 -p密码 --lock-tables   --all-databases &gt; %storeDir%\db.sql <span class="number">2</span>&gt;nul
+echo <span class="constant">Haozip</span> loading...
+cd /d %storeDir%
+
+<span class="string">"C:\Program Files\HaoZip\HaoZipC.exe"</span> a -tzip db.sql.zip db.sql
+del /q db.sql
+
+rem del <span class="number">7</span> days backup files
+<span class="variable">@echo</span> off
+
+<span class="keyword">for</span> /f <span class="string">%%i in ('dir /b ..\') do (
+   if %</span>%i <span class="constant">LSS</span> %keepFromDay%   (
+    echo deleting <span class="string">%%i 
+    rd /s /q "F:\databases\%%</span>i<span class="string">" 
+   )    
+)
+
+echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/06/10/windows-ftp-bat/">windows下ftp自动更新</a></h1>
   
 
@@ -118,6 +183,14 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/06/20/windows-bat-backup-mysql/">Windows批处理备份mysql</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/13/file-system-broken-reasons/"></a>
+      </li>
+    
+      <li>
         <a href="/2014/06/13/firefox-search-bar-modify/">Firefox搜索栏修改</a>
       </li>
     
@@ -127,14 +200,6 @@
     
       <li>
         <a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a>
-      </li>
-    
-      <li>
-        <a href="/2014/06/10/windows-ftp-bat/">windows下ftp自动更新</a>
-      </li>
-    
-      <li>
-        <a href="/2014/06/09/fuck-baidu-index/">诡异的百度索引查询</a>
       </li>
     
   </ul>
@@ -160,7 +225,7 @@
   
     <li><a href="/categories/微信开发/">微信开发</a><small>1</small></li>
   
-    <li><a href="/categories/服务器/">服务器</a><small>5</small></li>
+    <li><a href="/categories/服务器/">服务器</a><small>6</small></li>
   
     <li><a href="/categories/转载/">转载</a><small>1</small></li>
   
@@ -177,6 +242,8 @@
   
     <li><a href="/tags/IDE/">IDE</a><small>1</small></li>
   
+    <li><a href="/tags/bat/">bat</a><small>1</small></li>
+  
     <li><a href="/tags/css/">css</a><small>1</small></li>
   
     <li><a href="/tags/firefox/">firefox</a><small>1</small></li>
@@ -192,6 +259,8 @@
     <li><a href="/tags/liteIde/">liteIde</a><small>1</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/tags/mysql/">mysql</a><small>1</small></li>
   
     <li><a href="/tags/nginx/">nginx</a><small>3</small></li>
   
@@ -217,7 +286,7 @@
   
     <li><a href="/tags/wget/">wget</a><small>1</small></li>
   
-    <li><a href="/tags/windows/">windows</a><small>1</small></li>
+    <li><a href="/tags/windows/">windows</a><small>2</small></li>
   
     <li><a href="/tags/业界/">业界</a><small>1</small></li>
   
