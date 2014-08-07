@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-06-20T02:19:31.673Z</updated>
+  <updated>2014-08-07T05:40:51.546Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -13,6 +13,190 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[]]></title>
+    <link href="http://falconchen.github.io/2014/08/04/eclipse-marketplace/"/>
+    <id>http://falconchen.github.io/2014/08/04/eclipse-marketplace/</id>
+    <published>2014-08-04T03:38:39.000Z</published>
+    <updated>2014-08-04T03:49:12.000Z</updated>
+    <content type="html"><![CDATA[<p>title: ‘Eclipse Marketplace 安装和使用’<br>date: 2014-08-04 11:38:39<br>category:开发工具<br>tags:eclipse,marketplace,indigo</p>
+<hr>
+<p>eclipse marketplace当前使用<code>Eclipse</code> indigo</p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[]]></title>
+    <link href="http://falconchen.github.io/2014/07/23/jqmobi%E5%92%8CphoneGap/"/>
+    <id>http://falconchen.github.io/2014/07/23/jqmobi和phoneGap/</id>
+    <published>2014-07-23T03:00:23.000Z</published>
+    <updated>2014-07-23T03:36:07.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="jqMobi��Դ">jqMobi��Դ</h3>
+<ul>
+<li><p>������Ƶ<br><a href="http://bbs.phonegap100.com/thread-361-1-1.html" target="_blank">http://bbs.phonegap100.com/thread-361-1-1.html</a></p>
+</li>
+<li><p>�����ĵ�: ��������<br><a href="http://app-framework-software.intel.com/documentation.php#intro/quickstart" target="_blank">http://app-framework-software.intel.com/documentation.php#intro/quickstart</a></p>
+</li>
+<li><p>github��Դ�� appframework2.1<br><a href="https://github.com/01org/appframework/tree/2.1devtf" target="_blank">https://github.com/01org/appframework/tree/2.1devtf</a></p>
+</li>
+<li><p>appframework��html5, web app����<br><a href="http://blog.csdn.net/dawanganban/article/details/17591373" target="_blank">http://blog.csdn.net/dawanganban/article/details/17591373</a></p>
+</li>
+</ul>
+<h3 id="phoneGap��Դ">phoneGap��Դ</h3>
+<ul>
+<li><p>��װ 2.9��3.4<br><a href="http://www.phonegap100.com/article-101-1.html" target="_blank">http://www.phonegap100.com/article-101-1.html</a></p>
+</li>
+<li><p>����<br><a href="http://www.phonegap100.com/article-226-1.html" target="_blank">http://www.phonegap100.com/article-226-1.html</a></p>
+</li>
+<li><p>PhoneGapӦ�ÿ����Բߣ�����ͨ��ƻ�����ˣ�<br><a href="http://www.phonegap100.com/article-229-1.html" target="_blank">http://www.phonegap100.com/article-229-1.html</a></p>
+</li>
+<li><p>phonegapʵս��Ƶ�̳���������<br><a href="http://bbs.phonegap100.com/thread-296-1-1.html" target="_blank">http://bbs.phonegap100.com/thread-296-1-1.html</a></p>
+</li>
+</ul>
+<h3 id="Android">Android</h3>
+<ul>
+<li>��װADT<br><a href="http://developer.android.com/sdk/installing/installing-adt.html" target="_blank">http://developer.android.com/sdk/installing/installing-adt.html</a></li>
+</ul>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[]]></title>
+    <link href="http://falconchen.github.io/2014/07/21/laravel-study/"/>
+    <id>http://falconchen.github.io/2014/07/21/laravel-study/</id>
+    <published>2014-07-21T02:22:45.000Z</published>
+    <updated>2014-07-21T05:48:24.000Z</updated>
+    <content type="html"><![CDATA[<p>title: ‘laravel 笔记’<br>date: 2014-07-21 10:22:45<br>category: PHP<br>tags:[PHP,laravel]</p>
+<hr>
+<h3 id="安装composer">安装composer</h3>
+<p><a href="https://getcomposer.org/doc/00-intro.md" target="_blank">https://getcomposer.org/doc/00-intro.md</a></p>
+<p>在<code>windows</code>下可直接使用 <a href="https://getcomposer.org/Composer-Setup.exe" target="_blank">Windows installer</a>安装</p>
+<h3 id="安装laravel">安装laravel</h3>
+<p>下载 <a href="http://laravel.com/laravel.phar" target="_blank">Laravel installer PHAR archive</a></p>
+<p>windows下可新建一个laravel文件夹，将laravel.phar放入该目录，在目录新建一个文件laravel.bat，写入以下内容:</p>
+<pre><code><span class="variable">@php</span> <span class="string">"%~dp0laravel.phar"</span> <span class="variable">%*</span>
+</code></pre><p>最后将该目录放入系统环境变量%path%即可。</p>
+<p>运行<br><img src="http://i.imgur.com/AuhcXWX.jpg" alt="运行lavaral"></p>
+<p>创建项目</p>
+<pre><code>laravel <span class="keyword">new</span> weblog
+</code></pre><p>等待一段时间后会在当前目录新建一个weblog的文件夹，目录结构如下：</p>
+<p>├─app<br>│  ├─commands<br>│  ├─config<br>│  │  ├─local<br>│  │  ├─packages<br>│  │  └─testing<br>│  ├─controllers<br>│  ├─database<br>│  │  ├─migrations<br>│  │  └─seeds<br>│  ├─lang<br>│  │  └─en<br>│  ├─models<br>│  ├─start<br>│  ├─storage<br>│  │  ├─cache<br>│  │  ├─logs<br>│  │  ├─meta<br>│  │  ├─sessions<br>│  │  └─views<br>│  ├─tests<br>│  └─views<br>│      └─emails<br>│          └─auth<br>├─bootstrap<br>├─public<br>│  └─packages<br>└─vendor<br>    ├─bin<br>    ├─classpreloader<br>    │  └─classpreloader<br>    │      └─src<br>    │          └─ClassPreloader<br>    │              ├─Command<br>    │              └─Parser<br>    ├─composer<br>    ├─d11wtq<br>    │  └─boris<br>    │      ├─bin<br>    │      └─lib<br>    │          └─Boris<br>    ├─filp<br>    │  └─whoops<br>    │      ├─docs<br>    │      ├─examples<br>    │      ├─src<br>    │      │  ├─deprecated<br>    │      │  │  └─Zend<br>    │      │  └─Whoops<br>    │      │      ├─Exception<br>    │      │      ├─Handler<br>    │      │      ├─Provider<br>    │      │      │  ├─Phalcon<br>    │      │      │  └─Silex<br>    │      │      ├─Resources<br>    │      │      │  ├─css<br>    │      │      │  ├─js<br>    │      │      │  └─views<br>    │      │      └─Util<br>    │      └─tests<br>    │          ├─deprecated<br>    │          │  └─Zend<br>    │          ├─fixtures<br>    │          └─Whoops<br>    │              ├─Exception<br>    │              ├─Handler<br>    │              └─Util<br>    ├─ircmaxell<br>    │  └─password-compat<br>    │      ├─lib<br>    │      └─test<br>    │          └─Unit<br>    ├─jeremeamia<br>    │  └─SuperClosure<br>    │      ├─demo<br>    │      ├─src<br>    │      │  └─Jeremeamia<br>    │      │      └─SuperClosure<br>    │      │          └─Visitor<br>    │      └─tests<br>    │          └─Jeremeamia<br>    │              └─SuperClosure<br>    │                  └─Test<br>    │                      └─Visitor<br>    ├─laravel<br>    │  └─framework<br>    │      └─src<br>    │          └─Illuminate<br>    │              ├─Auth<br>    │              │  ├─Console<br>    │              │  │  └─stubs<br>    │              │  └─Reminders<br>    │              ├─Cache<br>    │              │  └─Console<br>    │              ├─Config<br>    │              ├─Console<br>    │              ├─Container<br>    │              ├─Cookie<br>    │              ├─Database<br>    │              │  ├─Capsule<br>    │              │  ├─Connectors<br>    │              │  ├─Console<br>    │              │  │  └─Migrations<br>    │              │  ├─Eloquent<br>    │              │  │  └─Relations<br>    │              │  ├─Migrations<br>    │              │  │  └─stubs<br>    │              │  ├─Query<br>    │              │  │  ├─Grammars<br>    │              │  │  └─Processors<br>    │              │  └─Schema<br>    │              │      └─Grammars<br>    │              ├─Encryption<br>    │              ├─Events<br>    │              ├─Exception<br>    │              │  └─resources<br>    │              ├─Filesystem<br>    │              ├─Foundation<br>    │              │  ├─Console<br>    │              │  │  ├─Optimize<br>    │              │  │  └─stubs<br>    │              │  ├─Providers<br>    │              │  └─Testing<br>    │              ├─Hashing<br>    │              ├─Html<br>    │              ├─Http<br>    │              ├─Log<br>    │              ├─Mail<br>    │              │  └─Transport<br>    │              ├─Pagination<br>    │              │  └─views<br>    │              ├─Queue<br>    │              │  ├─Capsule<br>    │              │  ├─Connectors<br>    │              │  ├─Console<br>    │              │  │  └─stubs<br>    │              │  ├─Failed<br>    │              │  └─Jobs<br>    │              ├─Redis<br>    │              ├─Remote<br>    │              ├─Routing<br>    │              │  ├─Console<br>    │              │  ├─Generators<br>    │              │  │  └─stubs<br>    │              │  └─Matching<br>    │              ├─Session<br>    │              │  └─Console<br>    │              │      └─stubs<br>    │              ├─Support<br>    │              │  ├─Contracts<br>    │              │  ├─Facades<br>    │              │  └─Traits<br>    │              ├─Translation<br>    │              ├─Validation<br>    │              ├─View<br>    │              │  ├─Compilers<br>    │              │  └─Engines<br>    │              └─Workbench<br>    │                  ├─Console<br>    │                  └─stubs<br>    ├─monolog<br>    │  └─monolog<br>    │      ├─doc<br>    │      ├─src<br>    │      │  └─Monolog<br>    │      │      ├─Formatter<br>    │      │      ├─Handler<br>    │      │      │  ├─FingersCrossed<br>    │      │      │  └─SyslogUdp<br>    │      │      └─Processor<br>    │      └─tests<br>    │          └─Monolog<br>    │              ├─Formatter<br>    │              ├─Functional<br>    │              │  └─Handler<br>    │              ├─Handler<br>    │              │  └─Fixtures<br>    │              └─Processor<br>    ├─nesbot<br>    │  └─carbon<br>    │      ├─src<br>    │      │  └─Carbon<br>    │      └─tests<br>    ├─nikic<br>    │  └─php-parser<br>    │      ├─doc<br>    │      │  └─component<br>    │      ├─grammar<br>    │      ├─lib<br>    │      │  └─PHPParser<br>    │      │      ├─Builder<br>    │      │      ├─Comment<br>    │      │      ├─Lexer<br>    │      │      ├─Node<br>    │      │      │  ├─Expr<br>    │      │      │  │  └─Cast<br>    │      │      │  ├─Name<br>    │      │      │  ├─Scalar<br>    │      │      │  └─Stmt<br>    │      │      │      └─TraitUseAdaptation<br>    │      │      ├─NodeVisitor<br>    │      │      ├─PrettyPrinter<br>    │      │      ├─Serializer<br>    │      │      └─Unserializer<br>    │      ├─test<br>    │      │  ├─code<br>    │      │  │  ├─parser<br>    │      │  │  │  ├─expr<br>    │      │  │  │  │  └─fetchAndCall<br>    │      │  │  │  ├─scalar<br>    │      │  │  │  └─stmt<br>    │      │  │  │      ├─class<br>    │      │  │  │      ├─function<br>    │      │  │  │      ├─loop<br>    │      │  │  │      └─namespace<br>    │      │  │  └─prettyPrinter<br>    │      │  └─PHPParser<br>    │      │      └─Tests<br>    │      │          ├─Builder<br>    │      │          ├─Lexer<br>    │      │          ├─Node<br>    │      │          │  ├─Scalar<br>    │      │          │  └─Stmt<br>    │      │          ├─NodeVisitor<br>    │      │          ├─Serializer<br>    │      │          └─Unserializer<br>    │      └─test_old<br>    ├─patchwork<br>    │  └─utf8<br>    │      └─class<br>    │          └─Patchwork<br>    │              ├─PHP<br>    │              │  └─Shim<br>    │              │      ├─charset<br>    │              │      └─unidata<br>    │              └─Utf8<br>    │                  ├─Bootup<br>    │                  └─data<br>    ├─phpseclib<br>    │  └─phpseclib<br>    │      ├─build<br>    │      ├─phpseclib<br>    │      │  ├─Crypt<br>    │      │  ├─File<br>    │      │  ├─Math<br>    │      │  ├─Net<br>    │      │  │  └─SFTP<br>    │      │  └─System<br>    │      │      └─SSH<br>    │      ├─tests<br>    │      │  ├─Functional<br>    │      │  │  └─Net<br>    │      │  └─Unit<br>    │      │      ├─Crypt<br>    │      │      │  ├─AES<br>    │      │      │  ├─Hash<br>    │      │      │  └─RSA<br>    │      │      ├─File<br>    │      │      │  ├─ASN1<br>    │      │      │  └─X509<br>    │      │      ├─Math<br>    │      │      │  └─BigInteger<br>    │      │      └─Net<br>    │      └─travis<br>    ├─predis<br>    │  └─predis<br>    │      ├─bin<br>    │      ├─examples<br>    │      ├─lib<br>    │      │  └─Predis<br>    │      │      ├─Cluster<br>    │      │      │  ├─Distribution<br>    │      │      │  └─Hash<br>    │      │      ├─Collection<br>    │      │      │  └─Iterator<br>    │      │      ├─Command<br>    │      │      │  └─Processor<br>    │      │      ├─Connection<br>    │      │      ├─Iterator<br>    │      │      ├─Monitor<br>    │      │      ├─Option<br>    │      │      ├─Pipeline<br>    │      │      ├─Profile<br>    │      │      ├─Protocol<br>    │      │      │  └─Text<br>    │      │      ├─PubSub<br>    │      │      ├─Replication<br>    │      │      ├─Session<br>    │      │      └─Transaction<br>    │      └─tests<br>    │          ├─PHPUnit<br>    │          └─Predis<br>    │              ├─Cluster<br>    │              │  └─Distribution<br>    │              ├─Collection<br>    │              │  └─Iterator<br>    │              ├─Command<br>    │              │  └─Processor<br>    │              ├─Connection<br>    │              ├─Iterator<br>    │              ├─Monitor<br>    │              ├─Option<br>    │              ├─Pipeline<br>    │              ├─Profile<br>    │              ├─Protocol<br>    │              │  └─Text<br>    │              ├─PubSub<br>    │              ├─Replication<br>    │              └─Transaction<br>    ├─psr<br>    │  └─log<br>    │      └─Psr<br>    │          └─Log<br>    │              └─Test<br>    ├─stack<br>    │  └─builder<br>    │      ├─src<br>    │      │  └─Stack<br>    │      └─tests<br>    │          ├─functional<br>    │          └─unit<br>    │              └─Stack<br>    ├─swiftmailer<br>    │  └─swiftmailer<br>    │      ├─doc<br>    │      │  └─uml<br>    │      ├─lib<br>    │      │  ├─classes<br>    │      │  │  └─Swift<br>    │      │  │      ├─ByteStream<br>    │      │  │      ├─CharacterReader<br>    │      │  │      ├─CharacterReaderFactory<br>    │      │  │      ├─CharacterStream<br>    │      │  │      ├─Encoder<br>    │      │  │      ├─Events<br>    │      │  │      ├─KeyCache<br>    │      │  │      ├─Mailer<br>    │      │  │      ├─Mime<br>    │      │  │      │  ├─ContentEncoder<br>    │      │  │      │  ├─HeaderEncoder<br>    │      │  │      │  └─Headers<br>    │      │  │      ├─Plugins<br>    │      │  │      │  ├─Decorator<br>    │      │  │      │  ├─Loggers<br>    │      │  │      │  ├─Pop<br>    │      │  │      │  └─Reporters<br>    │      │  │      ├─Signers<br>    │      │  │      ├─StreamFilters<br>    │      │  │      └─Transport<br>    │      │  │          └─Esmtp<br>    │      │  │              └─Auth<br>    │      │  └─dependency_maps<br>    │      ├─notes<br>    │      │  └─rfc<br>    │      └─tests<br>    │          ├─acceptance<br>    │          │  └─Swift<br>    │          │      ├─ByteStream<br>    │          │      ├─CharacterReaderFactory<br>    │          │      ├─Encoder<br>    │          │      ├─KeyCache<br>    │          │      ├─Mime<br>    │          │      │  ├─ContentEncoder<br>    │          │      │  └─HeaderEncoder<br>    │          │      └─Transport<br>    │          │          └─StreamBuffer<br>    │          ├─bug<br>    │          │  └─Swift<br>    │          ├─fixtures<br>    │          ├─smoke<br>    │          │  └─Swift<br>    │          │      └─Smoke<br>    │          ├─unit<br>    │          │  └─Swift<br>    │          │      ├─ByteStream<br>    │          │      ├─CharacterReader<br>    │          │      ├─CharacterStream<br>    │          │      ├─Encoder<br>    │          │      ├─Events<br>    │          │      ├─KeyCache<br>    │          │      ├─Mailer<br>    │          │      ├─Mime<br>    │          │      │  ├─ContentEncoder<br>    │          │      │  ├─HeaderEncoder<br>    │          │      │  └─Headers<br>    │          │      ├─Plugins<br>    │          │      │  ├─Loggers<br>    │          │      │  └─Reporters<br>    │          │      ├─Signers<br>    │          │      ├─StreamFilters<br>    │          │      └─Transport<br>    │          │          ├─Esmtp<br>    │          │          │  └─Auth<br>    │          │          └─EsmtpTransport<br>    │          └─_samples<br>    │              ├─charsets<br>    │              │  ├─iso-2022-jp<br>    │              │  ├─iso-8859-1<br>    │              │  └─utf-8<br>    │              ├─dkim<br>    │              ├─files<br>    │              └─smime<br>    └─symfony<br>        ├─browser-kit<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─BrowserKit<br>        │              └─Tests<br>        ├─console<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Console<br>        │              ├─Command<br>        │              ├─Descriptor<br>        │              ├─Event<br>        │              ├─Formatter<br>        │              ├─Helper<br>        │              ├─Input<br>        │              ├─Logger<br>        │              ├─Output<br>        │              ├─Question<br>        │              ├─Resources<br>        │              │  └─bin<br>        │              ├─Tester<br>        │              └─Tests<br>        │                  ├─Command<br>        │                  ├─Descriptor<br>        │                  ├─Fixtures<br>        │                  ├─Formatter<br>        │                  ├─Helper<br>        │                  ├─Input<br>        │                  ├─Logger<br>        │                  ├─Output<br>        │                  └─Tester<br>        ├─css-selector<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─CssSelector<br>        │              ├─Exception<br>        │              ├─Node<br>        │              ├─Parser<br>        │              │  ├─Handler<br>        │              │  ├─Shortcut<br>        │              │  └─Tokenizer<br>        │              ├─Tests<br>        │              │  ├─Node<br>        │              │  ├─Parser<br>        │              │  │  ├─Handler<br>        │              │  │  └─Shortcut<br>        │              │  └─XPath<br>        │              │      └─Fixtures<br>        │              └─XPath<br>        │                  └─Extension<br>        ├─debug<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Debug<br>        │              ├─Exception<br>        │              ├─FatalErrorHandler<br>        │              └─Tests<br>        │                  ├─Exception<br>        │                  ├─FatalErrorHandler<br>        │                  └─Fixtures<br>        │                      └─psr4<br>        ├─dom-crawler<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─DomCrawler<br>        │              ├─Field<br>        │              └─Tests<br>        │                  ├─Field<br>        │                  └─Fixtures<br>        ├─event-dispatcher<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─EventDispatcher<br>        │              ├─Debug<br>        │              ├─DependencyInjection<br>        │              └─Tests<br>        │                  ├─Debug<br>        │                  └─DependencyInjection<br>        ├─filesystem<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Filesystem<br>        │              ├─Exception<br>        │              └─Tests<br>        ├─finder<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Finder<br>        │              ├─Adapter<br>        │              ├─Comparator<br>        │              ├─Exception<br>        │              ├─Expression<br>        │              ├─Iterator<br>        │              ├─Shell<br>        │              └─Tests<br>        │                  ├─Comparator<br>        │                  ├─Expression<br>        │                  ├─FakeAdapter<br>        │                  ├─Fixtures<br>        │                  │  ├─A<br>        │                  │  │  └─B<br>        │                  │  │      └─C<br>        │                  │  ├─copy<br>        │                  │  │  └─A<br>        │                  │  │      └─B<br>        │                  │  │          └─C<br>        │                  │  ├─one<br>        │                  │  │  └─b<br>        │                  │  └─with space<br>        │                  └─Iterator<br>        ├─http-foundation<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─HttpFoundation<br>        │              ├─File<br>        │              │  ├─Exception<br>        │              │  └─MimeType<br>        │              ├─Resources<br>        │              │  └─stubs<br>        │              ├─Session<br>        │              │  ├─Attribute<br>        │              │  ├─Flash<br>        │              │  └─Storage<br>        │              │      ├─Handler<br>        │              │      └─Proxy<br>        │              └─Tests<br>        │                  ├─File<br>        │                  │  ├─Fixtures<br>        │                  │  │  └─directory<br>        │                  │  └─MimeType<br>        │                  └─Session<br>        │                      ├─Attribute<br>        │                      ├─Flash<br>        │                      └─Storage<br>        │                          ├─Handler<br>        │                          └─Proxy<br>        ├─http-kernel<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─HttpKernel<br>        │              ├─Bundle<br>        │              ├─CacheClearer<br>        │              ├─CacheWarmer<br>        │              ├─Config<br>        │              ├─Controller<br>        │              ├─DataCollector<br>        │              │  └─Util<br>        │              ├─Debug<br>        │              ├─DependencyInjection<br>        │              ├─Event<br>        │              ├─EventListener<br>        │              ├─Exception<br>        │              ├─Fragment<br>        │              ├─HttpCache<br>        │              ├─Log<br>        │              ├─Profiler<br>        │              └─Tests<br>        │                  ├─Bundle<br>        │                  ├─CacheClearer<br>        │                  ├─CacheWarmer<br>        │                  ├─Config<br>        │                  ├─Controller<br>        │                  ├─DataCollector<br>        │                  ├─Debug<br>        │                  ├─DependencyInjection<br>        │                  ├─EventListener<br>        │                  ├─Fixtures<br>        │                  │  ├─BaseBundle<br>        │                  │  │  └─Resources<br>        │                  │  ├─Bundle1Bundle<br>        │                  │  │  └─Resources<br>        │                  │  ├─Bundle2Bundle<br>        │                  │  ├─ChildBundle<br>        │                  │  │  └─Resources<br>        │                  │  ├─ExtensionAbsentBundle<br>        │                  │  ├─ExtensionLoadedBundle<br>        │                  │  │  └─DependencyInjection<br>        │                  │  ├─ExtensionPresentBundle<br>        │                  │  │  ├─Command<br>        │                  │  │  └─DependencyInjection<br>        │                  │  └─Resources<br>        │                  │      ├─BaseBundle<br>        │                  │      ├─Bundle1Bundle<br>        │                  │      ├─ChildBundle<br>        │                  │      └─FooBundle<br>        │                  ├─Fragment<br>        │                  ├─HttpCache<br>        │                  └─Profiler<br>        │                      └─Mock<br>        ├─process<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Process<br>        │              ├─Exception<br>        │              └─Tests<br>        ├─routing<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Routing<br>        │              ├─Annotation<br>        │              ├─Exception<br>        │              ├─Generator<br>        │              │  └─Dumper<br>        │              ├─Loader<br>        │              │  └─schema<br>        │              │      └─routing<br>        │              ├─Matcher<br>        │              │  └─Dumper<br>        │              └─Tests<br>        │                  ├─Annotation<br>        │                  ├─Fixtures<br>        │                  │  ├─AnnotatedClasses<br>        │                  │  └─dumper<br>        │                  ├─Generator<br>        │                  │  └─Dumper<br>        │                  ├─Loader<br>        │                  └─Matcher<br>        │                      └─Dumper<br>        ├─security-core<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Security<br>        │              └─Core<br>        │                  ├─Authentication<br>        │                  │  ├─Provider<br>        │                  │  ├─RememberMe<br>        │                  │  └─Token<br>        │                  ├─Authorization<br>        │                  │  └─Voter<br>        │                  ├─Encoder<br>        │                  ├─Event<br>        │                  ├─Exception<br>        │                  ├─Resources<br>        │                  │  └─translations<br>        │                  ├─Role<br>        │                  ├─Tests<br>        │                  │  ├─Authentication<br>        │                  │  │  ├─Provider<br>        │                  │  │  ├─RememberMe<br>        │                  │  │  └─Token<br>        │                  │  ├─Authorization<br>        │                  │  │  └─Voter<br>        │                  │  ├─Encoder<br>        │                  │  ├─Role<br>        │                  │  ├─User<br>        │                  │  ├─Util<br>        │                  │  └─Validator<br>        │                  │      └─Constraints<br>        │                  ├─User<br>        │                  ├─Util<br>        │                  └─Validator<br>        │                      └─Constraints<br>        └─translation<br>            └─Symfony<br>                └─Component<br>                    └─Translation<br>                        ├─Catalogue<br>                        ├─Dumper<br>                        ├─Exception<br>                        ├─Extractor<br>                        ├─Loader<br>                        │  └─schema<br>                        │      └─dic<br>                        │          └─xliff-core<br>                        ├─Tests<br>                        │  ├─Catalogue<br>                        │  ├─Dumper<br>                        │  ├─fixtures<br>                        │  │  └─resourcebundle<br>                        │  │      ├─corrupted<br>                        │  │      ├─dat<br>                        │  │      └─res<br>                        │  └─Loader<br>                        └─Writer<br>几个注意事项：</p>
+<ol>
+<li><p><code>app/storage</code>需要开启可写权限</p>
+</li>
+<li><p><code>php5.4</code>以上, 并且安装<code>MCrypt PHP 扩展</code>，对<code>php5.5</code>,部分系统需要手动安装php-json扩展</p>
+</li>
+<li><p>修改 <code>app/config/app.php</code> 部分配置，如timezone和locale,生产环境下app.debug不要使用true. </p>
+</li>
+<li><p>路径配置文件，<code>bootstrap/paths.php</code></p>
+</li>
+<li><p>laravel4 中需要打开<code>php_openssl</code>扩展,否则会报错。<br><a href="http://laravel.io/forum/04-18-2014-you-need-to-specify-a-file-path-to-store-the-seed" target="_blank">http://laravel.io/forum/04-18-2014-you-need-to-specify-a-file-path-to-store-the-seed</a></p>
+</li>
+</ol>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[partyline优化建议]]></title>
+    <link href="http://falconchen.github.io/2014/07/03/partyline-optimize-advices/"/>
+    <id>http://falconchen.github.io/2014/07/03/partyline-optimize-advices/</id>
+    <published>2014-07-03T00:00:00.000Z</published>
+    <updated>2014-07-03T03:41:42.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="安装浏览器扩展测试">安装浏览器扩展测试</h3>
+<p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
+<h3 id="图片、css、js静态资源缓存时间">图片、css、js静态资源缓存时间</h3>
+<p>除对缓存有特殊要求的资源外， 资源的<code>缓存时间</code>使用expires响应头， 设置为一周以上，一年以下</p>
+<h3 id="调整CSS结构加速首屏呈现速度">调整CSS结构加速首屏呈现速度</h3>
+<p>提取并内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）</p>
+<p>将需要在首屏加载时使用的样式内嵌在<code>&lt;style&gt;</code> 内，次要样式使用js加载，如：</p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+      <span class="class">.blue</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;<span class="rule">}</span></span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"blue"</span>&gt;</span>
+      Hello, world!
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      <span class="keyword">var</span> cb = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="keyword">var</span> l = document.createElement(<span class="string">'link'</span>); l.rel = <span class="string">'stylesheet'</span>;
+        l.href = <span class="string">'small.css'</span>;
+        <span class="keyword">var</span> h = document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]; h.parentNode.insertBefore(l, h);
+      };
+      <span class="keyword">var</span> raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      <span class="keyword">if</span> (raf) raf(cb);
+      <span class="keyword">else</span> window.addEventListener(<span class="string">'load'</span>, cb);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>减少首屏内容大小：<br><a href="https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent" target="_blank">https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent</a></p>
+<p>优化css推送：<br><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery" target="_blank">https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery</a></p>
+<h3 id="精简压缩html,css,js">精简压缩html,css,js</h3>
+<ul>
+<li>chrome扩展提供精简后的html</li>
+<li>css压缩可使用<a href="http://www.phpied.com/cssmin-js/" target="_blank">cssmin.js</a> 和<br><a href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI<br>Compressor</a></li>
+<li>js压缩可使用<a href="http://www.crockford.com/javascript/jsmin.html" target="_blank">JSMin</a>和<a href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI<br>Compressor</a></li>
+</ul>
+<p>参考：<a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">https://developers.google.com/speed/docs/insights/MinifyResources</a></p>
+<h3 id="图片压缩">图片压缩</h3>
+<ul>
+<li>图片格式选择：<code>png</code>格式各方面优于<code>gif</code> , 尽量使用<code>png</code>替代<code>gif</code>格式的图片,仅对简单图像，如小于10x10像素或少于三种颜色的图像。对照片类图片使用<code>jpg</code>格式，不要使用<code>bmp</code>或者<code>tiff</code>格式。</li>
+</ul>
+<ul>
+<li><p>使用<code>jpegtran</code>压缩<code>jpg</code></p>
+<ul>
+<li><a href="http://jpegclub.org/jpegtran/" target="_blank">文档和下载</a></li>
+<li><a href="http://blog.csdn.net/lan861698789/article/details/7738381" target="_blank">如何使用jpegtran - 蓝天白云 - 博客频道 - CSDN.NET</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>使用 <code>optipng</code> 压缩 <code>png</code></p>
+<ul>
+<li><a href="http://optipng.sourceforge.net/" target="_blank">主页</a> </li>
+<li><a href="http://optipng.sourceforge.net/optipng-0.7.5.man.pdf" target="_blank">手册（PDF格式）</a></li>
+</ul>
+</li>
+</ul>
+<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片,如果能找到使用编程语言存在精简压缩处理图片的类库或函数，请使用类库或函数处理更好。</p>
+<p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
+<hr>
+<h3 id="服务器架构方案,安装服务器模块自动优化">服务器架构方案,安装服务器模块自动优化</h3>
+<p>pagespeed有服务器自动优化模块，当前只支持nginx和apache。</p>
+<p>在源服务器跟squid之间加入一层(或者直接使用nginx或者apache做反向代理)，放入一个nginx（安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。缺点是占用部分服务器资源。响应时间可能略有增加。</p>
+<p>ngx_pagespeed能完成基础优化。这是测试站点得分，与设想架构不同的是，这是在squid外包装了nginx作为反向代理。测试服务器在北京，存取香港服务器速度很慢，因而响应时间一项得分表现不佳</p>
+<p><img src="http://i.imgur.com/nfVo6SV.jpg" alt=""></p>
+]]></content>
+    
+    
+      <category term="服务器" scheme="http://falconchen.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="前端" scheme="http://falconchen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[wordpress filter and action]]></title>
+    <link href="http://falconchen.github.io/2014/06/20/wordpress-filter-and-action/"/>
+    <id>http://falconchen.github.io/2014/06/20/wordpress-filter-and-action/</id>
+    <published>2014-06-20T07:38:09.000Z</published>
+    <updated>2014-06-20T07:38:09.000Z</updated>
+    <content type="html"><![CDATA[]]></content>
+    
+    
+  </entry>
   
   <entry>
     <title><![CDATA[文件系统损坏原因]]></title>
@@ -165,82 +349,6 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
       <category term="php-fpm" scheme="http://falconchen.github.io/tags/php-fpm/"/>
     
       <category term="php" scheme="http://falconchen.github.io/tags/php/"/>
-    
-      <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[partyline优化建议]]></title>
-    <link href="http://falconchen.github.io/2014/06/11/partyline-optimize-advices/"/>
-    <id>http://falconchen.github.io/2014/06/11/partyline-optimize-advices/</id>
-    <published>2014-06-11T07:15:07.000Z</published>
-    <updated>2014-06-20T02:15:05.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="安装浏览器扩展">安装浏览器扩展</h3>
-<p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
-<p>下载处理后的 </p>
-<h3 id="图片、css、js静态资源缓存时间">图片、css、js静态资源缓存时间</h3>
-<p>除对缓存有特殊要求的资源外， 资源的<code>缓存时间</code>使用expires响应头， 设置为一周以上，一年以下</p>
-<h3 id="内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）">内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）</h3>
-<p>identify and inline the CSS necessary for rendering the above-the-fold content and defer loading the remaining styles until after the above-the-fold content.</p>
-<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-      <span class="class">.blue</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;<span class="rule">}</span></span>
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"blue"</span>&gt;</span>
-      Hello, world!
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-      <span class="keyword">var</span> cb = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-        <span class="keyword">var</span> l = document.createElement(<span class="string">'link'</span>); l.rel = <span class="string">'stylesheet'</span>;
-        l.href = <span class="string">'small.css'</span>;
-        <span class="keyword">var</span> h = document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]; h.parentNode.insertBefore(l, h);
-      };
-      <span class="keyword">var</span> raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      <span class="keyword">if</span> (raf) raf(cb);
-      <span class="keyword">else</span> window.addEventListener(<span class="string">'load'</span>, cb);
-    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><p>优化css推送：<br><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery" target="_blank">https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery</a></p>
-<h3 id="压缩html,css,js">压缩html,css,js</h3>
-<p><a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">https://developers.google.com/speed/docs/insights/MinifyResources</a></p>
-<h3 id="图片压缩">图片压缩</h3>
-<ul>
-<li>图片格式选择：<code>png</code>格式各方面优于<code>gif</code> , 尽量使用<code>png</code>替代<code>gif</code>格式的图片,仅对简单图像，如小于10x10像素或少于三种颜色的图像。对照片类图片使用<code>jpg</code>格式，不要使用<code>bmp</code>或者<code>tiff</code>格式。</li>
-</ul>
-<ul>
-<li><p>使用<code>jpegtran</code>压缩<code>jpg</code></p>
-<ul>
-<li><a href="http://jpegclub.org/jpegtran/" target="_blank">文档和下载</a></li>
-<li><a href="http://blog.csdn.net/lan861698789/article/details/7738381" target="_blank">如何使用jpegtran - 蓝天白云 - 博客频道 - CSDN.NET</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>使用 <code>optipng</code> 压缩 <code>png</code></p>
-<ul>
-<li><a href="http://optipng.sourceforge.net/" target="_blank">主页</a> </li>
-<li><a href="http://optipng.sourceforge.net/optipng-0.7.5.man.pdf" target="_blank">手册（PDF格式）</a></li>
-</ul>
-</li>
-</ul>
-<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片</p>
-<p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
-<hr>
-<h3 id="另一种方案">另一种方案</h3>
-<p>在源服务器跟squid之间加入一层，放入一个nginx（已安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。</p>
-<p>ngx_pagespeed能完成大部分优化。</p>
-]]></content>
-    
-    
-      <category term="服务器" scheme="http://falconchen.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="前端" scheme="http://falconchen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="服务器" scheme="http://falconchen.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
@@ -1057,475 +1165,6 @@ hexo d
       <category term="404" scheme="http://falconchen.github.io/tags/404/"/>
     
       <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Java学习笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/java%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/23/java笔记/</id>
-    <published>2014-05-23T02:06:04.000Z</published>
-    <updated>2014-06-06T09:45:41.000Z</updated>
-    <content type="html"><![CDATA[<ul>
-<li>参考书目 </li>
-</ul>
-<h3 id="Head_First_Java">Head First Java</h3>
-<p><img src="http://img5.douban.com/lpic/s2171906.jpg" alt="head first java"></p>
-<hr>
-<p>java 的integer与boolean两种类型<strong>并不相容</strong>，只能用下面的boolean变量来测试</p>
-<pre><code><span class="keyword">boolean</span> isHot = <span class="keyword">true</span>;
-<span class="keyword">while</span> (isHot){ }
-</code></pre><hr>
-<p><a id="more"></a></p>
-<h3 id="centos安装java和jdk">centos安装java和jdk</h3>
-<blockquote>
-<p>参考 <a href="http://www.cnblogs.com/zhoulf/archive/2013/02/04/2891608.html" target="_blank">CentOS-6.3安装配置JDK-7</a>，当前安装的为最新jdk8</p>
-</blockquote>
-<ol>
-<li><p>查看java版本</p>
-<pre><code> <span class="comment"># java -version</span>
-</code></pre></li>
-</ol>
-<ol>
-<li><p>查看JDK信息</p>
-<pre><code> rpm -qa <span class="string">| grep java</span>
-</code></pre></li>
-</ol>
-<pre><code>    <span class="preprocessor">#结果</span>
-    tzdata-java-<span class="number">2012</span>c-<span class="number">1.</span>el6<span class="preprocessor">.noarch</span>        
-    java-<span class="number">1.6</span><span class="number">.0</span>-openjdk-<span class="number">1.6</span><span class="number">.0</span><span class="number">.0</span>-<span class="number">1.45</span><span class="number">.1</span><span class="number">.11</span><span class="number">.1</span><span class="preprocessor">.el</span>6<span class="preprocessor">.x</span>86_64            
-</code></pre><ol>
-<li><p>卸载openjdk,执行以下操作</p>
-<pre><code> rpm <span class="attribute">-e</span> <span class="subst">--</span>nodeps tzdata<span class="attribute">-java</span><span class="subst">-</span><span class="number">2012</span>c<span class="subst">-</span><span class="number">1.</span>el6<span class="built_in">.</span>noarch
- rpm <span class="attribute">-e</span> <span class="subst">--</span>nodeps 
-</code></pre></li>
-</ol>
-<ol>
-<li><p>安装</p>
-<pre><code> wget http://download<span class="preprocessor">.oracle</span><span class="preprocessor">.com</span>/otn-pub/java/jdk/<span class="number">8</span>u5-b13/jdk-<span class="number">8</span>u5-linux-x64<span class="preprocessor">.rpm</span> --no-check-certificate
-
- rpm -ivh jdk-<span class="number">8</span>u5-linux-x64<span class="preprocessor">.rpm</span>
-</code></pre><p> <em>如果下载失败，请到 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">java下载页</a>下载后再上传到服务器</em></p>
-</li>
-<li><p>设置环境变量</p>
-<ul>
-<li><p>向<strong>/etc/profile</strong>下追加以下内容</p>
-<pre><code>  <span class="comment">#add java path</span>
-  JAVA_HOME=/usr/java/jdk1.<span class="number">8.0</span>_05
-  JRE_HOME=/usr/java/jdk1.<span class="number">8.0</span>_05/jre
-  PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin
-  CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JRE_HOME</span>/lib
-  <span class="keyword">export</span> JAVA_HOME JRE_HOME PATH CLASSPATH
-</code></pre></li>
-<li><p>执行使之生效</p>
-<pre><code>  <span class="built_in">source</span> /etc/profile
-</code></pre></li>
-<li><p>删除原来的bin</p>
-<pre><code>  rm <span class="attribute">-rf</span> /usr/bin/javac
-  rm <span class="attribute">-rf</span> /usr/bin/jar
-  rm <span class="attribute">-rf</span> /usr/bin/java
-</code></pre></li>
-<li><p>建立软链接</p>
-<pre><code>  ln <span class="operator">-s</span> /usr/java/jdk1.<span class="number">8.0</span>_05/bin/javac /usr/bin/javac
-  ln <span class="operator">-s</span> /usr/java/jdk1.<span class="number">8.0</span>_05/bin/jar /usr/bin/jar
-  ln <span class="operator">-s</span> /usr/java/jdk1.<span class="number">8.0</span>_05/bin/java /usr/bin/java
-</code></pre></li>
-<li><p>检测是否成功</p>
-<pre><code>  java -<span class="built_in">version</span>
-</code></pre><p>  如果报错如下：</p>
-<blockquote>
-<p>javac: error while loading shared libraries: libjli.so: cannot open shared object file: No such file or directory</p>
-</blockquote>
-<p>  处理如下：</p>
-<pre><code>  find / -name libjli<span class="preprocessor">.so</span> <span class="preprocessor">#查找libjli.so路径</span>
-
-  <span class="keyword">cp</span> /usr/java/jdk1<span class="number">.8</span><span class="number">.0</span>_05/jre/lib/amd64/jli/libjli<span class="preprocessor">.so</span> /lib
-
-  <span class="keyword">ldd</span> /usr/bin/java
-</code></pre></li>
-</ul>
-</li>
-</ol>
-<hr>
-<p> 在windows下与Linux配置类似,但需要注意:</p>
-<ol>
-<li><p>全局变量设置里windows是用 <strong>%变量名%</strong> 表示而非<strong>$变量名</strong> 的形式</p>
-</li>
-<li><p>目录使用 <strong>\</strong> 而非<strong>/</strong></p>
-</li>
-<li><p>分隔符采用 <strong>;</strong> 而非 <strong>:</strong>    </p>
-</li>
-</ol>
-<hr>
-<h3 id="编译和运行">编译和运行</h3>
-<p>文件1：<code>Dog.java</code>:</p>
-<pre><code><span class="keyword">class</span> Dog {
-
-    int size;
-    <span class="built_in">String</span> breed ;
-    <span class="built_in">String</span> name;
-
-    <span class="keyword">void</span> bark() {
-        System.out.println(<span class="string">"Ruff! Ruff!"</span>);
-    }
-
-}
-</code></pre><p>文件2：<code>DogTestDrive.java</code>:</p>
-<pre><code>class DogTestDrive {
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-        Dog d = <span class="keyword">new</span> Dog();
-        d.size = <span class="number">40</span>;
-        d.bark();
-    }
-}
-</code></pre><p>编译：</p>
-<pre><code>javac DogTestDrive<span class="preprocessor">.java</span> 
-</code></pre><p>将在当前目录生成DogTestDrive.class和Dog.class</p>
-<p>运行：</p>
-<pre><code>java DogTestDrive
-</code></pre><hr>
-<h3 id="静态变量">静态变量</h3>
-<ul>
-<li>静态变量会在任何对象创立前就完成初始化.</li>
-<li>静态变量会在类的任何静态方法执行之前就初始化.</li>
-</ul>
-<h3 id="静态初始化程序">静态初始化程序</h3>
-<p>一段在加载类时会执行的程序代码，它会在其他程序可以使用该类之前就执行，所以很适合放<code>静态final变量</code>的起始程序：</p>
-<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> {</span>
-    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> x;
-    <span class="keyword">static</span> {
-        x = <span class="number">42</span>;
-
-    }
-
-}
-</code></pre><blockquote>
-<p>静态final变量如果没有在声明中或者在静态初始化程序中赋值，编译将报错。</p>
-</blockquote>
-<h3 id="常量">常量</h3>
-<ul>
-<li>在 java 中，常量是把变量同时标志为static和final的。</li>
-<li>常量的命名惯例是全部大写，使用<code>_</code>来分隔</li>
-<li>final 变量一旦被赋值无法更改</li>
-</ul>
-<h3 id="autoboxing类型转换">autoboxing类型转换</h3>
-<p>将String转为其他类型</p>
-<pre><code><span class="built_in">String</span> s = <span class="string">"2"</span>;
-int x = <span class="built_in">Integer</span>.parseInt(s);
-<span class="built_in">double</span> d = <span class="built_in">Double</span>.parseDouble(<span class="string">"43.42"</span>);
-<span class="built_in">boolean</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="string">"true"</span>).booleanValue();
-</code></pre><p>将其他类型转为String:</p>
-<pre><code>double d = <span class="string">"43.12"</span>;
-<span class="built_in">String</span> s = <span class="string">""</span> + d; <span class="comment">//+被重载过，double接空字符串转为字符类型</span>
-<span class="comment">//或者</span>
-<span class="built_in">String</span> s = Double.toString(d);<span class="comment">//静态方法</span>
-</code></pre><h3 id="数字格式化打印">数字格式化打印</h3>
-<p>通过<code>java.util</code>的<code>Formate</code>类进行打印</p>
-<p>以逗号分隔打印：</p>
-<pre><code><span class="built_in">String</span> s = <span class="built_in">String</span>.format(<span class="string">"%,d"</span>,<span class="number">100000000</span>);
-</code></pre><p>保留两位小数：</p>
-<pre><code>s = <span class="built_in">String</span>.format(<span class="string">"I have $%.2f "</span>,<span class="number">5926.2259</span>);
-</code></pre><p>逗号和保留两位小数：</p>
-<pre><code>s = <span class="built_in">String</span>.format(<span class="string">"I have $%,.2f "</span>,<span class="number">1115926.2259</span>);    
-</code></pre><h3 id="时间日期的格式化打印">时间日期的格式化打印</h3>
-<p>先要引入时间日期类</p>
-<pre><code><span class="preprocessor"><span class="keyword">import</span> java.util.Date;</span>
-</code></pre><p>当前日期：</p>
-<pre><code><span class="built_in">String</span> t = <span class="built_in">String</span>.format(<span class="string">"%tc"</span>,<span class="keyword">new</span> <span class="built_in">Date</span>());
-</code></pre><p>只有时间：</p>
-<pre><code>t = <span class="built_in">String</span>.format(<span class="string">"%tr"</span>,<span class="keyword">new</span> <span class="built_in">Date</span>());
-</code></pre><p>周、年、月:</p>
-<pre><code>t = String.<span class="keyword">format</span>(<span class="string">"<span class="variable">%tA</span> <span class="variable">%tB</span> <span class="variable">%td</span>"</span>,today,today,today);
-</code></pre><p>同上，不使用重复参数时:</p>
-<pre><code>t = String.<span class="keyword">format</span>(<span class="string">"<span class="variable">%tA</span> <span class="variable">%&lt;</span>tB <span class="variable">%&lt;</span>d"</span>,today);
-</code></pre><p>更多参考：<a href="http://www.blogjava.net/juhongtao/articles/12230.html" target="_blank">http://www.blogjava.net/juhongtao/articles/12230.html</a>    </p>
-]]></content>
-    <summary type="html"><![CDATA[<ul>
-<li>参考书目 </li>
-</ul>
-<h3 id="Head_First_Java">Head First Java</h3>
-<p><img src="http://img5.douban.com/lpic/s2171906.jpg" alt="head first java"></p>
-<hr>
-<p>java 的integer与boolean两种类型<strong>并不相容</strong>，只能用下面的boolean变量来测试</p>
-<pre><code><span class="keyword">boolean</span> isHot = <span class="keyword">true</span>;
-<span class="keyword">while</span> (isHot){ }
-</code></pre><hr>
-<p>]]></summary>
-    
-      <category term="java" scheme="http://falconchen.github.io/tags/java/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="学习笔记" scheme="http://falconchen.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nodejs笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/nodejs%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/23/nodejs笔记/</id>
-    <published>2014-05-23T02:06:04.000Z</published>
-    <updated>2014-05-26T06:41:37.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="nmp" scheme="http://falconchen.github.io/tags/nmp/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[vim笔记]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/vim%E7%AC%94%E8%AE%B0/"/>
-    <id>http://falconchen.github.io/2014/05/23/vim笔记/</id>
-    <published>2014-05-22T16:00:00.000Z</published>
-    <updated>2014-06-06T06:53:52.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="Windows下设置别名">Windows下设置别名</h3>
-<ul>
-<li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
-<pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
-</code></pre></li>
-</ul>
-<ul>
-<li><p>方法二，批量设置别名    (推荐)</p>
-<pre><code>  1. 新建一个文件`aliases.txt`，放在任意目录下，写入如下别名内容：
-
-          ls=dir /ONE <span class="formula">$*
-          ll=dir /ONE $</span>*
-          cat=type <span class="formula">$*
-          rm=del $</span>*
-          cd=cd /d <span class="formula">$*
-          vi=G:<span class="command">\falconDisk</span><span class="command">\Vim</span><span class="command">\vim</span>74<span class="command">\gvim</span> $</span>*
-
-  2. 新建另一个文件 `autorun.bat` ，放在任意目录，内容如下：
-
-          @echo off
-          cls
-          color 0A
-          doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
-  3.  找到注册表如下位置:
-
-      <span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Command</span> Processor<span class="special">]</span>
-
-      添加一个字符串值Autorun，值为<span class="command">\path</span><span class="command">\to</span><span class="command">\autorun</span>.bat
-
-  4. 启动命令行可以看到效果了
-</code></pre></li>
-</ul>
-<p><a id="more"></a></p>
-<h3 id="多文件操作">多文件操作</h3>
-<ol>
-<li><p>列出当前缓冲区文件</p>
-<pre><code> <span class="pseudo">:ls</span><span class="attr_selector">[!]</span>
-</code></pre><p> 输出如下：</p>
-<pre><code>     <span class="number">1</span> <span class="comment">#h  "/test/text"        line 1 ~</span>
-     <span class="number">2</span>u    <span class="string">"asdf"</span>            <span class="built_in">line</span> <span class="number">0</span> ~
-     <span class="number">3</span> %<span class="operator">a</span>+ <span class="string">"version.c"</span>        <span class="built_in">line</span> <span class="number">1</span> ~
-</code></pre><p> 使用ctrl+^可在%与#之间切换</p>
-</li>
-<li><p>在当前缓冲区选择文件    </p>
-<pre><code> :[s]bf            # Go <span class="keyword">to</span> first <span class="keyword">file</span>.
- :[s]bl            # Go <span class="keyword">to</span> last <span class="keyword">file</span>
- :[s]bn            # Go <span class="keyword">to</span> <span class="keyword">next</span> <span class="keyword">file</span>.
- :[s]bp            # Go <span class="keyword">to</span> previous <span class="keyword">file</span>.
- :[s]bw            # Close <span class="keyword">file</span>.
- :[s]b数字         #指定的<span class="keyword">buffer</span>
-</code></pre></li>
-</ol>
-<ol>
-<li><p>对应帮助手册 </p>
-<pre><code> :<span class="keyword">help</span> <span class="keyword">ls</span>
-</code></pre></li>
-<li><p>多标签用插件        </p>
-<p> 将minibufexpl.vim复制到plugin目录，<br> 在_vimrc中添加：</p>
-<pre><code> <span class="built_in">let</span> g:miniBufExplMapCTabSwitchBufs=<span class="number">1</span>
- <span class="built_in">let</span> g:miniBufExplMapWindowNavVim=<span class="number">1</span>
- <span class="built_in">let</span> g:miniBufExplMapWindowNavArrows=<span class="number">1</span>
-</code></pre></li>
-</ol>
-<h3 id="大小写转换">大小写转换</h3>
-<ul>
-<li><p>选择字符串（可使用visual模式）后单击 <code>gU</code>大写，<code>gu</code>小写</p>
-</li>
-<li><p>只转化某个单词：guw、gue </p>
-</li>
-<li><p>转换当前字符到行末为大写 gU$</p>
-</li>
-<li><p>转换当前字符到行首为大写： gU0</p>
-</li>
-<li><p>整篇文章转成大写： gggU</p>
-</li>
-<li><p>转换几行的大小写: 10gU</p>
-</li>
-</ul>
-<h3 id="可视化书签">可视化书签</h3>
-<ul>
-<li><p>将<code>visualmark.vim</code>复制到<code>plugin</code>目录。</p>
-</li>
-<li><p>用gvim打开源码文件，将光标定位在需要添加书签的地方，按下ctrl+F2，即添加了书签。</p>
-</li>
-<li><p>使用F2在书签之间正向切换，shift+F2反向切换。</p>
-</li>
-</ul>
-<h3 id="grep搜索项目内容">grep搜索项目内容</h3>
-<ul>
-<li><p>将<code>grep.vim</code>复制到<code>plugin</code>，在<code>_vimrc</code>中添加：</p>
-<pre><code>  nnoremap &lt;silent&gt; &lt;<span class="constant">F3</span>&gt; <span class="symbol">:Grep&lt;CR&gt;</span>
-</code></pre></li>
-<li>用gvim打开源码文件，并将光标定位到要查找的内容上，按下F3，确定要查找的内容和搜索范围，gvim会在弹出的QuickFix窗口中列出所有符合条件的搜索结果</li>
-</ul>
-<h3 id="supertab插件">supertab插件</h3>
-<ul>
-<li><code>SuperTab</code>使Tab快捷键具有更快捷的上下文提示功能，下载地址：<a href="http://github.com/ervandew/supertab" target="_blank">http://github.com/ervandew/supertab</a></li>
-<li><p>安装方法：</p>
-<pre><code>  <span class="number">1.</span> Download supertab.vmb <span class="built_in">to</span> <span class="keyword">any</span> <span class="built_in">directory</span>.
-  <span class="number">2.</span> Open <span class="operator">the</span> <span class="built_in">file</span> <span class="operator">in</span> vim ($ vim supertab.vmb).
-  <span class="number">3.</span> Source <span class="operator">the</span> <span class="built_in">file</span> (:so %).
-</code></pre></li>
-</ul>
-<h3 id="nerdtree_新建文件">nerdtree 新建文件</h3>
-<p>在 <code>nerdtree</code> 中新建文件的方式是 <code>m-a</code> 并写出文件名称。刷新用<code>r</code></p>
-<h3 id="窗口样式调整">窗口样式调整</h3>
-<ul>
-<li><p>交换两个窗口的位置，或者说移动窗口，用<code>ctrl + w + r/x</code></p>
-</li>
-<li><p>窗口大小调整，宽度和高度分别用<code>ctrl + w + &lt;/&gt;</code>和<code>ctrl + w + +/-</code>，或者使用更加灵活的<code>:res +n</code>，<code>:vertical res +n</code></p>
-</li>
-<li><p>Normal模式下，寻找上次光标所在位置为<code>ctrl + o</code>，下次的为<code>ctrl + i</code>，跳到某行修改并返回的时候非常方便</p>
-</li>
-</ul>
-<h3 id="添加删除注释">添加删除注释</h3>
-<ul>
-<li>添加注释：</li>
-</ul>
-<ol>
-<li>按<code>CTRL+V</code>进入可视化模式（VISUAL BLOCK）</li>
-<li>选中需要注释的代码块</li>
-<li>按 <code>I</code> 进入插入模式，在选中首行输入注释符，如 <code>#</code></li>
-<li>按 <code>ESC</code>后其他行也被注释掉了</li>
-</ol>
-<ul>
-<li>删除注释：</li>
-</ul>
-<ol>
-<li>按<code>CTRL+V</code>进入可视化模式（VISUAL BLOCK）</li>
-<li>选中注释符后，按<code>d</code>即可</li>
-</ol>
-<ul>
-<li>替换命令</li>
-</ul>
-<ol>
-<li><p><code>:% s/^/#/g</code> 来在全部内容的行首添加 # 号注释</p>
-</li>
-<li><p><code>:1,10 s/^/#/g</code> 在1~10 行首添加 # 号注释</p>
-</li>
-</ol>
-<p>参考：<a href="http://jingyan.baidu.com/article/9c69d48f43ed6d13c8024e7b.html" target="_blank">http://jingyan.baidu.com/article/9c69d48f43ed6d13c8024e7b.html</a></p>
-]]></content>
-    <summary type="html"><![CDATA[<h3 id="Windows下设置别名">Windows下设置别名</h3>
-<ul>
-<li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
-<pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
-</code></pre></li>
-</ul>
-<ul>
-<li><p>方法二，批量设置别名    (推荐)</p>
-<pre><code>  1. 新建一个文件`aliases.txt`，放在任意目录下，写入如下别名内容：
-
-          ls=dir /ONE <span class="formula">$*
-          ll=dir /ONE $</span>*
-          cat=type <span class="formula">$*
-          rm=del $</span>*
-          cd=cd /d <span class="formula">$*
-          vi=G:<span class="command">\falconDisk</span><span class="command">\Vim</span><span class="command">\vim</span>74<span class="command">\gvim</span> $</span>*
-
-  2. 新建另一个文件 `autorun.bat` ，放在任意目录，内容如下：
-
-          @echo off
-          cls
-          color 0A
-          doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
-  3.  找到注册表如下位置:
-
-      <span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Command</span> Processor<span class="special">]</span>
-
-      添加一个字符串值Autorun，值为<span class="command">\path</span><span class="command">\to</span><span class="command">\autorun</span>.bat
-
-  4. 启动命令行可以看到效果了
-</code></pre></li>
-</ul>
-<p>]]></summary>
-    
-      <category term="vim" scheme="http://falconchen.github.io/tags/vim/"/>
-    
-      <category term="笔记" scheme="http://falconchen.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="vim" scheme="http://falconchen.github.io/categories/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://falconchen.github.io/2014/05/21/hello-world/"/>
-    <id>http://falconchen.github.io/2014/05/21/hello-world/</id>
-    <published>2014-05-21T02:06:04.000Z</published>
-    <updated>2014-05-26T06:40:45.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
-<p><a id="more"></a></p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo new <span class="string">"My New Post"</span>
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo server
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo generate
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ hexo deploy
-</pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank">Deployment</a></p>
-]]></content>
-    <summary type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
-<p>]]></summary>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/categories/hexo/"/>
     
   </entry>
   

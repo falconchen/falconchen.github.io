@@ -61,6 +61,294 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/08/04/eclipse-marketplace/"></a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-08-04T03:38:39.000Z"><a href="/2014/08/04/eclipse-marketplace/">2014年08月04日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>title: ‘Eclipse Marketplace 安装和使用’<br>date: 2014-08-04 11:38:39<br>category:开发工具<br>tags:eclipse,marketplace,indigo</p>
+<hr>
+<p>eclipse marketplace当前使用<code>Eclipse</code> indigo</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/07/23/jqmobi和phoneGap/"></a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-07-23T03:00:23.000Z"><a href="/2014/07/23/jqmobi和phoneGap/">2014年07月23日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="jqMobi��Դ">jqMobi��Դ</h3>
+<ul>
+<li><p>������Ƶ<br><a href="http://bbs.phonegap100.com/thread-361-1-1.html" target="_blank">http://bbs.phonegap100.com/thread-361-1-1.html</a></p>
+</li>
+<li><p>�����ĵ�: ��������<br><a href="http://app-framework-software.intel.com/documentation.php#intro/quickstart" target="_blank">http://app-framework-software.intel.com/documentation.php#intro/quickstart</a></p>
+</li>
+<li><p>github��Դ�� appframework2.1<br><a href="https://github.com/01org/appframework/tree/2.1devtf" target="_blank">https://github.com/01org/appframework/tree/2.1devtf</a></p>
+</li>
+<li><p>appframework��html5, web app����<br><a href="http://blog.csdn.net/dawanganban/article/details/17591373" target="_blank">http://blog.csdn.net/dawanganban/article/details/17591373</a></p>
+</li>
+</ul>
+<h3 id="phoneGap��Դ">phoneGap��Դ</h3>
+<ul>
+<li><p>��װ 2.9��3.4<br><a href="http://www.phonegap100.com/article-101-1.html" target="_blank">http://www.phonegap100.com/article-101-1.html</a></p>
+</li>
+<li><p>����<br><a href="http://www.phonegap100.com/article-226-1.html" target="_blank">http://www.phonegap100.com/article-226-1.html</a></p>
+</li>
+<li><p>PhoneGapӦ�ÿ����Բߣ�����ͨ��ƻ�����ˣ�<br><a href="http://www.phonegap100.com/article-229-1.html" target="_blank">http://www.phonegap100.com/article-229-1.html</a></p>
+</li>
+<li><p>phonegapʵս��Ƶ�̳���������<br><a href="http://bbs.phonegap100.com/thread-296-1-1.html" target="_blank">http://bbs.phonegap100.com/thread-296-1-1.html</a></p>
+</li>
+</ul>
+<h3 id="Android">Android</h3>
+<ul>
+<li>��װADT<br><a href="http://developer.android.com/sdk/installing/installing-adt.html" target="_blank">http://developer.android.com/sdk/installing/installing-adt.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/07/21/laravel-study/"></a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-07-21T02:22:45.000Z"><a href="/2014/07/21/laravel-study/">2014年07月21日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>title: ‘laravel 笔记’<br>date: 2014-07-21 10:22:45<br>category: PHP<br>tags:[PHP,laravel]</p>
+<hr>
+<h3 id="安装composer">安装composer</h3>
+<p><a href="https://getcomposer.org/doc/00-intro.md" target="_blank">https://getcomposer.org/doc/00-intro.md</a></p>
+<p>在<code>windows</code>下可直接使用 <a href="https://getcomposer.org/Composer-Setup.exe" target="_blank">Windows installer</a>安装</p>
+<h3 id="安装laravel">安装laravel</h3>
+<p>下载 <a href="http://laravel.com/laravel.phar" target="_blank">Laravel installer PHAR archive</a></p>
+<p>windows下可新建一个laravel文件夹，将laravel.phar放入该目录，在目录新建一个文件laravel.bat，写入以下内容:</p>
+<pre><code><span class="variable">@php</span> <span class="string">"%~dp0laravel.phar"</span> <span class="variable">%*</span>
+</code></pre><p>最后将该目录放入系统环境变量%path%即可。</p>
+<p>运行<br><img src="http://i.imgur.com/AuhcXWX.jpg" alt="运行lavaral"></p>
+<p>创建项目</p>
+<pre><code>laravel <span class="keyword">new</span> weblog
+</code></pre><p>等待一段时间后会在当前目录新建一个weblog的文件夹，目录结构如下：</p>
+<p>├─app<br>│  ├─commands<br>│  ├─config<br>│  │  ├─local<br>│  │  ├─packages<br>│  │  └─testing<br>│  ├─controllers<br>│  ├─database<br>│  │  ├─migrations<br>│  │  └─seeds<br>│  ├─lang<br>│  │  └─en<br>│  ├─models<br>│  ├─start<br>│  ├─storage<br>│  │  ├─cache<br>│  │  ├─logs<br>│  │  ├─meta<br>│  │  ├─sessions<br>│  │  └─views<br>│  ├─tests<br>│  └─views<br>│      └─emails<br>│          └─auth<br>├─bootstrap<br>├─public<br>│  └─packages<br>└─vendor<br>    ├─bin<br>    ├─classpreloader<br>    │  └─classpreloader<br>    │      └─src<br>    │          └─ClassPreloader<br>    │              ├─Command<br>    │              └─Parser<br>    ├─composer<br>    ├─d11wtq<br>    │  └─boris<br>    │      ├─bin<br>    │      └─lib<br>    │          └─Boris<br>    ├─filp<br>    │  └─whoops<br>    │      ├─docs<br>    │      ├─examples<br>    │      ├─src<br>    │      │  ├─deprecated<br>    │      │  │  └─Zend<br>    │      │  └─Whoops<br>    │      │      ├─Exception<br>    │      │      ├─Handler<br>    │      │      ├─Provider<br>    │      │      │  ├─Phalcon<br>    │      │      │  └─Silex<br>    │      │      ├─Resources<br>    │      │      │  ├─css<br>    │      │      │  ├─js<br>    │      │      │  └─views<br>    │      │      └─Util<br>    │      └─tests<br>    │          ├─deprecated<br>    │          │  └─Zend<br>    │          ├─fixtures<br>    │          └─Whoops<br>    │              ├─Exception<br>    │              ├─Handler<br>    │              └─Util<br>    ├─ircmaxell<br>    │  └─password-compat<br>    │      ├─lib<br>    │      └─test<br>    │          └─Unit<br>    ├─jeremeamia<br>    │  └─SuperClosure<br>    │      ├─demo<br>    │      ├─src<br>    │      │  └─Jeremeamia<br>    │      │      └─SuperClosure<br>    │      │          └─Visitor<br>    │      └─tests<br>    │          └─Jeremeamia<br>    │              └─SuperClosure<br>    │                  └─Test<br>    │                      └─Visitor<br>    ├─laravel<br>    │  └─framework<br>    │      └─src<br>    │          └─Illuminate<br>    │              ├─Auth<br>    │              │  ├─Console<br>    │              │  │  └─stubs<br>    │              │  └─Reminders<br>    │              ├─Cache<br>    │              │  └─Console<br>    │              ├─Config<br>    │              ├─Console<br>    │              ├─Container<br>    │              ├─Cookie<br>    │              ├─Database<br>    │              │  ├─Capsule<br>    │              │  ├─Connectors<br>    │              │  ├─Console<br>    │              │  │  └─Migrations<br>    │              │  ├─Eloquent<br>    │              │  │  └─Relations<br>    │              │  ├─Migrations<br>    │              │  │  └─stubs<br>    │              │  ├─Query<br>    │              │  │  ├─Grammars<br>    │              │  │  └─Processors<br>    │              │  └─Schema<br>    │              │      └─Grammars<br>    │              ├─Encryption<br>    │              ├─Events<br>    │              ├─Exception<br>    │              │  └─resources<br>    │              ├─Filesystem<br>    │              ├─Foundation<br>    │              │  ├─Console<br>    │              │  │  ├─Optimize<br>    │              │  │  └─stubs<br>    │              │  ├─Providers<br>    │              │  └─Testing<br>    │              ├─Hashing<br>    │              ├─Html<br>    │              ├─Http<br>    │              ├─Log<br>    │              ├─Mail<br>    │              │  └─Transport<br>    │              ├─Pagination<br>    │              │  └─views<br>    │              ├─Queue<br>    │              │  ├─Capsule<br>    │              │  ├─Connectors<br>    │              │  ├─Console<br>    │              │  │  └─stubs<br>    │              │  ├─Failed<br>    │              │  └─Jobs<br>    │              ├─Redis<br>    │              ├─Remote<br>    │              ├─Routing<br>    │              │  ├─Console<br>    │              │  ├─Generators<br>    │              │  │  └─stubs<br>    │              │  └─Matching<br>    │              ├─Session<br>    │              │  └─Console<br>    │              │      └─stubs<br>    │              ├─Support<br>    │              │  ├─Contracts<br>    │              │  ├─Facades<br>    │              │  └─Traits<br>    │              ├─Translation<br>    │              ├─Validation<br>    │              ├─View<br>    │              │  ├─Compilers<br>    │              │  └─Engines<br>    │              └─Workbench<br>    │                  ├─Console<br>    │                  └─stubs<br>    ├─monolog<br>    │  └─monolog<br>    │      ├─doc<br>    │      ├─src<br>    │      │  └─Monolog<br>    │      │      ├─Formatter<br>    │      │      ├─Handler<br>    │      │      │  ├─FingersCrossed<br>    │      │      │  └─SyslogUdp<br>    │      │      └─Processor<br>    │      └─tests<br>    │          └─Monolog<br>    │              ├─Formatter<br>    │              ├─Functional<br>    │              │  └─Handler<br>    │              ├─Handler<br>    │              │  └─Fixtures<br>    │              └─Processor<br>    ├─nesbot<br>    │  └─carbon<br>    │      ├─src<br>    │      │  └─Carbon<br>    │      └─tests<br>    ├─nikic<br>    │  └─php-parser<br>    │      ├─doc<br>    │      │  └─component<br>    │      ├─grammar<br>    │      ├─lib<br>    │      │  └─PHPParser<br>    │      │      ├─Builder<br>    │      │      ├─Comment<br>    │      │      ├─Lexer<br>    │      │      ├─Node<br>    │      │      │  ├─Expr<br>    │      │      │  │  └─Cast<br>    │      │      │  ├─Name<br>    │      │      │  ├─Scalar<br>    │      │      │  └─Stmt<br>    │      │      │      └─TraitUseAdaptation<br>    │      │      ├─NodeVisitor<br>    │      │      ├─PrettyPrinter<br>    │      │      ├─Serializer<br>    │      │      └─Unserializer<br>    │      ├─test<br>    │      │  ├─code<br>    │      │  │  ├─parser<br>    │      │  │  │  ├─expr<br>    │      │  │  │  │  └─fetchAndCall<br>    │      │  │  │  ├─scalar<br>    │      │  │  │  └─stmt<br>    │      │  │  │      ├─class<br>    │      │  │  │      ├─function<br>    │      │  │  │      ├─loop<br>    │      │  │  │      └─namespace<br>    │      │  │  └─prettyPrinter<br>    │      │  └─PHPParser<br>    │      │      └─Tests<br>    │      │          ├─Builder<br>    │      │          ├─Lexer<br>    │      │          ├─Node<br>    │      │          │  ├─Scalar<br>    │      │          │  └─Stmt<br>    │      │          ├─NodeVisitor<br>    │      │          ├─Serializer<br>    │      │          └─Unserializer<br>    │      └─test_old<br>    ├─patchwork<br>    │  └─utf8<br>    │      └─class<br>    │          └─Patchwork<br>    │              ├─PHP<br>    │              │  └─Shim<br>    │              │      ├─charset<br>    │              │      └─unidata<br>    │              └─Utf8<br>    │                  ├─Bootup<br>    │                  └─data<br>    ├─phpseclib<br>    │  └─phpseclib<br>    │      ├─build<br>    │      ├─phpseclib<br>    │      │  ├─Crypt<br>    │      │  ├─File<br>    │      │  ├─Math<br>    │      │  ├─Net<br>    │      │  │  └─SFTP<br>    │      │  └─System<br>    │      │      └─SSH<br>    │      ├─tests<br>    │      │  ├─Functional<br>    │      │  │  └─Net<br>    │      │  └─Unit<br>    │      │      ├─Crypt<br>    │      │      │  ├─AES<br>    │      │      │  ├─Hash<br>    │      │      │  └─RSA<br>    │      │      ├─File<br>    │      │      │  ├─ASN1<br>    │      │      │  └─X509<br>    │      │      ├─Math<br>    │      │      │  └─BigInteger<br>    │      │      └─Net<br>    │      └─travis<br>    ├─predis<br>    │  └─predis<br>    │      ├─bin<br>    │      ├─examples<br>    │      ├─lib<br>    │      │  └─Predis<br>    │      │      ├─Cluster<br>    │      │      │  ├─Distribution<br>    │      │      │  └─Hash<br>    │      │      ├─Collection<br>    │      │      │  └─Iterator<br>    │      │      ├─Command<br>    │      │      │  └─Processor<br>    │      │      ├─Connection<br>    │      │      ├─Iterator<br>    │      │      ├─Monitor<br>    │      │      ├─Option<br>    │      │      ├─Pipeline<br>    │      │      ├─Profile<br>    │      │      ├─Protocol<br>    │      │      │  └─Text<br>    │      │      ├─PubSub<br>    │      │      ├─Replication<br>    │      │      ├─Session<br>    │      │      └─Transaction<br>    │      └─tests<br>    │          ├─PHPUnit<br>    │          └─Predis<br>    │              ├─Cluster<br>    │              │  └─Distribution<br>    │              ├─Collection<br>    │              │  └─Iterator<br>    │              ├─Command<br>    │              │  └─Processor<br>    │              ├─Connection<br>    │              ├─Iterator<br>    │              ├─Monitor<br>    │              ├─Option<br>    │              ├─Pipeline<br>    │              ├─Profile<br>    │              ├─Protocol<br>    │              │  └─Text<br>    │              ├─PubSub<br>    │              ├─Replication<br>    │              └─Transaction<br>    ├─psr<br>    │  └─log<br>    │      └─Psr<br>    │          └─Log<br>    │              └─Test<br>    ├─stack<br>    │  └─builder<br>    │      ├─src<br>    │      │  └─Stack<br>    │      └─tests<br>    │          ├─functional<br>    │          └─unit<br>    │              └─Stack<br>    ├─swiftmailer<br>    │  └─swiftmailer<br>    │      ├─doc<br>    │      │  └─uml<br>    │      ├─lib<br>    │      │  ├─classes<br>    │      │  │  └─Swift<br>    │      │  │      ├─ByteStream<br>    │      │  │      ├─CharacterReader<br>    │      │  │      ├─CharacterReaderFactory<br>    │      │  │      ├─CharacterStream<br>    │      │  │      ├─Encoder<br>    │      │  │      ├─Events<br>    │      │  │      ├─KeyCache<br>    │      │  │      ├─Mailer<br>    │      │  │      ├─Mime<br>    │      │  │      │  ├─ContentEncoder<br>    │      │  │      │  ├─HeaderEncoder<br>    │      │  │      │  └─Headers<br>    │      │  │      ├─Plugins<br>    │      │  │      │  ├─Decorator<br>    │      │  │      │  ├─Loggers<br>    │      │  │      │  ├─Pop<br>    │      │  │      │  └─Reporters<br>    │      │  │      ├─Signers<br>    │      │  │      ├─StreamFilters<br>    │      │  │      └─Transport<br>    │      │  │          └─Esmtp<br>    │      │  │              └─Auth<br>    │      │  └─dependency_maps<br>    │      ├─notes<br>    │      │  └─rfc<br>    │      └─tests<br>    │          ├─acceptance<br>    │          │  └─Swift<br>    │          │      ├─ByteStream<br>    │          │      ├─CharacterReaderFactory<br>    │          │      ├─Encoder<br>    │          │      ├─KeyCache<br>    │          │      ├─Mime<br>    │          │      │  ├─ContentEncoder<br>    │          │      │  └─HeaderEncoder<br>    │          │      └─Transport<br>    │          │          └─StreamBuffer<br>    │          ├─bug<br>    │          │  └─Swift<br>    │          ├─fixtures<br>    │          ├─smoke<br>    │          │  └─Swift<br>    │          │      └─Smoke<br>    │          ├─unit<br>    │          │  └─Swift<br>    │          │      ├─ByteStream<br>    │          │      ├─CharacterReader<br>    │          │      ├─CharacterStream<br>    │          │      ├─Encoder<br>    │          │      ├─Events<br>    │          │      ├─KeyCache<br>    │          │      ├─Mailer<br>    │          │      ├─Mime<br>    │          │      │  ├─ContentEncoder<br>    │          │      │  ├─HeaderEncoder<br>    │          │      │  └─Headers<br>    │          │      ├─Plugins<br>    │          │      │  ├─Loggers<br>    │          │      │  └─Reporters<br>    │          │      ├─Signers<br>    │          │      ├─StreamFilters<br>    │          │      └─Transport<br>    │          │          ├─Esmtp<br>    │          │          │  └─Auth<br>    │          │          └─EsmtpTransport<br>    │          └─_samples<br>    │              ├─charsets<br>    │              │  ├─iso-2022-jp<br>    │              │  ├─iso-8859-1<br>    │              │  └─utf-8<br>    │              ├─dkim<br>    │              ├─files<br>    │              └─smime<br>    └─symfony<br>        ├─browser-kit<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─BrowserKit<br>        │              └─Tests<br>        ├─console<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Console<br>        │              ├─Command<br>        │              ├─Descriptor<br>        │              ├─Event<br>        │              ├─Formatter<br>        │              ├─Helper<br>        │              ├─Input<br>        │              ├─Logger<br>        │              ├─Output<br>        │              ├─Question<br>        │              ├─Resources<br>        │              │  └─bin<br>        │              ├─Tester<br>        │              └─Tests<br>        │                  ├─Command<br>        │                  ├─Descriptor<br>        │                  ├─Fixtures<br>        │                  ├─Formatter<br>        │                  ├─Helper<br>        │                  ├─Input<br>        │                  ├─Logger<br>        │                  ├─Output<br>        │                  └─Tester<br>        ├─css-selector<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─CssSelector<br>        │              ├─Exception<br>        │              ├─Node<br>        │              ├─Parser<br>        │              │  ├─Handler<br>        │              │  ├─Shortcut<br>        │              │  └─Tokenizer<br>        │              ├─Tests<br>        │              │  ├─Node<br>        │              │  ├─Parser<br>        │              │  │  ├─Handler<br>        │              │  │  └─Shortcut<br>        │              │  └─XPath<br>        │              │      └─Fixtures<br>        │              └─XPath<br>        │                  └─Extension<br>        ├─debug<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Debug<br>        │              ├─Exception<br>        │              ├─FatalErrorHandler<br>        │              └─Tests<br>        │                  ├─Exception<br>        │                  ├─FatalErrorHandler<br>        │                  └─Fixtures<br>        │                      └─psr4<br>        ├─dom-crawler<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─DomCrawler<br>        │              ├─Field<br>        │              └─Tests<br>        │                  ├─Field<br>        │                  └─Fixtures<br>        ├─event-dispatcher<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─EventDispatcher<br>        │              ├─Debug<br>        │              ├─DependencyInjection<br>        │              └─Tests<br>        │                  ├─Debug<br>        │                  └─DependencyInjection<br>        ├─filesystem<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Filesystem<br>        │              ├─Exception<br>        │              └─Tests<br>        ├─finder<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Finder<br>        │              ├─Adapter<br>        │              ├─Comparator<br>        │              ├─Exception<br>        │              ├─Expression<br>        │              ├─Iterator<br>        │              ├─Shell<br>        │              └─Tests<br>        │                  ├─Comparator<br>        │                  ├─Expression<br>        │                  ├─FakeAdapter<br>        │                  ├─Fixtures<br>        │                  │  ├─A<br>        │                  │  │  └─B<br>        │                  │  │      └─C<br>        │                  │  ├─copy<br>        │                  │  │  └─A<br>        │                  │  │      └─B<br>        │                  │  │          └─C<br>        │                  │  ├─one<br>        │                  │  │  └─b<br>        │                  │  └─with space<br>        │                  └─Iterator<br>        ├─http-foundation<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─HttpFoundation<br>        │              ├─File<br>        │              │  ├─Exception<br>        │              │  └─MimeType<br>        │              ├─Resources<br>        │              │  └─stubs<br>        │              ├─Session<br>        │              │  ├─Attribute<br>        │              │  ├─Flash<br>        │              │  └─Storage<br>        │              │      ├─Handler<br>        │              │      └─Proxy<br>        │              └─Tests<br>        │                  ├─File<br>        │                  │  ├─Fixtures<br>        │                  │  │  └─directory<br>        │                  │  └─MimeType<br>        │                  └─Session<br>        │                      ├─Attribute<br>        │                      ├─Flash<br>        │                      └─Storage<br>        │                          ├─Handler<br>        │                          └─Proxy<br>        ├─http-kernel<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─HttpKernel<br>        │              ├─Bundle<br>        │              ├─CacheClearer<br>        │              ├─CacheWarmer<br>        │              ├─Config<br>        │              ├─Controller<br>        │              ├─DataCollector<br>        │              │  └─Util<br>        │              ├─Debug<br>        │              ├─DependencyInjection<br>        │              ├─Event<br>        │              ├─EventListener<br>        │              ├─Exception<br>        │              ├─Fragment<br>        │              ├─HttpCache<br>        │              ├─Log<br>        │              ├─Profiler<br>        │              └─Tests<br>        │                  ├─Bundle<br>        │                  ├─CacheClearer<br>        │                  ├─CacheWarmer<br>        │                  ├─Config<br>        │                  ├─Controller<br>        │                  ├─DataCollector<br>        │                  ├─Debug<br>        │                  ├─DependencyInjection<br>        │                  ├─EventListener<br>        │                  ├─Fixtures<br>        │                  │  ├─BaseBundle<br>        │                  │  │  └─Resources<br>        │                  │  ├─Bundle1Bundle<br>        │                  │  │  └─Resources<br>        │                  │  ├─Bundle2Bundle<br>        │                  │  ├─ChildBundle<br>        │                  │  │  └─Resources<br>        │                  │  ├─ExtensionAbsentBundle<br>        │                  │  ├─ExtensionLoadedBundle<br>        │                  │  │  └─DependencyInjection<br>        │                  │  ├─ExtensionPresentBundle<br>        │                  │  │  ├─Command<br>        │                  │  │  └─DependencyInjection<br>        │                  │  └─Resources<br>        │                  │      ├─BaseBundle<br>        │                  │      ├─Bundle1Bundle<br>        │                  │      ├─ChildBundle<br>        │                  │      └─FooBundle<br>        │                  ├─Fragment<br>        │                  ├─HttpCache<br>        │                  └─Profiler<br>        │                      └─Mock<br>        ├─process<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Process<br>        │              ├─Exception<br>        │              └─Tests<br>        ├─routing<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Routing<br>        │              ├─Annotation<br>        │              ├─Exception<br>        │              ├─Generator<br>        │              │  └─Dumper<br>        │              ├─Loader<br>        │              │  └─schema<br>        │              │      └─routing<br>        │              ├─Matcher<br>        │              │  └─Dumper<br>        │              └─Tests<br>        │                  ├─Annotation<br>        │                  ├─Fixtures<br>        │                  │  ├─AnnotatedClasses<br>        │                  │  └─dumper<br>        │                  ├─Generator<br>        │                  │  └─Dumper<br>        │                  ├─Loader<br>        │                  └─Matcher<br>        │                      └─Dumper<br>        ├─security-core<br>        │  └─Symfony<br>        │      └─Component<br>        │          └─Security<br>        │              └─Core<br>        │                  ├─Authentication<br>        │                  │  ├─Provider<br>        │                  │  ├─RememberMe<br>        │                  │  └─Token<br>        │                  ├─Authorization<br>        │                  │  └─Voter<br>        │                  ├─Encoder<br>        │                  ├─Event<br>        │                  ├─Exception<br>        │                  ├─Resources<br>        │                  │  └─translations<br>        │                  ├─Role<br>        │                  ├─Tests<br>        │                  │  ├─Authentication<br>        │                  │  │  ├─Provider<br>        │                  │  │  ├─RememberMe<br>        │                  │  │  └─Token<br>        │                  │  ├─Authorization<br>        │                  │  │  └─Voter<br>        │                  │  ├─Encoder<br>        │                  │  ├─Role<br>        │                  │  ├─User<br>        │                  │  ├─Util<br>        │                  │  └─Validator<br>        │                  │      └─Constraints<br>        │                  ├─User<br>        │                  ├─Util<br>        │                  └─Validator<br>        │                      └─Constraints<br>        └─translation<br>            └─Symfony<br>                └─Component<br>                    └─Translation<br>                        ├─Catalogue<br>                        ├─Dumper<br>                        ├─Exception<br>                        ├─Extractor<br>                        ├─Loader<br>                        │  └─schema<br>                        │      └─dic<br>                        │          └─xliff-core<br>                        ├─Tests<br>                        │  ├─Catalogue<br>                        │  ├─Dumper<br>                        │  ├─fixtures<br>                        │  │  └─resourcebundle<br>                        │  │      ├─corrupted<br>                        │  │      ├─dat<br>                        │  │      └─res<br>                        │  └─Loader<br>                        └─Writer<br>几个注意事项：</p>
+<ol>
+<li><p><code>app/storage</code>需要开启可写权限</p>
+</li>
+<li><p><code>php5.4</code>以上, 并且安装<code>MCrypt PHP 扩展</code>，对<code>php5.5</code>,部分系统需要手动安装php-json扩展</p>
+</li>
+<li><p>修改 <code>app/config/app.php</code> 部分配置，如timezone和locale,生产环境下app.debug不要使用true. </p>
+</li>
+<li><p>路径配置文件，<code>bootstrap/paths.php</code></p>
+</li>
+<li><p>laravel4 中需要打开<code>php_openssl</code>扩展,否则会报错。<br><a href="http://laravel.io/forum/04-18-2014-you-need-to-specify-a-file-path-to-store-the-seed" target="_blank">http://laravel.io/forum/04-18-2014-you-need-to-specify-a-file-path-to-store-the-seed</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/07/03/partyline-optimize-advices/">partyline优化建议</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-07-03T00:00:00.000Z"><a href="/2014/07/03/partyline-optimize-advices/">2014年07月03日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="安装浏览器扩展测试">安装浏览器扩展测试</h3>
+<p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
+<h3 id="图片、css、js静态资源缓存时间">图片、css、js静态资源缓存时间</h3>
+<p>除对缓存有特殊要求的资源外， 资源的<code>缓存时间</code>使用expires响应头， 设置为一周以上，一年以下</p>
+<h3 id="调整CSS结构加速首屏呈现速度">调整CSS结构加速首屏呈现速度</h3>
+<p>提取并内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）</p>
+<p>将需要在首屏加载时使用的样式内嵌在<code>&lt;style&gt;</code> 内，次要样式使用js加载，如：</p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+      <span class="class">.blue</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;<span class="rule">}</span></span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"blue"</span>&gt;</span>
+      Hello, world!
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      <span class="keyword">var</span> cb = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="keyword">var</span> l = document.createElement(<span class="string">'link'</span>); l.rel = <span class="string">'stylesheet'</span>;
+        l.href = <span class="string">'small.css'</span>;
+        <span class="keyword">var</span> h = document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]; h.parentNode.insertBefore(l, h);
+      };
+      <span class="keyword">var</span> raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      <span class="keyword">if</span> (raf) raf(cb);
+      <span class="keyword">else</span> window.addEventListener(<span class="string">'load'</span>, cb);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>减少首屏内容大小：<br><a href="https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent" target="_blank">https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent</a></p>
+<p>优化css推送：<br><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery" target="_blank">https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery</a></p>
+<h3 id="精简压缩html,css,js">精简压缩html,css,js</h3>
+<ul>
+<li>chrome扩展提供精简后的html</li>
+<li>css压缩可使用<a href="http://www.phpied.com/cssmin-js/" target="_blank">cssmin.js</a> 和<br><a href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI<br>Compressor</a></li>
+<li>js压缩可使用<a href="http://www.crockford.com/javascript/jsmin.html" target="_blank">JSMin</a>和<a href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI<br>Compressor</a></li>
+</ul>
+<p>参考：<a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">https://developers.google.com/speed/docs/insights/MinifyResources</a></p>
+<h3 id="图片压缩">图片压缩</h3>
+<ul>
+<li>图片格式选择：<code>png</code>格式各方面优于<code>gif</code> , 尽量使用<code>png</code>替代<code>gif</code>格式的图片,仅对简单图像，如小于10x10像素或少于三种颜色的图像。对照片类图片使用<code>jpg</code>格式，不要使用<code>bmp</code>或者<code>tiff</code>格式。</li>
+</ul>
+<ul>
+<li><p>使用<code>jpegtran</code>压缩<code>jpg</code></p>
+<ul>
+<li><a href="http://jpegclub.org/jpegtran/" target="_blank">文档和下载</a></li>
+<li><a href="http://blog.csdn.net/lan861698789/article/details/7738381" target="_blank">如何使用jpegtran - 蓝天白云 - 博客频道 - CSDN.NET</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>使用 <code>optipng</code> 压缩 <code>png</code></p>
+<ul>
+<li><a href="http://optipng.sourceforge.net/" target="_blank">主页</a> </li>
+<li><a href="http://optipng.sourceforge.net/optipng-0.7.5.man.pdf" target="_blank">手册（PDF格式）</a></li>
+</ul>
+</li>
+</ul>
+<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片,如果能找到使用编程语言存在精简压缩处理图片的类库或函数，请使用类库或函数处理更好。</p>
+<p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
+<hr>
+<h3 id="服务器架构方案,安装服务器模块自动优化">服务器架构方案,安装服务器模块自动优化</h3>
+<p>pagespeed有服务器自动优化模块，当前只支持nginx和apache。</p>
+<p>在源服务器跟squid之间加入一层(或者直接使用nginx或者apache做反向代理)，放入一个nginx（安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。缺点是占用部分服务器资源。响应时间可能略有增加。</p>
+<p>ngx_pagespeed能完成基础优化。这是测试站点得分，与设想架构不同的是，这是在squid外包装了nginx作为反向代理。测试服务器在北京，存取香港服务器速度很慢，因而响应时间一项得分表现不佳</p>
+<p><img src="http://i.imgur.com/nfVo6SV.jpg" alt=""></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/06/20/wordpress-filter-and-action/">wordpress filter and action</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-06-20T07:38:09.000Z"><a href="/2014/06/20/wordpress-filter-and-action/">2014年06月20日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/06/20/file-system-broken-reasons/">文件系统损坏原因</a></h1>
   
 
@@ -275,98 +563,6 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
     <header>
       
   
-    <h1 class="title"><a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-06-11T07:15:07.000Z"><a href="/2014/06/11/partyline-optimize-advices/">2014年06月11日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <h3 id="安装浏览器扩展">安装浏览器扩展</h3>
-<p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
-<p>下载处理后的 </p>
-<h3 id="图片、css、js静态资源缓存时间">图片、css、js静态资源缓存时间</h3>
-<p>除对缓存有特殊要求的资源外， 资源的<code>缓存时间</code>使用expires响应头， 设置为一周以上，一年以下</p>
-<h3 id="内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）">内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）</h3>
-<p>identify and inline the CSS necessary for rendering the above-the-fold content and defer loading the remaining styles until after the above-the-fold content.</p>
-<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-      <span class="class">.blue</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;<span class="rule">}</span></span>
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"blue"</span>&gt;</span>
-      Hello, world!
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-      <span class="keyword">var</span> cb = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-        <span class="keyword">var</span> l = document.createElement(<span class="string">'link'</span>); l.rel = <span class="string">'stylesheet'</span>;
-        l.href = <span class="string">'small.css'</span>;
-        <span class="keyword">var</span> h = document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]; h.parentNode.insertBefore(l, h);
-      };
-      <span class="keyword">var</span> raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      <span class="keyword">if</span> (raf) raf(cb);
-      <span class="keyword">else</span> window.addEventListener(<span class="string">'load'</span>, cb);
-    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><p>优化css推送：<br><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery" target="_blank">https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery</a></p>
-<h3 id="压缩html,css,js">压缩html,css,js</h3>
-<p><a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">https://developers.google.com/speed/docs/insights/MinifyResources</a></p>
-<h3 id="图片压缩">图片压缩</h3>
-<ul>
-<li>图片格式选择：<code>png</code>格式各方面优于<code>gif</code> , 尽量使用<code>png</code>替代<code>gif</code>格式的图片,仅对简单图像，如小于10x10像素或少于三种颜色的图像。对照片类图片使用<code>jpg</code>格式，不要使用<code>bmp</code>或者<code>tiff</code>格式。</li>
-</ul>
-<ul>
-<li><p>使用<code>jpegtran</code>压缩<code>jpg</code></p>
-<ul>
-<li><a href="http://jpegclub.org/jpegtran/" target="_blank">文档和下载</a></li>
-<li><a href="http://blog.csdn.net/lan861698789/article/details/7738381" target="_blank">如何使用jpegtran - 蓝天白云 - 博客频道 - CSDN.NET</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>使用 <code>optipng</code> 压缩 <code>png</code></p>
-<ul>
-<li><a href="http://optipng.sourceforge.net/" target="_blank">主页</a> </li>
-<li><a href="http://optipng.sourceforge.net/optipng-0.7.5.man.pdf" target="_blank">手册（PDF格式）</a></li>
-</ul>
-</li>
-</ul>
-<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片</p>
-<p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
-<hr>
-<h3 id="另一种方案">另一种方案</h3>
-<p>在源服务器跟squid之间加入一层，放入一个nginx（已安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。</p>
-<p>ngx_pagespeed能完成大部分优化。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
     <h1 class="title"><a href="/2014/06/10/windows-ftp-bat/">windows下ftp自动更新</a></h1>
   
 
@@ -387,158 +583,6 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
           <div class="alignleft">
             <a href="/2014/06/10/windows-ftp-bat/#more" class="more-link">Read More</a>
           </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/06/09/fuck-baidu-index/">诡异的百度索引查询</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-06-09T06:49:17.000Z"><a href="/2014/06/09/fuck-baidu-index/">2014年06月09日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>早上打开百度统计看看这些天网站的流量和索引量，不看不知道，一看吓一跳，索引量变成零了。</p>
-<p><img src="http://falconchen.github.io/image/baidu_index1.jpg" alt="索引量为0"></p>
-<p>然后下午吃饭回来一看，又给恢复回来了。</p>
-<p><img src="http://falconchen.github.io/image/baidu_index2.jpg" alt="索引量恢复"></p>
-<p>这是什么情况？百度最近抽风，没想到百度统计也这么坑爹的。</p>
-<p>PS:本来这篇文章是在<code>liteIde</code>里写的，没想到插入图片的时候<code>liteIde</code>居然没响应了，没办法，只好先回到<code>MarkdownPad2</code>, Windows上还有没有更好的markdown书写工具？</p>
-<p>PS2: 再然后发现了个破解版的：<a href="http://www.tt7z.com/html/MarkdownPad-Pro.html" target="_blank">http://www.tt7z.com/html/MarkdownPad-Pro.html</a> </p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/06/05/pagespeed-insights-opt/">使用PageSpeed进行网站优化</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-06-05T10:02:35.000Z"><a href="/2014/06/05/pagespeed-insights-opt/">2014年06月05日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，PageSpeed Insights得分仅为57。</p>
-<p><a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">pagespeed insight测试网址</a>，如果无法访问或者检测出错，请自觉翻墙.</p>
-<h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
-<p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/06/05/pagespeed-insights-opt/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/29/利用ssh隧道进行反向代理/">利用SSH隧道进行反向代理</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-29T08:01:07.000Z"><a href="/2014/05/29/利用ssh隧道进行反向代理/">2014年05月29日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>公司有几个网站要迁移到<code>阿里云</code>，数据已经被我迁移过去了，域名还在备案，使用未备案的域名访问，阿里云是会直接封锁的，万恶的备案！！！</p>
-<p>公司有一个临时方案，把域名和数据暂时放在北京office的一台Linux服务器上，备案通过后再切换到阿里云服务器，但是当把数据弄到临时服务器后，突然发现网站的一个功能模块出现兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且这模块不是我开发的, 代码写得有些凌乱,改了两天也算勉强能用了。<br>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/05/29/利用ssh隧道进行反向代理/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/28/hexo-css-issue/">hexo生成css的问题</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-28T03:30:59.000Z"><a href="/2014/05/28/hexo-css-issue/">2014年05月28日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>修改了主题的样式文件如：<code>layout.styl</code><br>在本地预览是可以即时看到效果的，但是当执行<code>hexo g</code>,在<code>public</code>目录下的 <code>style.css</code>却没有发生修改，<code>hexo d</code>部署时也是没有修改版本的样式，不清楚具体原因，现在的解决方法是修改完主题样式后，删除<code>public</code>下的<code>style.css</code>,再重新生成方可生效。</p>
-
-      
-    </div>
-    <footer>
-      
         
         
       
@@ -573,23 +617,23 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
   <ul class="entry">
     
       <li>
-        <a href="/2014/06/20/file-system-broken-reasons/">文件系统损坏原因</a>
+        <a href="/2014/08/04/eclipse-marketplace/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/20/windows-bat-backup-mysql/">Windows批处理备份mysql</a>
+        <a href="/2014/07/23/jqmobi和phoneGap/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/13/firefox-search-bar-modify/">Firefox搜索栏修改</a>
+        <a href="/2014/07/21/laravel-study/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/12/php-fpm优化/">php-fpm优化</a>
+        <a href="/2014/07/03/partyline-optimize-advices/">partyline优化建议</a>
       </li>
     
       <li>
-        <a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a>
+        <a href="/2014/06/20/wordpress-filter-and-action/">wordpress filter and action</a>
       </li>
     
   </ul>

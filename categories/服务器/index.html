@@ -65,6 +65,106 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/07/03/partyline-optimize-advices/">partyline优化建议</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-07-03T00:00:00.000Z"><a href="/2014/07/03/partyline-optimize-advices/">2014年07月03日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="安装浏览器扩展测试">安装浏览器扩展测试</h3>
+<p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
+<h3 id="图片、css、js静态资源缓存时间">图片、css、js静态资源缓存时间</h3>
+<p>除对缓存有特殊要求的资源外， 资源的<code>缓存时间</code>使用expires响应头， 设置为一周以上，一年以下</p>
+<h3 id="调整CSS结构加速首屏呈现速度">调整CSS结构加速首屏呈现速度</h3>
+<p>提取并内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）</p>
+<p>将需要在首屏加载时使用的样式内嵌在<code>&lt;style&gt;</code> 内，次要样式使用js加载，如：</p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+      <span class="class">.blue</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;<span class="rule">}</span></span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"blue"</span>&gt;</span>
+      Hello, world!
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      <span class="keyword">var</span> cb = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="keyword">var</span> l = document.createElement(<span class="string">'link'</span>); l.rel = <span class="string">'stylesheet'</span>;
+        l.href = <span class="string">'small.css'</span>;
+        <span class="keyword">var</span> h = document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]; h.parentNode.insertBefore(l, h);
+      };
+      <span class="keyword">var</span> raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      <span class="keyword">if</span> (raf) raf(cb);
+      <span class="keyword">else</span> window.addEventListener(<span class="string">'load'</span>, cb);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>减少首屏内容大小：<br><a href="https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent" target="_blank">https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent</a></p>
+<p>优化css推送：<br><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery" target="_blank">https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery</a></p>
+<h3 id="精简压缩html,css,js">精简压缩html,css,js</h3>
+<ul>
+<li>chrome扩展提供精简后的html</li>
+<li>css压缩可使用<a href="http://www.phpied.com/cssmin-js/" target="_blank">cssmin.js</a> 和<br><a href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI<br>Compressor</a></li>
+<li>js压缩可使用<a href="http://www.crockford.com/javascript/jsmin.html" target="_blank">JSMin</a>和<a href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI<br>Compressor</a></li>
+</ul>
+<p>参考：<a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">https://developers.google.com/speed/docs/insights/MinifyResources</a></p>
+<h3 id="图片压缩">图片压缩</h3>
+<ul>
+<li>图片格式选择：<code>png</code>格式各方面优于<code>gif</code> , 尽量使用<code>png</code>替代<code>gif</code>格式的图片,仅对简单图像，如小于10x10像素或少于三种颜色的图像。对照片类图片使用<code>jpg</code>格式，不要使用<code>bmp</code>或者<code>tiff</code>格式。</li>
+</ul>
+<ul>
+<li><p>使用<code>jpegtran</code>压缩<code>jpg</code></p>
+<ul>
+<li><a href="http://jpegclub.org/jpegtran/" target="_blank">文档和下载</a></li>
+<li><a href="http://blog.csdn.net/lan861698789/article/details/7738381" target="_blank">如何使用jpegtran - 蓝天白云 - 博客频道 - CSDN.NET</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>使用 <code>optipng</code> 压缩 <code>png</code></p>
+<ul>
+<li><a href="http://optipng.sourceforge.net/" target="_blank">主页</a> </li>
+<li><a href="http://optipng.sourceforge.net/optipng-0.7.5.man.pdf" target="_blank">手册（PDF格式）</a></li>
+</ul>
+</li>
+</ul>
+<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片,如果能找到使用编程语言存在精简压缩处理图片的类库或函数，请使用类库或函数处理更好。</p>
+<p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
+<hr>
+<h3 id="服务器架构方案,安装服务器模块自动优化">服务器架构方案,安装服务器模块自动优化</h3>
+<p>pagespeed有服务器自动优化模块，当前只支持nginx和apache。</p>
+<p>在源服务器跟squid之间加入一层(或者直接使用nginx或者apache做反向代理)，放入一个nginx（安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。缺点是占用部分服务器资源。响应时间可能略有增加。</p>
+<p>ngx_pagespeed能完成基础优化。这是测试站点得分，与设想架构不同的是，这是在squid外包装了nginx作为反向代理。测试服务器在北京，存取香港服务器速度很慢，因而响应时间一项得分表现不佳</p>
+<p><img src="http://i.imgur.com/nfVo6SV.jpg" alt=""></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/06/20/file-system-broken-reasons/">文件系统损坏原因</a></h1>
   
 
@@ -219,98 +319,6 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
     <header>
       
   
-    <h1 class="title"><a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-06-11T07:15:07.000Z"><a href="/2014/06/11/partyline-optimize-advices/">2014年06月11日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <h3 id="安装浏览器扩展">安装浏览器扩展</h3>
-<p><code>chrome扩展</code>: <a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank">https://developers.google.com/speed/docs/insights/using_chrome</a></p>
-<p>下载处理后的 </p>
-<h3 id="图片、css、js静态资源缓存时间">图片、css、js静态资源缓存时间</h3>
-<p>除对缓存有特殊要求的资源外， 资源的<code>缓存时间</code>使用expires响应头， 设置为一周以上，一年以下</p>
-<h3 id="内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）">内嵌关键的css样式，延迟加载次要样式（在首屏呈现后加载）</h3>
-<p>identify and inline the CSS necessary for rendering the above-the-fold content and defer loading the remaining styles until after the above-the-fold content.</p>
-<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-      <span class="class">.blue</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;<span class="rule">}</span></span>
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"blue"</span>&gt;</span>
-      Hello, world!
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-      <span class="keyword">var</span> cb = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-        <span class="keyword">var</span> l = document.createElement(<span class="string">'link'</span>); l.rel = <span class="string">'stylesheet'</span>;
-        l.href = <span class="string">'small.css'</span>;
-        <span class="keyword">var</span> h = document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]; h.parentNode.insertBefore(l, h);
-      };
-      <span class="keyword">var</span> raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      <span class="keyword">if</span> (raf) raf(cb);
-      <span class="keyword">else</span> window.addEventListener(<span class="string">'load'</span>, cb);
-    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><p>优化css推送：<br><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery" target="_blank">https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery</a></p>
-<h3 id="压缩html,css,js">压缩html,css,js</h3>
-<p><a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">https://developers.google.com/speed/docs/insights/MinifyResources</a></p>
-<h3 id="图片压缩">图片压缩</h3>
-<ul>
-<li>图片格式选择：<code>png</code>格式各方面优于<code>gif</code> , 尽量使用<code>png</code>替代<code>gif</code>格式的图片,仅对简单图像，如小于10x10像素或少于三种颜色的图像。对照片类图片使用<code>jpg</code>格式，不要使用<code>bmp</code>或者<code>tiff</code>格式。</li>
-</ul>
-<ul>
-<li><p>使用<code>jpegtran</code>压缩<code>jpg</code></p>
-<ul>
-<li><a href="http://jpegclub.org/jpegtran/" target="_blank">文档和下载</a></li>
-<li><a href="http://blog.csdn.net/lan861698789/article/details/7738381" target="_blank">如何使用jpegtran - 蓝天白云 - 博客频道 - CSDN.NET</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>使用 <code>optipng</code> 压缩 <code>png</code></p>
-<ul>
-<li><a href="http://optipng.sourceforge.net/" target="_blank">主页</a> </li>
-<li><a href="http://optipng.sourceforge.net/optipng-0.7.5.man.pdf" target="_blank">手册（PDF格式）</a></li>
-</ul>
-</li>
-</ul>
-<p>需要动态处理的图片(如新闻图片)，可以使用在程序内调用对应的上述外部程序，如上传图片成功后，php中可使用<code>exec</code>，<code>system</code>等函数调用jpegtran或optipng操作图片</p>
-<p>固定的图片如css样式图片,背景图片，icon等，可以直接使用 <code>chrome扩展</code> 保存处理后的图片或对应压缩工具处理过的图片来替换。</p>
-<hr>
-<h3 id="另一种方案">另一种方案</h3>
-<p>在源服务器跟squid之间加入一层，放入一个nginx（已安装ngx_pagespeed模块）服务器,为节省带宽，最好是跟squid在同一服务器或同一内网，nginx作为源服务器的反向代理，squid作为nginx的反向代理和缓存服务器。</p>
-<p>ngx_pagespeed能完成大部分优化。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
     <h1 class="title"><a href="/2014/06/10/windows-ftp-bat/">windows下ftp自动更新</a></h1>
   
 
@@ -442,23 +450,23 @@ echo Finish at  %date% %time%  &gt;&gt; ../backup.log</span>
   <ul class="entry">
     
       <li>
-        <a href="/2014/06/20/file-system-broken-reasons/">文件系统损坏原因</a>
+        <a href="/2014/08/04/eclipse-marketplace/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/20/windows-bat-backup-mysql/">Windows批处理备份mysql</a>
+        <a href="/2014/07/23/jqmobi和phoneGap/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/13/firefox-search-bar-modify/">Firefox搜索栏修改</a>
+        <a href="/2014/07/21/laravel-study/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/12/php-fpm优化/">php-fpm优化</a>
+        <a href="/2014/07/03/partyline-optimize-advices/">partyline优化建议</a>
       </li>
     
       <li>
-        <a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a>
+        <a href="/2014/06/20/wordpress-filter-and-action/">wordpress filter and action</a>
       </li>
     
   </ul>

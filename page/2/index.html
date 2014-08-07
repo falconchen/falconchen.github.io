@@ -61,6 +61,158 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/06/09/fuck-baidu-index/">诡异的百度索引查询</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-06-09T06:49:17.000Z"><a href="/2014/06/09/fuck-baidu-index/">2014年06月09日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>早上打开百度统计看看这些天网站的流量和索引量，不看不知道，一看吓一跳，索引量变成零了。</p>
+<p><img src="http://falconchen.github.io/image/baidu_index1.jpg" alt="索引量为0"></p>
+<p>然后下午吃饭回来一看，又给恢复回来了。</p>
+<p><img src="http://falconchen.github.io/image/baidu_index2.jpg" alt="索引量恢复"></p>
+<p>这是什么情况？百度最近抽风，没想到百度统计也这么坑爹的。</p>
+<p>PS:本来这篇文章是在<code>liteIde</code>里写的，没想到插入图片的时候<code>liteIde</code>居然没响应了，没办法，只好先回到<code>MarkdownPad2</code>, Windows上还有没有更好的markdown书写工具？</p>
+<p>PS2: 再然后发现了个破解版的：<a href="http://www.tt7z.com/html/MarkdownPad-Pro.html" target="_blank">http://www.tt7z.com/html/MarkdownPad-Pro.html</a> </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/06/05/pagespeed-insights-opt/">使用PageSpeed进行网站优化</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-06-05T10:02:35.000Z"><a href="/2014/06/05/pagespeed-insights-opt/">2014年06月05日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，PageSpeed Insights得分仅为57。</p>
+<p><a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">pagespeed insight测试网址</a>，如果无法访问或者检测出错，请自觉翻墙.</p>
+<h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
+<p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2014/06/05/pagespeed-insights-opt/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/05/29/利用ssh隧道进行反向代理/">利用SSH隧道进行反向代理</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-29T08:01:07.000Z"><a href="/2014/05/29/利用ssh隧道进行反向代理/">2014年05月29日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>公司有几个网站要迁移到<code>阿里云</code>，数据已经被我迁移过去了，域名还在备案，使用未备案的域名访问，阿里云是会直接封锁的，万恶的备案！！！</p>
+<p>公司有一个临时方案，把域名和数据暂时放在北京office的一台Linux服务器上，备案通过后再切换到阿里云服务器，但是当把数据弄到临时服务器后，突然发现网站的一个功能模块出现兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且这模块不是我开发的, 代码写得有些凌乱,改了两天也算勉强能用了。<br>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2014/05/29/利用ssh隧道进行反向代理/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/05/28/hexo-css-issue/">hexo生成css的问题</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-28T03:30:59.000Z"><a href="/2014/05/28/hexo-css-issue/">2014年05月28日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>修改了主题的样式文件如：<code>layout.styl</code><br>在本地预览是可以即时看到效果的，但是当执行<code>hexo g</code>,在<code>public</code>目录下的 <code>style.css</code>却没有发生修改，<code>hexo d</code>部署时也是没有修改版本的样式，不清楚具体原因，现在的解决方法是修改完主题样式后，删除<code>public</code>下的<code>style.css</code>,再重新生成方可生效。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/05/28/hello-liteIde/">hello LiteIde</a></h1>
   
 
@@ -333,215 +485,13 @@ hexo d
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/23/java笔记/">Java学习笔记</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-23T02:06:04.000Z"><a href="/2014/05/23/java笔记/">2014年05月23日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li>参考书目 </li>
-</ul>
-<h3 id="Head_First_Java">Head First Java</h3>
-<p><img src="http://img5.douban.com/lpic/s2171906.jpg" alt="head first java"></p>
-<hr>
-<p>java 的integer与boolean两种类型<strong>并不相容</strong>，只能用下面的boolean变量来测试</p>
-<pre><code><span class="keyword">boolean</span> isHot = <span class="keyword">true</span>;
-<span class="keyword">while</span> (isHot){ }
-</code></pre><hr>
-<p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/05/23/java笔记/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/23/nodejs笔记/">nodejs笔记</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-23T02:06:04.000Z"><a href="/2014/05/23/nodejs笔记/">2014年05月23日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <h3 id="npm安装包失败的解决方法">npm安装包失败的解决方法</h3>
-<p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
-<ol>
-<li><p>通过<code>config</code>命令</p>
-<pre><code> npm config <span class="keyword">set</span> registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> 
- npm info underscore （如果上面配置正确这个命令会有字符串response）
-</code></pre></li>
-<li><p>命令行指定</p>
-<pre><code> npm --registry http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span> info underscore 
-</code></pre></li>
-<li><p>编辑 <code>~/.npmrc</code>,win下为nodejs安装目录下的<code>npmrc</code> ,加入下面内容:</p>
-<pre><code> registry = http://registry<span class="preprocessor">.cnpmjs</span><span class="preprocessor">.org</span>
-</code></pre></li>
-</ol>
-<p>搜索镜像: <a href="http://cnpmjs.org" target="_blank">http://cnpmjs.org</a></p>
-<p>建立或使用镜像,参考: <a href="https://github.com/fenmgk2/cnpmjs.org" target="_blank">https://github.com/fenmgk2/cnpmjs.org</a></p>
-<p>引用自：<br>    <a href="http://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank">使用npm安装一些包失败了的看过来（npm国内镜像介绍） - CNode</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/23/vim笔记/">vim笔记</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-22T16:00:00.000Z"><a href="/2014/05/23/vim笔记/">2014年05月23日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <h3 id="Windows下设置别名">Windows下设置别名</h3>
-<ul>
-<li><p>新建一个<code>vi.bat</code>放到<code>%path%</code>下，如<code>c:\windows\system32</code>下，写入以下内容：</p>
-<pre><code>  <span class="command">\path</span><span class="command">\to</span><span class="command">\vim</span>.exe <span class="comment">%1%</span>
-</code></pre></li>
-</ul>
-<ul>
-<li><p>方法二，批量设置别名    (推荐)</p>
-<pre><code>  1. 新建一个文件`aliases.txt`，放在任意目录下，写入如下别名内容：
-
-          ls=dir /ONE <span class="formula">$*
-          ll=dir /ONE $</span>*
-          cat=type <span class="formula">$*
-          rm=del $</span>*
-          cd=cd /d <span class="formula">$*
-          vi=G:<span class="command">\falconDisk</span><span class="command">\Vim</span><span class="command">\vim</span>74<span class="command">\gvim</span> $</span>*
-
-  2. 新建另一个文件 `autorun.bat` ，放在任意目录，内容如下：
-
-          @echo off
-          cls
-          color 0A
-          doskey /macrofile=<span class="command">\path</span><span class="command">\to</span><span class="command">\aliases</span>.txt
-  3.  找到注册表如下位置:
-
-      <span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Command</span> Processor<span class="special">]</span>
-
-      添加一个字符串值Autorun，值为<span class="command">\path</span><span class="command">\to</span><span class="command">\autorun</span>.bat
-
-  4. 启动命令行可以看到效果了
-</code></pre></li>
-</ul>
-<p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/05/23/vim笔记/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/21/hello-world/">Hello World</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-21T02:06:04.000Z"><a href="/2014/05/21/hello-world/">2014年05月21日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank">trobuleshooting</a> or you can ask me on <a href="https://github.com/tommy351/hexo/issues" target="_blank">GitHub</a>.</p>
-<p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/05/21/hello-world/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
     <a href="/" class="alignleft prev">Prev</a>
   
+  
+    <a href="/page/3/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -559,23 +509,23 @@ hexo d
   <ul class="entry">
     
       <li>
-        <a href="/2014/06/20/file-system-broken-reasons/">文件系统损坏原因</a>
+        <a href="/2014/08/04/eclipse-marketplace/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/20/windows-bat-backup-mysql/">Windows批处理备份mysql</a>
+        <a href="/2014/07/23/jqmobi和phoneGap/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/13/firefox-search-bar-modify/">Firefox搜索栏修改</a>
+        <a href="/2014/07/21/laravel-study/"></a>
       </li>
     
       <li>
-        <a href="/2014/06/12/php-fpm优化/">php-fpm优化</a>
+        <a href="/2014/07/03/partyline-optimize-advices/">partyline优化建议</a>
       </li>
     
       <li>
-        <a href="/2014/06/11/partyline-optimize-advices/">partyline优化建议</a>
+        <a href="/2014/06/20/wordpress-filter-and-action/">wordpress filter and action</a>
       </li>
     
   </ul>
