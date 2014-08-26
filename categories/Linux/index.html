@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>pagespeed | 琴心剑胆</title>
+  <title>Linux | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -55,7 +55,7 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">pagespeed</h2>
+<h2 class="archive-title category">Linux</h2>
 
 
   
@@ -65,28 +65,43 @@
     <header>
       
   
-    <h1 class="title"><a href="/2014/06/05/pagespeed-insights-opt/">使用PageSpeed进行网站优化</a></h1>
+    <h1 class="title"><a href="/2014/08/26/linux-date-setting/">linux 设置日期</a></h1>
   
 
       
         <div class="icon"></div>
-        <time datetime="2014-06-05T10:02:35.000Z"><a href="/2014/06/05/pagespeed-insights-opt/">2014年06月05日</a></time>
+        <time datetime="2014-08-26T09:09:57.000Z"><a href="/2014/08/26/linux-date-setting/">2014年08月26日</a></time>
       
     </header>
     <div class="entry">
       
-        <p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，PageSpeed Insights得分仅为57。</p>
-<p><a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">pagespeed insight测试网址</a>，如果无法访问或者检测出错，请自觉翻墙.</p>
-<h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
-<p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br>
+        <h3 id="linux_设置日期">linux 设置日期</h3>
+<p>linux系统下查看和设置日期时间的命令都是date。</p>
+<p>查看日期时间命令：<code>date</code></p>
+<p>设置日期时间命令：<code>date -s [date|time]</code></p>
+<p>设置系统日期为2008年9月9日</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">date</span> <span class="attribute">-s</span> <span class="number">20080909</span>
+</pre></td></tr></table></figure>
+
+
+<p>设置系统时间为14:25:49</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="tag">date</span> <span class="tag">-s</span> 14<span class="pseudo">:25</span><span class="pseudo">:49</span>
+</pre></td></tr></table></figure>
+
+
+<p>设置系统日期和时间为:2008年9月9日14时25分49秒</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">date</span> <span class="attribute">-s</span> <span class="string">'20080909 14:25:49'</span>   <span class="comment">//一定要加引号才行。</span>
+</pre></td></tr></table></figure>
+
+<p>其实设置的日期和时间格式是灵活的，可以有很多格式。</p>
+
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2014/06/05/pagespeed-insights-opt/#more" class="more-link">Read More</a>
-          </div>
         
         
       
