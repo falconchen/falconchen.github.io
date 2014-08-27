@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>nginx | 琴心剑胆</title>
+  <title>wordpress | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -55,7 +55,7 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">nginx</h2>
+<h2 class="archive-title tag">wordpress</h2>
 
 
   
@@ -65,123 +65,97 @@
     <header>
       
   
-    <h1 class="title"><a href="/2014/06/05/pagespeed-insights-opt/">使用PageSpeed进行网站优化</a></h1>
+    <h1 class="title"><a href="/2014/08/27/wordpress-language-package/">Wordpress 语言包设置和翻译</a></h1>
   
 
       
         <div class="icon"></div>
-        <time datetime="2014-06-05T10:02:35.000Z"><a href="/2014/06/05/pagespeed-insights-opt/">2014年06月05日</a></time>
+        <time datetime="2014-08-27T03:15:08.000Z"><a href="/2014/08/27/wordpress-language-package/">2014年08月27日</a></time>
       
     </header>
     <div class="entry">
       
-        <p>最近网站打开速度较慢，服务器带宽经常暴满，虽然从10m提高到15m，依然时常能达到锋值，ping值高达两三百毫秒，PageSpeed Insights得分仅为57。</p>
-<p><a href="http://developers.google.com/speed/pagespeed/insights" target="_blank">pagespeed insight测试网址</a>，如果无法访问或者检测出错，请自觉翻墙.</p>
-<h3 id="PageSpeed_Insights_简介">PageSpeed Insights 简介</h3>
-<p>以下内容摘自：<a href="https://developers.google.com/speed/docs/insights/about" target="_blank">https://developers.google.com/speed/docs/insights/about</a><br>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/06/05/pagespeed-insights-opt/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
+        <h3 id="多语言翻译设置">多语言翻译设置</h3>
+<ol>
+<li>主题的<code>functions.php</code>添加多语言的初始代码<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">function</span> <span class="title">theme_languages_init</span><span class="params">()</span>{</span>   
+    load_theme_textdomain(<span class="string">'bluenight'</span>, get_template_directory() . <span class="string">'/languages'</span>);   
+}
+add_action (<span class="string">'init'</span>, <span class="string">'theme_languages_init'</span>);
+</pre></td></tr></table></figure>
 
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/29/利用ssh隧道进行反向代理/">利用SSH隧道进行反向代理</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-29T08:01:07.000Z"><a href="/2014/05/29/利用ssh隧道进行反向代理/">2014年05月29日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>公司有几个网站要迁移到<code>阿里云</code>，数据已经被我迁移过去了，域名还在备案，使用未备案的域名访问，阿里云是会直接封锁的，万恶的备案！！！</p>
-<p>公司有一个临时方案，把域名和数据暂时放在北京office的一台Linux服务器上，备案通过后再切换到阿里云服务器，但是当把数据弄到临时服务器后，突然发现网站的一个功能模块出现兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且这模块不是我开发的, 代码写得有些凌乱,改了两天也算勉强能用了。<br>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/05/29/利用ssh隧道进行反向代理/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2014/05/27/微信开发[0]-搭建开发测试环境/">微信开发笔记[0]:搭建开发测试环境</a></h1>
-  
-
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-27T03:34:26.000Z"><a href="/2014/05/27/微信开发[0]-搭建开发测试环境/">2014年05月27日</a></time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>概况：</p>
-<ul>
-<li><p>本地开发机 <code>win7</code> ,计算机名：<code>FALCON-PC</code> ,公司内网无法进行80端口映射.已安装 <code>nginx+php+mysql</code></p>
 </li>
-<li><p>外网测试机环境为<code>centos6.4</code>，主机名<code>cpp65</code> 。已安装<code>nginx</code></p>
-</li>
-<li><p>使用域名 <code>65.hihoku.com</code> 进行开发测试，A记录已指向<code>cpp65</code></p>
-</li>
-</ul>
-<p>搭建目标：</p>
-<ul>
-<li>微信服务器能直接与本地开发机通讯，本地开发即时看到调试效果</li>
-</ul>
-<p>原理和实现：</p>
-<ul>
-<li><p>由于微信服务器不能直接访问内网的开发机，所以先让微信服务器访问外网测试主机，测试主机通过ssh隧道将请求转发至开发机，取得开发机响应的数据后，再返回给微信服务器。</p>
-</li>
-<li><p>SSH Forward 远程端口转发（<code>S2C</code>模式）+ <code>nginx反向代理</code> </p>
-</li>
-</ul>
+</ol>
+<p>插件为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>add_action(<span class="string">'plugins_loaded'</span>,<span class="string">'MingPressAdmin::mingspress_textdomain'</span>);
+<span class="class"><span class="keyword">class</span> <span class="title">MingPressAdmin</span> {</span>
+	<span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">mingspress_textdomain</span><span class="params">()</span> {</span>
+		<span class="variable">$result</span> = load_plugin_textdomain( <span class="string">'mingspress'</span>, <span class="keyword">false</span>, dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) );
+	}
+}
+</pre></td></tr></table></figure><br>将对应的语言包放在主题下,bluenight是主题名，也相当于翻译的命名空间<br><br><br>2. 在主题中使用<code>_e</code>和<code>__</code>标记需要多语言翻译的内容，如：<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="comment">// 普通的输出使用 _e() 函数   </span>
+&lt;div <span class="keyword">class</span>=<span class="string">"post"</span>&gt;&lt;p&gt;&lt;?php _e(<span class="string">'Sorry, no posts matched your criteria.'</span>, <span class="string">'bluenight'</span>); ?&gt;&lt;/p&gt;&lt;/div&gt;   
+<span class="comment">// 在函数中走参数或返回值输出使用 __() 函数   </span>
+echo the_tags(<span class="string">'&lt;h2&gt;'</span>.__(<span class="string">'Related '</span>,<span class="string">'bluenight'</span>), <span class="string">' , '</span> , __(<span class="string">' Posts'</span>,<span class="string">'bluenight'</span>).<span class="string">'&lt;/h2&gt;'</span>).<span class="string">'&lt;ul&gt;'</span>;
+</pre></td></tr></table></figure>
+
+<ol>
+<li>PoEdit 设置</li>
+</ol>
+<p>下载地址：<a href="http://poedit.net/" target="_blank">http://poedit.net/</a></p>
+<p>安装后新建一个工程，<br><img src="http://falcon.sinaapp.com/images/md/poedit1.png" alt=""></p>
+<p>翻译的语言这里选择：简体中文/zh_CN</p>
+<p>确认后再点击保存会提供保存的名称和位置，我们放在主题的language下，命名为zh_CN.po</p>
+<p>如果可供其他人翻译的模板，则翻译语言一则选择英语，保存为<code>主题名.pot</code></p>
+<p><img src="http://falcon.sinaapp.com/images/md/poedit2.png" alt="">    </p>
+<p>那么其他人翻译时可以用<code>PoEdit</code>中导入此模板进行翻译，<code>wordpress</code>官方主题就是这样的</p>
+<p>保存后点击从源代码提取，填写翻译的属性，再保存一次<br><img src="http://falcon.sinaapp.com/images/md/poedit3.png" alt=""></p>
+<p>源路径填写为文件上一级目录：<br><img src="http://falcon.sinaapp.com/images/md/poedit4.png" alt=""></p>
+<p>源关键字：</p>
+<pre><code>__
+_<span class="tag">e</span>
+_<span class="tag">n</span><span class="pseudo">:1</span>,2
+_<span class="tag">x</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+_<span class="tag">ex</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+</code></pre><p><img src="http://falcon.sinaapp.com/images/md/poedit5.png" alt=""></p>
+<p>_n是单复数，如评论</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>  
+<span class="keyword">echo</span> _n( <span class="string">'There is a comment'</span> , <span class="string">'There are comments'</span> , get_comments_number() );  
+<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>_x和_ex是按上下文语义翻译，如：</p>
+<p>名词：一篇文章</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"a post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>动词：发布</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"To post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>点击从源文件更新，此时<code>PoEdit</code>搜索到的翻译字符串为<br><img src="http://falcon.sinaapp.com/images/md/poedit7.png" alt=""></p>
+<p>确认后会自动导入翻译文本<br><img src="http://falcon.sinaapp.com/images/md/poedit6.png" alt=""></p>
+<p>修改<code>wp-config.php</code>的语言常量</p>
+<pre><code><span class="class"><span class="keyword">define</span></span>(<span class="string">'WPLANG'</span>, <span class="string">'zh_CN'</span>);      
+</code></pre><p>参考文章：<br><a href="http://www.wpdaxue.com/localize-wordpress-themes.html" target="_blank">http://www.wpdaxue.com/localize-wordpress-themes.html</a><br><a href="http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html" target="_blank">http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html</a><br><a href="http://www.ludou.org/how-to-translate-wordpress-theme-and-plugin.html" target="_blank">WordPress主题插件汉化教程 - 露兜博客</a></p>
+<h3 id="令插件支持语言包">令插件支持语言包</h3>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">myplugin_init</span><span class="params">()</span> {</span>
+  load_plugin_textdomain( <span class="string">'wpdaxue'</span>, <span class="keyword">false</span> , dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) . <span class="string">'/languages/'</span> );
+}
+add_action(<span class="string">'plugins_loaded'</span>, <span class="string">'myplugin_init'</span>);
+</code></pre><p>此时語言包命名方式为 <code>wpdaxue-zh_CN.po</code>，放在插件的<code>languages</code>目录下</p>
 
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2014/05/27/微信开发[0]-搭建开发测试环境/#more" class="more-link">Read More</a>
-          </div>
         
         
       

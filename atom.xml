@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Life is painting a picture, not doing a sum.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://falconchen.github.io/"/>
-  <updated>2014-08-26T09:17:39.598Z</updated>
+  <updated>2014-08-27T03:15:50.407Z</updated>
   <id>http://falconchen.github.io/</id>
   
   <author>
@@ -13,6 +13,103 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Wordpress 语言包设置和翻译]]></title>
+    <link href="http://falconchen.github.io/2014/08/27/wordpress-language-package/"/>
+    <id>http://falconchen.github.io/2014/08/27/wordpress-language-package/</id>
+    <published>2014-08-27T03:15:08.000Z</published>
+    <updated>2014-08-27T03:15:17.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="多语言翻译设置">多语言翻译设置</h3>
+<ol>
+<li>主题的<code>functions.php</code>添加多语言的初始代码<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">function</span> <span class="title">theme_languages_init</span><span class="params">()</span>{</span>   
+    load_theme_textdomain(<span class="string">'bluenight'</span>, get_template_directory() . <span class="string">'/languages'</span>);   
+}
+add_action (<span class="string">'init'</span>, <span class="string">'theme_languages_init'</span>);
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>插件为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>add_action(<span class="string">'plugins_loaded'</span>,<span class="string">'MingPressAdmin::mingspress_textdomain'</span>);
+<span class="class"><span class="keyword">class</span> <span class="title">MingPressAdmin</span> {</span>
+	<span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">mingspress_textdomain</span><span class="params">()</span> {</span>
+		<span class="variable">$result</span> = load_plugin_textdomain( <span class="string">'mingspress'</span>, <span class="keyword">false</span>, dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) );
+	}
+}
+</pre></td></tr></table></figure><br>将对应的语言包放在主题下,bluenight是主题名，也相当于翻译的命名空间<br><br><br>2. 在主题中使用<code>_e</code>和<code>__</code>标记需要多语言翻译的内容，如：<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="comment">// 普通的输出使用 _e() 函数   </span>
+&lt;div <span class="keyword">class</span>=<span class="string">"post"</span>&gt;&lt;p&gt;&lt;?php _e(<span class="string">'Sorry, no posts matched your criteria.'</span>, <span class="string">'bluenight'</span>); ?&gt;&lt;/p&gt;&lt;/div&gt;   
+<span class="comment">// 在函数中走参数或返回值输出使用 __() 函数   </span>
+echo the_tags(<span class="string">'&lt;h2&gt;'</span>.__(<span class="string">'Related '</span>,<span class="string">'bluenight'</span>), <span class="string">' , '</span> , __(<span class="string">' Posts'</span>,<span class="string">'bluenight'</span>).<span class="string">'&lt;/h2&gt;'</span>).<span class="string">'&lt;ul&gt;'</span>;
+</pre></td></tr></table></figure>
+
+<ol>
+<li>PoEdit 设置</li>
+</ol>
+<p>下载地址：<a href="http://poedit.net/" target="_blank">http://poedit.net/</a></p>
+<p>安装后新建一个工程，<br><img src="http://falcon.sinaapp.com/images/md/poedit1.png" alt=""></p>
+<p>翻译的语言这里选择：简体中文/zh_CN</p>
+<p>确认后再点击保存会提供保存的名称和位置，我们放在主题的language下，命名为zh_CN.po</p>
+<p>如果可供其他人翻译的模板，则翻译语言一则选择英语，保存为<code>主题名.pot</code></p>
+<p><img src="http://falcon.sinaapp.com/images/md/poedit2.png" alt="">    </p>
+<p>那么其他人翻译时可以用<code>PoEdit</code>中导入此模板进行翻译，<code>wordpress</code>官方主题就是这样的</p>
+<p>保存后点击从源代码提取，填写翻译的属性，再保存一次<br><img src="http://falcon.sinaapp.com/images/md/poedit3.png" alt=""></p>
+<p>源路径填写为文件上一级目录：<br><img src="http://falcon.sinaapp.com/images/md/poedit4.png" alt=""></p>
+<p>源关键字：</p>
+<pre><code>__
+_<span class="tag">e</span>
+_<span class="tag">n</span><span class="pseudo">:1</span>,2
+_<span class="tag">x</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+_<span class="tag">ex</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+</code></pre><p><img src="http://falcon.sinaapp.com/images/md/poedit5.png" alt=""></p>
+<p>_n是单复数，如评论</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>  
+<span class="keyword">echo</span> _n( <span class="string">'There is a comment'</span> , <span class="string">'There are comments'</span> , get_comments_number() );  
+<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>_x和_ex是按上下文语义翻译，如：</p>
+<p>名词：一篇文章</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"a post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>动词：发布</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"To post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>点击从源文件更新，此时<code>PoEdit</code>搜索到的翻译字符串为<br><img src="http://falcon.sinaapp.com/images/md/poedit7.png" alt=""></p>
+<p>确认后会自动导入翻译文本<br><img src="http://falcon.sinaapp.com/images/md/poedit6.png" alt=""></p>
+<p>修改<code>wp-config.php</code>的语言常量</p>
+<pre><code><span class="class"><span class="keyword">define</span></span>(<span class="string">'WPLANG'</span>, <span class="string">'zh_CN'</span>);      
+</code></pre><p>参考文章：<br><a href="http://www.wpdaxue.com/localize-wordpress-themes.html" target="_blank">http://www.wpdaxue.com/localize-wordpress-themes.html</a><br><a href="http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html" target="_blank">http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html</a><br><a href="http://www.ludou.org/how-to-translate-wordpress-theme-and-plugin.html" target="_blank">WordPress主题插件汉化教程 - 露兜博客</a></p>
+<h3 id="令插件支持语言包">令插件支持语言包</h3>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">myplugin_init</span><span class="params">()</span> {</span>
+  load_plugin_textdomain( <span class="string">'wpdaxue'</span>, <span class="keyword">false</span> , dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) . <span class="string">'/languages/'</span> );
+}
+add_action(<span class="string">'plugins_loaded'</span>, <span class="string">'myplugin_init'</span>);
+</code></pre><p>此时語言包命名方式为 <code>wpdaxue-zh_CN.po</code>，放在插件的<code>languages</code>目录下</p>
+]]></content>
+    
+    
+      <category term="php" scheme="http://falconchen.github.io/tags/php/"/>
+    
+      <category term="wordpress" scheme="http://falconchen.github.io/tags/wordpress/"/>
+    
+      <category term="多语言" scheme="http://falconchen.github.io/tags/%E5%A4%9A%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="PoEdit" scheme="http://falconchen.github.io/tags/PoEdit/"/>
+    
+      <category term="PHP" scheme="http://falconchen.github.io/categories/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[linux 设置日期]]></title>
@@ -1185,32 +1282,6 @@ hexo d
       <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
     
       <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[hexo创建404]]></title>
-    <link href="http://falconchen.github.io/2014/05/23/hexo%E5%88%9B%E5%BB%BA404/"/>
-    <id>http://falconchen.github.io/2014/05/23/hexo创建404/</id>
-    <published>2014-05-23T10:01:01.000Z</published>
-    <updated>2014-05-26T01:50:49.000Z</updated>
-    <content type="html"><![CDATA[<p>先做好一个<code>404.html</code>的html页面，放到<code>source</code>文件夹下，此时如果进行生成，hexo会自作多情地render，要禁止解析，可以在html内容前加入：</p>
-<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="header">layout: false
----</span>
-</pre></td></tr></table></figure><br>即可，此时生成会在public生成一个404.html页面，在<code>github</code>无须设置，在其他服务器(如<code>nginx</code>)还需要改动配置文件。</p>
-<p>这是本站的<code>公益404页面</code>:<a href="http://falconchen.github.io/404.html" target="_blank">http://falconchen.github.io/404.html</a></p>
-]]></content>
-    
-    
-      <category term="nodejs" scheme="http://falconchen.github.io/tags/nodejs/"/>
-    
-      <category term="hexo" scheme="http://falconchen.github.io/tags/hexo/"/>
-    
-      <category term="404" scheme="http://falconchen.github.io/tags/404/"/>
     
       <category term="nodejs" scheme="http://falconchen.github.io/categories/nodejs/"/>
     

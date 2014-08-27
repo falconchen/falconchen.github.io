@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>利用SSH隧道进行反向代理 | 琴心剑胆</title>
+  <title>Wordpress 语言包设置和翻译 | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="利用SSH隧道进行反向代理"/>
+  <meta property="og:title" content="Wordpress 语言包设置和翻译"/>
   <meta property="og:site_name" content="琴心剑胆"/>
 
   
@@ -60,106 +60,92 @@
     <header>
       
   
-    <h1 class="title">利用SSH隧道进行反向代理</h1>
+    <h1 class="title">Wordpress 语言包设置和翻译</h1>
   
 
       
         <div class="icon"></div>
-        <time datetime="2014-05-29T08:01:07.000Z"><a href="/2014/05/29/利用ssh隧道进行反向代理/">2014年05月29日</a></time>
+        <time datetime="2014-08-27T03:15:08.000Z"><a href="/2014/08/27/wordpress-language-package/">2014年08月27日</a></time>
       
     </header>
     <div class="entry">
       
-        <p>公司有几个网站要迁移到<code>阿里云</code>，数据已经被我迁移过去了，域名还在备案，使用未备案的域名访问，阿里云是会直接封锁的，万恶的备案！！！</p>
-<p>公司有一个临时方案，把域名和数据暂时放在北京office的一台Linux服务器上，备案通过后再切换到阿里云服务器，但是当把数据弄到临时服务器后，突然发现网站的一个功能模块出现兼容性问题，代码里很多地方是针对windows处理的， 由于开发机和原服务器都是windows系统，在<code>文件目录分隔符</code>、<code>系统字符编码</code>等一些地方没有考虑到linux的情形，而且这模块不是我开发的, 代码写得有些凌乱,改了两天也算勉强能用了。<br><a id="more"></a><br>还有一个问题，北京office的服务器似乎不太稳定，SSH连接偶尔还会掉线，这个影响后面的部署和选择。</p>
-<p>我想来想去，最终觉得用反向代理处理。好处是显而易见的：</p>
+        <h3 id="多语言翻译设置">多语言翻译设置</h3>
 <ol>
-<li><p>解决代码的平台兼容性问题</p>
-</li>
-<li><p>不用重复迁移，否则当域名备案成功后还要把临时服务器的数据转移到阿里云来，不堪其扰。</p>
-</li>
-</ol>
-<h3 id="正常反向代理">正常反向代理</h3>
-<ol>
-<li><p>在阿里云上安装必要的软件，配置网站，这里使用<code>apache</code> , 开放服务器80端口。</p>
-</li>
-<li><p>在临时服务器上配置反向代理，这里我使用<code>nginx</code>,配置如下：</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre>1
+<li>主题的<code>functions.php</code>添加多语言的初始代码<figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre>server{		
-    listen  <span class="number">80</span>;
-    server_name 域名<span class="number">1</span> 域名<span class="number">2</span>;
-    access_log /<span class="keyword">log</span>/web/access.<span class="keyword">log</span>;
-    location / {
-           proxy_pass http:<span class="comment">//阿里云主机IP:80;</span>
-           include proxy.conf;
-       }	
-   }
-</pre></td></tr></table></figure>
-</li>
-<li><p>重启nginx后即生效，访问似乎正常，几分钟后域名被拦截了，意料之中，反向代理访问在后端主机看来跟正常访问其实是一样的，都是常规的<code>http请求</code>，阿里云根据请求头的信息拦截。</p>
-</li>
-</ol>
-<p><img src="/image/aliyunban.jpg" alt="阿里云拦截"></p>
-<p>一句话说白了，<em>此路不通</em></p>
-<h3 id="结合SSH_Forward的反向代理">结合SSH Forward的反向代理</h3>
-<p>先看命令，在阿里云上执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>c:\ssh -R <span class="number">7002</span>:localhost:<span class="number">80</span> 用户名@远程主机IP
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">function</span> <span class="title">theme_languages_init</span><span class="params">()</span>{</span>   
+    load_theme_textdomain(<span class="string">'bluenight'</span>, get_template_directory() . <span class="string">'/languages'</span>);   
+}
+add_action (<span class="string">'init'</span>, <span class="string">'theme_languages_init'</span>);
 </pre></td></tr></table></figure>
 
-<p>这条命令的意思是在阿里云服务器向临时服务器建立一个ssh连接，将阿里云的80端口映射到临时服务器的7002端口，这样请求临时服务器的7002端口数据时，就会被转发往阿里云服务器的80端口，而且借助SSH隧道，还实现了<code>加密传输</code>，于是阿里云的系统根本不能拦截。</p>
-<p>同时临时服务器nginx做以下配置：</p>
+</li>
+</ol>
+<p>插件为：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 5
 6
-7
-8
-9
-</pre></td><td class="code"><pre>server{		
-	    listen  80;
-	    server_name 域名1 域名2;
-	    access_log /log/web/access.log;
-	    location / {
-	           proxy_pass http://127.0.0.1:7002;
-	           include proxy.conf;
-	       }	
-	   }
-</pre></td></tr></table></figure>    
+</pre></td><td class="code"><pre>add_action(<span class="string">'plugins_loaded'</span>,<span class="string">'MingPressAdmin::mingspress_textdomain'</span>);
+<span class="class"><span class="keyword">class</span> <span class="title">MingPressAdmin</span> {</span>
+	<span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">mingspress_textdomain</span><span class="params">()</span> {</span>
+		<span class="variable">$result</span> = load_plugin_textdomain( <span class="string">'mingspress'</span>, <span class="keyword">false</span>, dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) );
+	}
+}
+</pre></td></tr></table></figure><br>将对应的语言包放在主题下,bluenight是主题名，也相当于翻译的命名空间<br><br><br>2. 在主题中使用<code>_e</code>和<code>__</code>标记需要多语言翻译的内容，如：<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="comment">// 普通的输出使用 _e() 函数   </span>
+&lt;div <span class="keyword">class</span>=<span class="string">"post"</span>&gt;&lt;p&gt;&lt;?php _e(<span class="string">'Sorry, no posts matched your criteria.'</span>, <span class="string">'bluenight'</span>); ?&gt;&lt;/p&gt;&lt;/div&gt;   
+<span class="comment">// 在函数中走参数或返回值输出使用 __() 函数   </span>
+echo the_tags(<span class="string">'&lt;h2&gt;'</span>.__(<span class="string">'Related '</span>,<span class="string">'bluenight'</span>), <span class="string">' , '</span> , __(<span class="string">' Posts'</span>,<span class="string">'bluenight'</span>).<span class="string">'&lt;/h2&gt;'</span>).<span class="string">'&lt;ul&gt;'</span>;
+</pre></td></tr></table></figure>
 
-<p>可以看到跟正常反向代理相比，只是将<code>proxy_pass</code>修改了,原来防火墙的配置也不用修改。</p>
-<p>在Windows下除了安装<code>openssh</code>的命令行执行外，还可以在 <code>putty</code>,<code>bitvise</code>一些客户端设置。推荐使用bitvise,因为掉线后会自动重连。</p>
-<p><img src="/image/puttys2c.jpg" alt="putty设置"></p>
-<p><img src="/image/bitvises2c.jpg" alt="bitvise设置"></p>
-<h3 id="Apache的日志格式修改">Apache的日志格式修改</h3>
-<p>使用反向代理后，后端的apache就不能直接取得<code>访客真实IP</code>了，在代理服务器nginx的<code>proxy.conf</code>可见如下内容：</p>
-<pre><code>proxy_set_header        X<span class="attribute">-Real</span><span class="attribute">-IP</span> <span class="variable">$remote_addr</span>
-proxy_set_header       X<span class="attribute">-Forwarded</span><span class="attribute">-For</span>   <span class="variable">$proxy_add_x_forwarded_for</span>;
-</code></pre><p>即为转发到apache上的请求增加了两个请求头<code>X-Real-IP</code>和<code>X-Forwarded-For</code>。</p>
-<p>Apache的<code>http.conf</code>配置日志格式增加一条：</p>
-<pre><code><span class="comment">#reverse proxy backend</span>
-LogFormat <span class="string">"%{X-Forwarded-For}i <span class="variable">%l</span> <span class="variable">%u</span> <span class="variable">%t</span> \"<span class="variable">%r</span>\" <span class="variable">%&gt;</span>s <span class="variable">%b</span>"</span> backend
-</code></pre><p><code>http-vhosts.conf</code>相关配置修改为：</p>
-<pre><code>CustomLog <span class="string">"path/to/log"</span> backend
-</code></pre><h3 id="参考资料">参考资料</h3>
-<ul>
-<li><p><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank">SSH原理与运用（二）：远程操作与端口转发 - 阮一峰的网络日志</a></p>
-</li>
-<li><p><a href="http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/" target="_blank">实战 SSH 端口转发</a></p>
-</li>
-<li><p><a href="http://yansu.org/2014/01/24/apache-log-format.html" target="_blank">Apache 日志文件格式及简单处理 | 闫肃的博客</a></p>
-</li>
-</ul>
+<ol>
+<li>PoEdit 设置</li>
+</ol>
+<p>下载地址：<a href="http://poedit.net/" target="_blank">http://poedit.net/</a></p>
+<p>安装后新建一个工程，<br><img src="http://falcon.sinaapp.com/images/md/poedit1.png" alt=""></p>
+<p>翻译的语言这里选择：简体中文/zh_CN</p>
+<p>确认后再点击保存会提供保存的名称和位置，我们放在主题的language下，命名为zh_CN.po</p>
+<p>如果可供其他人翻译的模板，则翻译语言一则选择英语，保存为<code>主题名.pot</code></p>
+<p><img src="http://falcon.sinaapp.com/images/md/poedit2.png" alt="">    </p>
+<p>那么其他人翻译时可以用<code>PoEdit</code>中导入此模板进行翻译，<code>wordpress</code>官方主题就是这样的</p>
+<p>保存后点击从源代码提取，填写翻译的属性，再保存一次<br><img src="http://falcon.sinaapp.com/images/md/poedit3.png" alt=""></p>
+<p>源路径填写为文件上一级目录：<br><img src="http://falcon.sinaapp.com/images/md/poedit4.png" alt=""></p>
+<p>源关键字：</p>
+<pre><code>__
+_<span class="tag">e</span>
+_<span class="tag">n</span><span class="pseudo">:1</span>,2
+_<span class="tag">x</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+_<span class="tag">ex</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+</code></pre><p><img src="http://falcon.sinaapp.com/images/md/poedit5.png" alt=""></p>
+<p>_n是单复数，如评论</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>  
+<span class="keyword">echo</span> _n( <span class="string">'There is a comment'</span> , <span class="string">'There are comments'</span> , get_comments_number() );  
+<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>_x和_ex是按上下文语义翻译，如：</p>
+<p>名词：一篇文章</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"a post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>动词：发布</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"To post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>点击从源文件更新，此时<code>PoEdit</code>搜索到的翻译字符串为<br><img src="http://falcon.sinaapp.com/images/md/poedit7.png" alt=""></p>
+<p>确认后会自动导入翻译文本<br><img src="http://falcon.sinaapp.com/images/md/poedit6.png" alt=""></p>
+<p>修改<code>wp-config.php</code>的语言常量</p>
+<pre><code><span class="class"><span class="keyword">define</span></span>(<span class="string">'WPLANG'</span>, <span class="string">'zh_CN'</span>);      
+</code></pre><p>参考文章：<br><a href="http://www.wpdaxue.com/localize-wordpress-themes.html" target="_blank">http://www.wpdaxue.com/localize-wordpress-themes.html</a><br><a href="http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html" target="_blank">http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html</a><br><a href="http://www.ludou.org/how-to-translate-wordpress-theme-and-plugin.html" target="_blank">WordPress主题插件汉化教程 - 露兜博客</a></p>
+<h3 id="令插件支持语言包">令插件支持语言包</h3>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">myplugin_init</span><span class="params">()</span> {</span>
+  load_plugin_textdomain( <span class="string">'wpdaxue'</span>, <span class="keyword">false</span> , dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) . <span class="string">'/languages/'</span> );
+}
+add_action(<span class="string">'plugins_loaded'</span>, <span class="string">'myplugin_init'</span>);
+</code></pre><p>此时語言包命名方式为 <code>wpdaxue-zh_CN.po</code>，放在插件的<code>languages</code>目录下</p>
 
       
     </div>
@@ -168,13 +154,13 @@ LogFormat <span class="string">"%{X-Forwarded-For}i <span class="variable">%l</s
         
   
   <div class="categories">
-    <a href="/categories/服务器/">服务器</a>
+    <a href="/categories/PHP/">PHP</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/ssh/">ssh</a>, <a href="/tags/服务器/">服务器</a>, <a href="/tags/nginx/">nginx</a>
+    <a href="/tags/php/">php</a>, <a href="/tags/wordpress/">wordpress</a>, <a href="/tags/多语言/">多语言</a>, <a href="/tags/PoEdit/">PoEdit</a>
   </div>
 
         

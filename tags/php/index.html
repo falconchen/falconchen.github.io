@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>PHP | 琴心剑胆</title>
+  <title>php | 琴心剑胆</title>
   <meta name="author" content="Falcon Chen">
   
   <meta name="description" content="Everything about Falcon.">
@@ -55,7 +55,7 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">PHP</h2>
+<h2 class="archive-title tag">php</h2>
 
 
   
@@ -65,36 +65,151 @@
     <header>
       
   
-    <h1 class="title"><a href="/2014/07/21/laravel-study/">laravel 笔记</a></h1>
+    <h1 class="title"><a href="/2014/08/27/wordpress-language-package/">Wordpress 语言包设置和翻译</a></h1>
   
 
       
         <div class="icon"></div>
-        <time datetime="2014-07-21T02:22:45.000Z"><a href="/2014/07/21/laravel-study/">2014年07月21日</a></time>
+        <time datetime="2014-08-27T03:15:08.000Z"><a href="/2014/08/27/wordpress-language-package/">2014年08月27日</a></time>
       
     </header>
     <div class="entry">
       
-        <h3 id="安装composer">安装composer</h3>
-<p><a href="https://getcomposer.org/doc/00-intro.md" target="_blank">https://getcomposer.org/doc/00-intro.md</a></p>
-<p>在<code>windows</code>下可直接使用 <a href="https://getcomposer.org/Composer-Setup.exe" target="_blank">Windows installer</a>安装</p>
-<h3 id="安装laravel">安装laravel</h3>
-<p>下载 <a href="http://laravel.com/laravel.phar" target="_blank">Laravel installer PHAR archive</a></p>
-<p>windows下可新建一个laravel文件夹，将laravel.phar放入该目录，在目录新建一个文件laravel.bat，写入以下内容:</p>
-<pre><code><span class="variable">@php</span> <span class="string">"%~dp0laravel.phar"</span> <span class="variable">%*</span>
-</code></pre><p>最后将该目录放入系统环境变量%path%即可。</p>
-<p>运行<br><img src="http://i.imgur.com/AuhcXWX.jpg" alt="运行lavaral"></p>
-<p>创建项目</p>
-<pre><code>laravel <span class="keyword">new</span> weblog
-</code></pre><p>
+        <h3 id="多语言翻译设置">多语言翻译设置</h3>
+<ol>
+<li>主题的<code>functions.php</code>添加多语言的初始代码<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">function</span> <span class="title">theme_languages_init</span><span class="params">()</span>{</span>   
+    load_theme_textdomain(<span class="string">'bluenight'</span>, get_template_directory() . <span class="string">'/languages'</span>);   
+}
+add_action (<span class="string">'init'</span>, <span class="string">'theme_languages_init'</span>);
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>插件为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>add_action(<span class="string">'plugins_loaded'</span>,<span class="string">'MingPressAdmin::mingspress_textdomain'</span>);
+<span class="class"><span class="keyword">class</span> <span class="title">MingPressAdmin</span> {</span>
+	<span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">mingspress_textdomain</span><span class="params">()</span> {</span>
+		<span class="variable">$result</span> = load_plugin_textdomain( <span class="string">'mingspress'</span>, <span class="keyword">false</span>, dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) );
+	}
+}
+</pre></td></tr></table></figure><br>将对应的语言包放在主题下,bluenight是主题名，也相当于翻译的命名空间<br><br><br>2. 在主题中使用<code>_e</code>和<code>__</code>标记需要多语言翻译的内容，如：<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="comment">// 普通的输出使用 _e() 函数   </span>
+&lt;div <span class="keyword">class</span>=<span class="string">"post"</span>&gt;&lt;p&gt;&lt;?php _e(<span class="string">'Sorry, no posts matched your criteria.'</span>, <span class="string">'bluenight'</span>); ?&gt;&lt;/p&gt;&lt;/div&gt;   
+<span class="comment">// 在函数中走参数或返回值输出使用 __() 函数   </span>
+echo the_tags(<span class="string">'&lt;h2&gt;'</span>.__(<span class="string">'Related '</span>,<span class="string">'bluenight'</span>), <span class="string">' , '</span> , __(<span class="string">' Posts'</span>,<span class="string">'bluenight'</span>).<span class="string">'&lt;/h2&gt;'</span>).<span class="string">'&lt;ul&gt;'</span>;
+</pre></td></tr></table></figure>
+
+<ol>
+<li>PoEdit 设置</li>
+</ol>
+<p>下载地址：<a href="http://poedit.net/" target="_blank">http://poedit.net/</a></p>
+<p>安装后新建一个工程，<br><img src="http://falcon.sinaapp.com/images/md/poedit1.png" alt=""></p>
+<p>翻译的语言这里选择：简体中文/zh_CN</p>
+<p>确认后再点击保存会提供保存的名称和位置，我们放在主题的language下，命名为zh_CN.po</p>
+<p>如果可供其他人翻译的模板，则翻译语言一则选择英语，保存为<code>主题名.pot</code></p>
+<p><img src="http://falcon.sinaapp.com/images/md/poedit2.png" alt="">    </p>
+<p>那么其他人翻译时可以用<code>PoEdit</code>中导入此模板进行翻译，<code>wordpress</code>官方主题就是这样的</p>
+<p>保存后点击从源代码提取，填写翻译的属性，再保存一次<br><img src="http://falcon.sinaapp.com/images/md/poedit3.png" alt=""></p>
+<p>源路径填写为文件上一级目录：<br><img src="http://falcon.sinaapp.com/images/md/poedit4.png" alt=""></p>
+<p>源关键字：</p>
+<pre><code>__
+_<span class="tag">e</span>
+_<span class="tag">n</span><span class="pseudo">:1</span>,2
+_<span class="tag">x</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+_<span class="tag">ex</span><span class="pseudo">:1</span>,2<span class="tag">c</span>
+</code></pre><p><img src="http://falcon.sinaapp.com/images/md/poedit5.png" alt=""></p>
+<p>_n是单复数，如评论</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>  
+<span class="keyword">echo</span> _n( <span class="string">'There is a comment'</span> , <span class="string">'There are comments'</span> , get_comments_number() );  
+<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>_x和_ex是按上下文语义翻译，如：</p>
+<p>名词：一篇文章</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"a post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>动词：发布</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> _ex(<span class="string">"Post"</span>,<span class="string">"To post"</span>,<span class="string">"mings"</span>);<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>点击从源文件更新，此时<code>PoEdit</code>搜索到的翻译字符串为<br><img src="http://falcon.sinaapp.com/images/md/poedit7.png" alt=""></p>
+<p>确认后会自动导入翻译文本<br><img src="http://falcon.sinaapp.com/images/md/poedit6.png" alt=""></p>
+<p>修改<code>wp-config.php</code>的语言常量</p>
+<pre><code><span class="class"><span class="keyword">define</span></span>(<span class="string">'WPLANG'</span>, <span class="string">'zh_CN'</span>);      
+</code></pre><p>参考文章：<br><a href="http://www.wpdaxue.com/localize-wordpress-themes.html" target="_blank">http://www.wpdaxue.com/localize-wordpress-themes.html</a><br><a href="http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html" target="_blank">http://www.wpdaxue.com/difference-between-__-_e-_x-_ex-and-_n.html</a><br><a href="http://www.ludou.org/how-to-translate-wordpress-theme-and-plugin.html" target="_blank">WordPress主题插件汉化教程 - 露兜博客</a></p>
+<h3 id="令插件支持语言包">令插件支持语言包</h3>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">myplugin_init</span><span class="params">()</span> {</span>
+  load_plugin_textdomain( <span class="string">'wpdaxue'</span>, <span class="keyword">false</span> , dirname( plugin_basename( <span class="keyword">__FILE__</span> ) ) . <span class="string">'/languages/'</span> );
+}
+add_action(<span class="string">'plugins_loaded'</span>, <span class="string">'myplugin_init'</span>);
+</code></pre><p>此时語言包命名方式为 <code>wpdaxue-zh_CN.po</code>，放在插件的<code>languages</code>目录下</p>
+
       
     </div>
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2014/07/21/laravel-study/#more" class="more-link">Read More</a>
-          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2014/06/12/php-fpm优化/">php-fpm优化</a></h1>
+  
+
+      
+        <div class="icon"></div>
+        <time datetime="2014-06-12T06:07:40.000Z"><a href="/2014/06/12/php-fpm优化/">2014年06月12日</a></time>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="当前内存使用情况">当前内存使用情况</h3>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>[root<span class="variable">@cpp22</span> ~]<span class="comment"># free -m</span>
+			total       used       free     shared    buffers     cached
+<span class="constant">Mem</span><span class="symbol">:</span>          <span class="number">7870</span>       <span class="number">7736</span>        <span class="number">134</span>          <span class="number">0</span>       <span class="number">1009</span>       <span class="number">5010</span>
+-<span class="regexp">/+ buffers/cache</span><span class="symbol">:</span>       <span class="number">1716</span>       <span class="number">6154</span>
+<span class="constant">Swap</span><span class="symbol">:</span>         <span class="number">2047</span>          <span class="number">0</span>       <span class="number">2047</span>
+</pre></td></tr></table></figure></p>
+<h3 id="查看php-fpm进程是否够用：">查看php-fpm进程是否够用：</h3>
+<p>使用 </p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>netstat -napo |grep <span class="string">"php-fpm"</span> | wc <span class="operator">-l</span>
+</pre></td></tr></table></figure><br>查看一下当前fastcgi进程个数，如果个数接近conf里配置的上限，就需要调高进程数。</p>
+<h3 id="php最大执行时间的设置">php最大执行时间的设置</h3>
+<p>如果file_get_contents请求的远程资源如果反应过慢，file_get_contents就会一直卡在那里不会超时。我们知道php.ini 里面max_execution_time 可以设置 PHP 脚本的最大执行时间，但是，在 php-cgi(php-fpm) 中，该参数不会起效。真正能够控制 PHP 脚本最大执行时间的是 php-fpm.conf 配置文件中的request_terminate_timeout参数。</p>
+<h3 id="pm-*的设置">pm.*的设置</h3>
+<p>如果设置成static，php-fpm进程数自始至终都是pm.max_children指定的数量，不再增加或减少。如果设置成 dynamic，则php-fpm进程数是动态的，最开始是pm.start_servers指定的数量，如果请求较多，则会自动增加， 保证空闲的进程数不小于pm.min_spare_servers，如果进程数较多，也会进行相应清理，保证多余的进程数不多于 pm.max_spare_servers。</p>
+
+      
+    </div>
+    <footer>
+      
         
         
       
@@ -128,6 +243,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/08/27/wordpress-language-package/">Wordpress 语言包设置和翻译</a>
+      </li>
+    
+      <li>
         <a href="/2014/08/26/linux-date-setting/">linux 设置日期</a>
       </li>
     
@@ -143,10 +262,6 @@
         <a href="/2014/07/03/partyline-optimize-advices/">partyline优化建议</a>
       </li>
     
-      <li>
-        <a href="/2014/06/20/wordpress-filter-and-action/">wordpress filter and action</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -158,7 +273,7 @@
   
     <li><a href="/categories/Linux/">Linux</a><small>1</small></li>
   
-    <li><a href="/categories/PHP/">PHP</a><small>1</small></li>
+    <li><a href="/categories/PHP/">PHP</a><small>2</small></li>
   
     <li><a href="/categories/SEO/">SEO</a><small>1</small></li>
   
@@ -196,6 +311,8 @@
     <li><a href="/tags/Linux/">Linux</a><small>1</small></li>
   
     <li><a href="/tags/PHP/">PHP</a><small>1</small></li>
+  
+    <li><a href="/tags/PoEdit/">PoEdit</a><small>1</small></li>
   
     <li><a href="/tags/bat/">bat</a><small>1</small></li>
   
@@ -235,7 +352,7 @@
   
     <li><a href="/tags/phonegap/">phonegap</a><small>1</small></li>
   
-    <li><a href="/tags/php/">php</a><small>1</small></li>
+    <li><a href="/tags/php/">php</a><small>2</small></li>
   
     <li><a href="/tags/php-fpm/">php-fpm</a><small>1</small></li>
   
@@ -249,6 +366,8 @@
   
     <li><a href="/tags/windows/">windows</a><small>2</small></li>
   
+    <li><a href="/tags/wordpress/">wordpress</a><small>1</small></li>
+  
     <li><a href="/tags/业界/">业界</a><small>1</small></li>
   
     <li><a href="/tags/优化/">优化</a><small>1</small></li>
@@ -256,6 +375,8 @@
     <li><a href="/tags/前端/">前端</a><small>2</small></li>
   
     <li><a href="/tags/反向代理/">反向代理</a><small>1</small></li>
+  
+    <li><a href="/tags/多语言/">多语言</a><small>1</small></li>
   
     <li><a href="/tags/工匠情怀/">工匠情怀</a><small>1</small></li>
   
